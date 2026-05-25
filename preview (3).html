@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revive Agency — Votre Visa Canada en Moins de 2 Mois</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C96D;
+  --gold-bright: #FFD700;
+  --gold-dark: #8B6914;
+  --black: #050505;
+  --black-2: #0C0C0C;
+  --black-3: #111111;
+  --black-4: #1A1A1A;
+  --white: #F5F0E8;
+  --white-dim: rgba(245,240,232,0.7);
+  --white-faint: rgba(245,240,232,0.12);
+  --glass: rgba(201,168,76,0.04);
+  --glass-border: rgba(201,168,76,0.15);
+  --glass-border-bright: rgba(201,168,76,0.4);
+  --red: #C0392B;
+  --green: #1A6B3C;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: auto; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Geist', Arial, sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* CURSOR */
+.cursor { width:8px;height:8px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;mix-blend-mode:screen; }
+.cursor-ring { width:36px;height:36px;border:1px solid rgba(201,168,76,0.4);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:all 0.12s ease; }
+
+/* CANVAS */
+#particles { position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none; }
+
+/* SMOOTH SCROLL WRAPPER */
+#smooth-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  will-change: transform;
+  z-index: 2;
+}
+
+/* NOISE */
+body::before { content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");opacity:0.4;z-index:1;pointer-events:none; }
+
+/* GRID */
+body::after { content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(201,168,76,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:1;pointer-events:none; }
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left:0; right:0;
+  z-index: 100;
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(5,5,5,0.95) 0%, transparent 100%);
+  backdrop-filter: blur(20px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+nav.nav-hidden {
+  transform: translateY(-100%);
+}
+.nav-logo { font-family:'Geist Mono',monospace;font-weight:700;font-size:14px;letter-spacing:0.3em;color:var(--gold);text-decoration:none;text-transform:uppercase; }
+.nav-logo span { color:var(--white);font-weight:400; }
+.nav-links { display:flex;gap:40px;list-style:none; }
+.nav-links a { color:var(--white-dim);text-decoration:none;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;transition:color 0.3s;font-weight:400; }
+.nav-links a:hover { color:var(--gold); }
+.nav-cta { background:transparent;border:1px solid var(--glass-border-bright);color:var(--gold);padding:10px 24px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;cursor:none;transition:all 0.3s;font-family:'Geist Mono',monospace;text-decoration:none;display:inline-block;border-radius:999px; }
+.nav-cta:hover { background:var(--gold);color:var(--black); }
+
+section { position:relative;z-index:2; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 160px 40px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-badge { display:inline-flex;align-items:center;gap:10px;border:1px solid var(--glass-border);background:var(--glass);backdrop-filter:blur(20px);padding:8px 20px;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:40px;animation:fadeInDown 1s ease both;border-radius:999px; }
+.hero-badge::before { content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.6);} }
+.hero-title { font-family:'Geist',Arial,sans-serif;font-size:clamp(52px,9vw,110px);font-weight:300;line-height:1.0;letter-spacing:-0.02em;margin-bottom:8px;animation:fadeInUp 1s ease 0.2s both; }
+.hero-title em { font-style:italic;color:var(--gold);font-weight:300; }
+.hero-title strong { font-weight:700;display:block;background:linear-gradient(135deg,var(--gold-light),var(--gold),var(--gold-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.hero-title-sub { font-family:'Geist',Arial,sans-serif;font-size:clamp(20px,3vw,36px);font-weight:300;font-style:italic;color:var(--white-dim);margin-bottom:32px;animation:fadeInUp 1s ease 0.4s both; }
+.hero-desc { max-width:600px;font-size:16px;line-height:1.8;color:var(--white-dim);margin:0 auto 50px;animation:fadeInUp 1s ease 0.5s both;font-weight:300; }
+.hero-desc strong { color:var(--gold);font-weight:500; }
+.hero-btns { display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeInUp 1s ease 0.6s both; }
+.btn-primary { background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--black);padding:18px 44px;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;font-family:'Geist Mono',monospace;font-weight:700;border:none;cursor:none;text-decoration:none;display:inline-block;position:relative;overflow:hidden;transition:all 0.3s;border-radius:999px; }
+.btn-primary::before { content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--gold-bright),var(--gold));opacity:0;transition:opacity 0.3s;border-radius:999px; }
+.btn-primary:hover::before { opacity:1; }
+.btn-primary:hover { transform:translateY(-2px);box-shadow:0 20px 60px rgba(201,168,76,0.3); }
+.btn-primary span { position:relative;z-index:1; }
+.btn-secondary { background:transparent;color:var(--white);padding:18px 44px;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;font-family:'Geist',Arial,sans-serif;font-weight:400;border:1px solid rgba(245,240,232,0.2);cursor:none;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all 0.3s;border-radius:999px; }
+.btn-secondary:hover { border-color:var(--gold);color:var(--gold); }
+.whatsapp-icon { width:18px;height:18px;fill:currentColor; }
+.hero-scroll { position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--white-dim);font-size:10px;letter-spacing:0.3em;text-transform:uppercase;animation:fadeIn 2s ease 1.5s both; }
+.scroll-line { width:1px;height:60px;background:linear-gradient(180deg,transparent,var(--gold),transparent);animation:scrollDown 2s ease infinite; }
+@keyframes scrollDown { 0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom} }
+.orb { position:absolute;border-radius:50%;filter:blur(80px);opacity:0.12;animation:orbFloat 8s ease-in-out infinite;pointer-events:none; }
+.orb-1 { width:500px;height:500px;background:var(--gold);top:-100px;right:-100px;animation-delay:0s; }
+.orb-2 { width:300px;height:300px;background:var(--gold-light);bottom:0;left:-50px;animation-delay:-3s; }
+@keyframes orbFloat { 0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,10px) scale(0.95)} }
+
+/* TRUST BADGES STRIP */
+.trust-strip {
+  position: relative; z-index: 2;
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  background: rgba(201,168,76,0.03);
+  backdrop-filter: blur(20px);
+  padding: 16px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+}
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+.trust-badge::before {
+  content: '';
+  width: 4px; height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+/* STATS STRIP */
+.stats-strip { border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);background:var(--glass);backdrop-filter:blur(20px);padding:32px 60px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;z-index:2; }
+.stat-item { display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 20px;border-right:1px solid var(--glass-border);text-align:center;opacity:0;transform:translateY(20px);transition:all 0.6s ease; }
+.stat-item:last-child { border-right:none; }
+.stat-item.visible { opacity:1;transform:translateY(0); }
+.stat-number { font-family:'Geist',Arial,sans-serif;font-size:42px;font-weight:700;color:var(--gold);line-height:1; }
+.stat-label { font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--white-dim);font-weight:300; }
+
+/* SECTION COMMONS */
+.section-tag { font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px;font-family:'Geist Mono',monospace;font-weight:400; }
+.section-tag::before { content:'';width:40px;height:1px;background:var(--gold);display:inline-block; }
+.section-title { font-family:'Geist',Arial,sans-serif;font-size:clamp(36px,5vw,68px);font-weight:300;line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px; }
+.section-title em { font-style:italic;color:var(--gold); }
+.section-title strong { font-weight:700; }
+
+/* PROBLEM SECTION */
+.problem-section { padding:100px 60px;max-width:1200px;margin:0 auto; }
+.problem-grid { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:60px; }
+.problem-text p { font-size:17px;line-height:1.9;color:var(--white-dim);margin-bottom:20px;font-weight:300; }
+.problem-text p strong { color:var(--white);font-weight:500; }
+.problem-cards { display:flex;flex-direction:column;gap:16px; }
+.problem-card { background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(20px);padding:24px 28px;display:flex;align-items:flex-start;gap:16px;transition:all 0.3s;opacity:0;transform:translateX(40px);border-radius:20px; }
+.problem-card.visible { opacity:1;transform:translateX(0); }
+.problem-card:hover { border-color:var(--glass-border-bright);background:rgba(201,168,76,0.06); }
+.problem-icon { font-size:22px;flex-shrink:0;margin-top:2px; }
+.problem-card h4 { font-family:'Geist',Arial,sans-serif;font-size:16px;font-weight:600;margin-bottom:4px;color:var(--white); }
+.problem-card p { font-size:13px;color:var(--white-dim);line-height:1.6;font-weight:300; }
+
+/* STORY SECTION */
+.story-section { padding:100px 60px;background:linear-gradient(180deg,transparent,rgba(201,168,76,0.03),transparent);position:relative;overflow:hidden; }
+.story-inner { max-width:900px;margin:0 auto;position:relative; }
+.story-quote-mark { font-family:'Geist',Arial,sans-serif;font-size:200px;color:var(--gold);opacity:0.08;position:absolute;top:-60px;left:-40px;line-height:1;pointer-events:none; }
+.story-content { padding-left:40px; }
+.story-content p { font-size:19px;line-height:2;color:var(--white-dim);margin-bottom:24px;font-weight:300; }
+.story-content p strong { color:var(--gold);font-style:italic;font-size:22px; }
+.story-content p em { color:var(--white);font-style:normal;font-weight:500; }
+.story-signature { margin-top:40px;padding-top:40px;border-top:1px solid var(--glass-border);display:flex;align-items:center;gap:20px; }
+.signature-avatar { width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--black);font-weight:700;flex-shrink:0; }
+.signature-name { font-size:18px;font-weight:600;color:var(--white); }
+.signature-role { font-size:11px;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;font-weight:300; }
+
+/* HOW IT WORKS — ALIGNED GRID */
+.how-section { padding:100px 60px;max-width:1200px;margin:0 auto;text-align:center; }
+
+.steps-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 0;
+  margin-top: 70px;
+  position: relative;
+}
+
+.steps-row::before {
+  content: '';
+  position: absolute;
+  top: 44px;
+  left: 20%; right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.4;
+}
+
+/* Each step column uses grid rows to force alignment across columns */
+.step-item {
+  padding: 0 32px;
+  display: grid;
+  grid-template-rows: 100px 70px 1fr 40px;
+  align-items: start;
+  justify-items: center;
+  gap: 16px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+.step-item.visible { opacity:1;transform:translateY(0); }
+.step-item:nth-child(2) { transition-delay:0.15s; }
+.step-item:nth-child(3) { transition-delay:0.3s; }
+
+.step-number {
+  width:88px;height:88px;
+  border:1px solid var(--glass-border-bright);
+  background:var(--glass);
+  backdrop-filter:blur(20px);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Geist',Arial,sans-serif;
+  font-size:36px;font-weight:700;color:var(--gold);
+  position:relative;z-index:1;
+  align-self: center;
+}
+.step-number::after { content:'';position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(201,168,76,0.1);animation:rotateBorder 8s linear infinite; }
+@keyframes rotateBorder { to{transform:rotate(360deg)} }
+
+.step-title { font-family:'Geist',Arial,sans-serif;font-size:18px;font-weight:600;color:var(--white);align-self:start;text-align:center; }
+.step-desc { font-size:13px;color:var(--white-dim);line-height:1.7;font-weight:300;text-align:center;align-self:start; }
+.step-time { font-size:10px;color:var(--gold);letter-spacing:0.15em;text-transform:uppercase;border:1px solid var(--glass-border);padding:5px 16px;background:var(--glass);align-self:center;font-family:'Geist Mono',monospace;border-radius:999px; }
+
+/* EMAIL CAPTURE */
+.email-section { padding:60px;max-width:700px;margin:0 auto;text-align:center; }
+.email-box { background:var(--glass);border:1px solid var(--glass-border-bright);backdrop-filter:blur(30px);padding:50px;position:relative;overflow:hidden;border-radius:28px; }
+.email-box::before { content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+.email-title { font-family:'Geist',Arial,sans-serif;font-size:28px;font-weight:600;margin-bottom:10px; }
+.email-subtitle { font-size:14px;color:var(--white-dim);margin-bottom:30px;font-weight:300; }
+.email-form { display:flex;gap:0; }
+.email-input { flex:1;background:rgba(5,5,5,0.8);border:1px solid var(--glass-border);border-right:none;color:var(--white);padding:16px 20px;font-family:'Geist',Arial,sans-serif;font-size:14px;outline:none;transition:border-color 0.3s;border-radius:999px 0 0 999px; }
+.email-input:focus { border-color:var(--gold); }
+.email-input::placeholder { color:rgba(245,240,232,0.3); }
+.email-btn { background:linear-gradient(135deg,var(--gold),var(--gold-dark));border:none;color:var(--black);padding:16px 28px;font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.2em;cursor:none;white-space:nowrap;transition:all 0.3s;border-radius:0 999px 999px 0; }
+.email-btn:hover { filter:brightness(1.1); }
+.email-note { font-size:11px;color:var(--white-dim);margin-top:14px;opacity:0.6;font-style:italic; }
+
+/* PACKAGES */
+.packages-section { padding:100px 60px;max-width:1300px;margin:0 auto; }
+.packages-title-wrap { text-align:center;margin-bottom:70px; }
+.packages-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start; }
+
+.package-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.075), rgba(201,168,76,0.045), rgba(5,5,5,0.42));
+  border: 1px solid rgba(201,168,76,0.22);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 18px 60px rgba(0,0,0,0.28);
+  backdrop-filter: blur(22px) saturate(130%);
+  padding:40px 36px;position:relative;overflow:hidden;transition:all 0.4s;opacity:0;transform:translateY(40px);border-radius:28px;
+}
+.package-card.visible { opacity:1;transform:translateY(0); }
+.package-card:nth-child(2) { transition-delay:0.15s; }
+.package-card:nth-child(3) { transition-delay:0.3s; }
+.package-card::before { content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.3s; }
+.package-card:hover::before { opacity:1; }
+.package-card:hover { border-color:rgba(201,168,76,0.62);transform:translateY(-8px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.12),0 34px 90px rgba(201,168,76,0.13); }
+.package-card.featured { background:linear-gradient(155deg,rgba(201,168,76,0.14),rgba(255,255,255,0.06),rgba(5,5,5,0.46));border:1px solid rgba(201,168,76,0.46);box-shadow:inset 0 1px 0 rgba(255,255,255,0.10),0 26px 80px rgba(201,168,76,0.12); }
+.package-card.featured::before { opacity:1; }
+.package-badge { position:absolute;top:20px;right:20px;background:var(--gold);color:var(--black);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;padding:4px 12px;font-family:'Geist Mono',monospace;font-weight:700;border-radius:999px; }
+.package-type { font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:400;font-family:'Geist Mono',monospace; }
+.package-name { font-family:'Geist',Arial,sans-serif;font-size:36px;font-weight:700;color:var(--white);margin-bottom:8px; }
+.package-desc { font-size:13px;color:var(--white-dim);margin-bottom:28px;line-height:1.6;font-weight:300; }
+.package-price-row { display:flex;align-items:baseline;gap:8px;margin-bottom:8px; }
+.price-old { font-size:18px;color:var(--white-dim);text-decoration:line-through;opacity:0.5; }
+.price-current { font-family:'Geist',Arial,sans-serif;font-size:52px;font-weight:700;color:var(--gold);line-height:1; }
+.price-currency { font-size:22px;color:var(--gold-light); }
+.price-period { font-size:12px;color:var(--white-dim);font-weight:300; }
+.price-per-person { font-size:12px;color:var(--gold);margin-bottom:28px;font-style:italic; }
+.package-divider { height:1px;background:var(--glass-border);margin:24px 0; }
+.package-features { list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px; }
+.package-features li { display:flex;align-items:flex-start;gap:12px;font-size:13px;color:var(--white-dim);line-height:1.5;font-weight:300; }
+.feat-check { color:var(--gold);font-size:14px;flex-shrink:0;margin-top:1px; }
+.feat-x { color:rgba(245,240,232,0.2);font-size:14px;flex-shrink:0;margin-top:1px; }
+.package-btn { display:block;text-align:center;padding:16px;font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;cursor:none;border-radius:999px; }
+.package-btn-outline { border:1px solid var(--glass-border-bright);color:var(--gold);background:transparent; }
+.package-btn-outline:hover { background:var(--gold);color:var(--black);border-color:var(--gold); }
+.package-btn-solid { background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--black);border:none; }
+.package-btn-solid:hover { filter:brightness(1.1);transform:translateY(-1px);box-shadow:0 10px 40px rgba(201,168,76,0.3); }
+
+/* GARANTIE */
+.garantie-box { margin-top:30px;background:linear-gradient(145deg,rgba(255,255,255,0.05),rgba(201,168,76,0.06),rgba(5,5,5,0.4));border:1px solid var(--glass-border-bright);backdrop-filter:blur(20px);padding:28px 36px;display:flex;align-items:center;justify-content:space-between;gap:30px;position:relative;overflow:hidden;border-radius:28px; }
+.garantie-box::before { content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(201,168,76,0.05),transparent); }
+.garantie-left { display:flex;align-items:center;gap:20px; }
+.garantie-icon { width:48px;height:48px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;border-radius:12px; }
+.garantie-title { font-family:'Geist',Arial,sans-serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:4px; }
+.garantie-desc { font-size:13px;color:var(--white-dim);font-weight:300;max-width:500px; }
+.garantie-price { text-align:right;flex-shrink:0; }
+.garantie-amount { font-family:'Geist',Arial,sans-serif;font-size:38px;font-weight:700;color:var(--gold);line-height:1; }
+.garantie-label { font-size:11px;color:var(--white-dim);text-transform:uppercase;letter-spacing:0.1em;font-weight:300; }
+
+/* ADD-ON */
+.addon-section { padding:40px 60px;max-width:1300px;margin:0 auto; }
+.addon-box { background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(20px);padding:28px 36px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-radius:28px; }
+.addon-left { display:flex;align-items:center;gap:16px; }
+.addon-icon { font-size:24px; }
+.addon-info h4 { font-family:'Geist',Arial,sans-serif;font-size:16px;font-weight:600;color:var(--white);margin-bottom:2px; }
+.addon-info p { font-size:13px;color:var(--white-dim);font-weight:300; }
+.addon-price { font-family:'Geist',Arial,sans-serif;font-size:22px;font-weight:700;color:var(--gold);white-space:nowrap;flex-shrink:0; }
+
+/* PAYMENT METHODS SECTION */
+.payment-section {
+  padding: 80px 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.payment-badge {
+  background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(201,168,76,0.04), rgba(5,5,5,0.5));
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  padding: 22px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s;
+  border-radius: 20px;
+}
+.payment-badge:hover {
+  border-color: var(--glass-border-bright);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(201,168,76,0.08);
+}
+.payment-badge-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.payment-badge-name {
+  font-family: 'Geist Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+  font-weight: 500;
+}
+.payment-pills {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.payment-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(201,168,76,0.06);
+  border: 1px solid var(--glass-border-bright);
+  padding: 12px 24px;
+  font-size: 12px;
+  color: var(--white-dim);
+  border-radius: 999px;
+  font-weight: 300;
+}
+.payment-pill strong { color: var(--gold); font-weight: 600; }
+.payment-note {
+  font-size: 11px;
+  color: var(--white-dim);
+  opacity: 0.5;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* DELAYS */
+.delays-section { padding:80px 60px;max-width:900px;margin:0 auto;text-align:center; }
+.delays-grid { display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:50px; }
+.delay-card { background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(20px);padding:40px;position:relative;overflow:hidden;transition:all 0.3s;border-radius:28px; }
+.delay-card::after { content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+.delay-card:hover { border-color:var(--glass-border-bright);transform:translateY(-4px); }
+.delay-type { font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:400;font-family:'Geist Mono',monospace; }
+.delay-timeline { font-family:'Geist',Arial,sans-serif;font-size:64px;font-weight:700;color:var(--white);line-height:1;margin-bottom:8px; }
+.delay-unit { font-size:16px;color:var(--gold);font-style:italic;margin-bottom:16px; }
+.delay-note { font-size:12px;color:var(--white-dim);font-weight:300;line-height:1.6; }
+.delay-ircc { font-size:10px;color:var(--gold);opacity:0.6;margin-top:10px;font-style:italic; }
+.our-delay { margin-top:30px;padding:20px 30px;background:linear-gradient(135deg,rgba(201,168,76,0.12),rgba(201,168,76,0.04));border:1px solid var(--glass-border-bright);display:flex;align-items:center;justify-content:center;gap:16px;font-size:14px;color:var(--white-dim);border-radius:999px; }
+.our-delay strong { color:var(--gold);font-size:20px;font-weight:700; }
+
+/* COMPARISON */
+.compare-section { padding:100px 60px;max-width:1100px;margin:0 auto; }
+.compare-grid { display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:50px; }
+.compare-col { background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(20px);overflow:hidden;border-radius:28px; }
+.compare-col.good { border-color:rgba(26,107,60,0.4); }
+.compare-col.bad { border-color:rgba(192,57,43,0.4); }
+.compare-header { padding:20px 28px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--glass-border); }
+.compare-col.good .compare-header { background:rgba(26,107,60,0.1); }
+.compare-col.bad .compare-header { background:rgba(192,57,43,0.1); }
+.compare-icon { font-size:22px; }
+.compare-title { font-family:'Geist',Arial,sans-serif;font-size:18px;font-weight:600;color:var(--white); }
+.compare-items { padding:20px 28px;display:flex;flex-direction:column;gap:12px; }
+.compare-item { display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--white-dim);line-height:1.5;font-weight:300; }
+.good .compare-item .ci-icon { color:#4CAF50;flex-shrink:0;margin-top:1px; }
+.bad .compare-item .ci-icon { color:var(--red);flex-shrink:0;margin-top:1px; }
+
+/* REVIEWS */
+.reviews-section { padding:100px 60px;max-width:1200px;margin:0 auto; }
+.reviews-title-wrap { text-align:center;margin-bottom:60px; }
+.reviews-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
+.review-card { background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(20px);padding:32px;position:relative;overflow:hidden;transition:all 0.3s;opacity:0;transform:translateY(30px);border-radius:28px; }
+.review-card.visible { opacity:1;transform:translateY(0); }
+.review-card:nth-child(2) { transition-delay:0.1s; }
+.review-card:nth-child(3) { transition-delay:0.2s; }
+.review-card:hover { border-color:var(--glass-border-bright);transform:translateY(-4px); }
+.review-stars { display:flex;gap:4px;margin-bottom:16px; }
+.star { color:var(--gold);font-size:14px; }
+.review-text { font-family:'Geist',Arial,sans-serif;font-size:15px;font-style:italic;color:var(--white-dim);line-height:1.7;margin-bottom:24px;font-weight:300; }
+.review-author { display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid var(--glass-border); }
+.author-avatar { width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--black);font-weight:700;flex-shrink:0; }
+.author-name { font-weight:500;font-size:14px;color:var(--white); }
+.author-location { font-size:11px;color:var(--gold);font-weight:300;font-family:'Geist Mono',monospace; }
+
+/* FAQ */
+.faq-section { padding:100px 60px;max-width:800px;margin:0 auto; }
+.faq-list { margin-top:50px;display:flex;flex-direction:column;gap:4px; }
+.faq-item { background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(20px);overflow:hidden;transition:border-color 0.3s;border-radius:16px; }
+.faq-item.open { border-color:var(--glass-border-bright); }
+.faq-question { padding:20px 24px;display:flex;align-items:center;justify-content:space-between;cursor:none;font-size:14px;color:var(--white);font-weight:400;gap:20px;transition:color 0.3s; }
+.faq-item.open .faq-question { color:var(--gold); }
+.faq-toggle { width:24px;height:24px;border:1px solid var(--glass-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;color:var(--gold);transition:transform 0.3s;border-radius:50%; }
+.faq-item.open .faq-toggle { transform:rotate(45deg); }
+.faq-answer { max-height:0;overflow:hidden;transition:max-height 0.4s ease; }
+.faq-item.open .faq-answer { max-height:400px; }
+.faq-answer p { padding:0 24px 20px;font-size:13px;color:var(--white-dim);line-height:1.8;font-weight:300; }
+.faq-answer p strong { color:var(--gold);font-weight:500; }
+
+/* FINAL CTA */
+.cta-section { padding:120px 60px;text-align:center;position:relative;overflow:hidden; }
+.cta-section::before { content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(201,168,76,0.06),transparent 70%);pointer-events:none; }
+.cta-inner { position:relative;z-index:1;max-width:700px;margin:0 auto; }
+.cta-title { font-family:'Geist',Arial,sans-serif;font-size:clamp(42px,6vw,72px);font-weight:300;line-height:1.1;margin-bottom:20px; }
+.cta-title em { font-style:italic;color:var(--gold); }
+.cta-title strong { font-weight:700;display:block; }
+.cta-sub { font-size:16px;color:var(--white-dim);margin-bottom:16px;font-weight:300;line-height:1.8; }
+.cta-urgency { display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.08);border:1px solid var(--glass-border);padding:10px 24px;font-size:12px;color:var(--gold);letter-spacing:0.1em;margin-bottom:40px;border-radius:999px;font-family:'Geist Mono',monospace; }
+.cta-urgency::before { content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 1.5s infinite; }
+.cta-btns { display:flex;gap:16px;justify-content:center;flex-wrap:wrap; }
+
+/* FOOTER */
+footer {
+  position: relative; z-index: 2;
+  border-top: 1px solid var(--glass-border);
+  background: rgba(5,5,5,0.95);
+  backdrop-filter: blur(30px);
+  padding: 0;
+}
+
+.footer-top {
+  text-align: center;
+  padding: 60px 60px 40px;
+  border-bottom: 1px solid var(--glass-border);
+}
+.footer-top-logo {
+  font-family: 'Geist Mono', monospace;
+  font-size: 18px;
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 12px;
+}
+.footer-top-tagline {
+  font-size: 14px;
+  color: var(--white-dim);
+  font-weight: 300;
+  font-style: italic;
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding: 50px 60px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.footer-col-title {
+  font-family: 'Geist Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  display: block;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul li { font-size: 13px; color: var(--white-dim); font-weight: 300; line-height: 1.5; }
+.footer-col ul li a { color: var(--white-dim); text-decoration: none; transition: color 0.3s; }
+.footer-col ul li a:hover { color: var(--gold); }
+
+.footer-bottom {
+  padding: 24px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-copy {
+  font-size: 11px;
+  color: var(--white-dim);
+  opacity: 0.4;
+  font-weight: 300;
+}
+.footer-policy-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+.footer-policy-links a {
+  font-size: 11px;
+  color: var(--white-dim);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  font-weight: 300;
+  opacity: 0.6;
+}
+.footer-policy-links a:hover { color: var(--gold); opacity: 1; }
+
+.footer-disclaimer {
+  padding: 20px 60px;
+  border-top: 1px solid var(--glass-border);
+  text-align: center;
+}
+.footer-disclaimer p {
+  font-size: 10px;
+  color: var(--white-dim);
+  opacity: 0.35;
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* STICKY WHATSAPP */
+.sticky-wa { position:fixed;bottom:32px;right:32px;z-index:200;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(37,211,102,0.4);cursor:none;transition:all 0.3s;animation:bounceIn 1s ease 2s both;text-decoration:none; }
+.sticky-wa:hover { transform:scale(1.1);box-shadow:0 12px 40px rgba(37,211,102,0.5); }
+.sticky-wa svg { width:28px;height:28px;fill:white; }
+@keyframes bounceIn { 0%{transform:scale(0);opacity:0}60%{transform:scale(1.15)}100%{transform:scale(1);opacity:1} }
+
+/* ANIMATIONS */
+@keyframes fadeInDown { from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)} }
+@keyframes fadeInUp { from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0}to{opacity:1} }
+
+.reveal { opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible { opacity:1;transform:translateY(0); }
+
+.glitch { position:relative; }
+.glitch::before,.glitch::after { content:attr(data-text);position:absolute;top:0;left:0;opacity:0.05; }
+.glitch::before { animation:glitch1 4s infinite;color:var(--gold-light);clip-path:polygon(0 0,100% 0,100% 35%,0 35%); }
+.glitch::after { animation:glitch2 4s infinite;color:var(--gold-dark);clip-path:polygon(0 65%,100% 65%,100% 100%,0 100%); }
+@keyframes glitch1 { 0%,90%,100%{transform:translate(0)}92%{transform:translate(-3px,1px)}94%{transform:translate(3px,-1px)}96%{transform:translate(-2px,2px)} }
+@keyframes glitch2 { 0%,90%,100%{transform:translate(0)}92%{transform:translate(3px,-1px)}94%{transform:translate(-3px,1px)}96%{transform:translate(2px,-2px)} }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .worldcup-banner { display:none; }
+  nav { padding:16px 20px;top:0; }
+  .nav-links { display:none; }
+  .hero { padding:120px 24px 60px; }
+  .trust-strip { gap:6px 16px;padding:12px 20px; }
+  .trust-badge { font-size:9px; }
+  .stats-strip { grid-template-columns:repeat(2,1fr);padding:24px; }
+  .stat-item:nth-child(2) { border-right:none; }
+  .problem-section,.story-section,.how-section,.packages-section,.delays-section,.compare-section,.reviews-section,.faq-section,.cta-section,.email-section,.addon-section,.payment-section { padding:60px 20px; }
+  .problem-grid { grid-template-columns:1fr;gap:40px; }
+  .steps-row { grid-template-columns:1fr; }
+  .step-item { grid-template-rows:auto auto auto auto; }
+  .steps-row::before { display:none; }
+  .packages-grid { grid-template-columns:1fr; }
+  .payment-grid { grid-template-columns:repeat(2,1fr); }
+  .delays-grid { grid-template-columns:1fr; }
+  .compare-grid { grid-template-columns:1fr; }
+  .reviews-grid { grid-template-columns:1fr; }
+  .garantie-box { flex-direction:column;gap:20px;text-align:center; }
+  .garantie-price { text-align:center; }
+  .addon-box { flex-direction:column;text-align:center; }
+  .addon-left { flex-direction:column;text-align:center; }
+  .payment-pills { flex-direction:column;align-items:center; }
+  .footer-cols { grid-template-columns:repeat(2,1fr);gap:30px;padding:40px 20px; }
+  .footer-top,.footer-bottom,.footer-disclaimer { padding:30px 20px; }
+  .footer-bottom { flex-direction:column;text-align:center; }
+  .footer-policy-links { flex-wrap:wrap;justify-content:center;gap:12px; }
+  .email-form { flex-direction:column; }
+  .email-input { border-right:1px solid var(--glass-border);border-radius:999px; }
+  .email-btn { width:100%;border-radius:999px; }
+}
+
+@media (min-width: 901px) {
+  body,a,button,input,textarea,select { cursor:none !important; }
+  .cursor,.cursor-ring { display:block !important; }
+}
+@media (max-width: 900px) {
+  body,a,button,input,textarea,select { cursor:auto !important; }
+  .cursor,.cursor-ring { display:none !important;opacity:0 !important;visibility:hidden !important;pointer-events:none !important; }
+  html,body { max-width:100vw !important;overflow-x:hidden !important; }
+}
+
+/* SCROLL FIX, KEEP DESIGN BLACK/GOLD */
+html {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  background: var(--black) !important;
+  color: var(--white) !important;
+  overflow-x: hidden !important;
+}
+
+/* Disable the fake fixed smooth scroll wrapper that can cause white/blank rendering */
+#smooth-wrapper {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  width: 100% !important;
+  min-height: auto !important;
+  transform: none !important;
+  will-change: auto !important;
+  z-index: 2 !important;
+}
+
+/* Make anchor jumps feel faster */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<canvas id="particles"></canvas>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Revive<span>Agency</span></a>
+  <ul class="nav-links">
+    <li><a href="#comment">Comment ça marche</a></li>
+    <li><a href="#packages">Nos Forfaits</a></li>
+    <li><a href="#avis">Témoignages</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="https://wa.me/1234567890" class="nav-cta">Contactez-Nous</a>
+</nav>
+
+<div id="smooth-wrapper">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="hero-badge">🍁 Fondée par quelqu'un qui a vécu 4 refus — et réussi</div>
+  <h1 class="hero-title glitch" data-text="Votre Enfant">
+    Votre Enfant
+    <strong>Au Canada.</strong>
+    <em>En Moins de 2 Mois.</em>
+  </h1>
+  <p class="hero-title-sub">On s'occupe de tout. Vous vous occupez de vos rêves.</p>
+  <p class="hero-desc">
+    Vous n'avez pas besoin d'une agence qui vous promet tout. Vous avez besoin de quelqu'un qui comprend vraiment pourquoi les dossiers sont refusés — et qui sait exactement comment les faire accepter.<br><br>
+    Permis d'études. Visa visiteur. <strong>Soumis en 48h. Sans erreur. Sans mauvaise surprise.</strong>
+  </p>
+  <div class="hero-btns">
+    <a href="#packages" class="btn-primary"><span>Démarrer Mon Dossier →</span></a>
+    <a href="https://wa.me/1234567890" class="btn-secondary">
+      <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Parler sur WhatsApp
+    </a>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Découvrir
+  </div>
+</section>
+
+<!-- TRUST BADGES -->
+<div class="trust-strip">
+  <div class="trust-badge">⚡ Soumission en 48h garantie</div>
+  <div class="trust-badge">🔒 Dossier 100% sécurisé</div>
+  <div class="trust-badge">🍁 Permis d'études & visa visiteur</div>
+  <div class="trust-badge">💬 Support WhatsApp 7j/7</div>
+  <div class="trust-badge">🛡️ Garantie succès disponible</div>
+  <div class="trust-badge">📋 Formulaires IRCC inclus</div>
+  <div class="trust-badge">🌍 6 pays africains servis</div>
+  <div class="trust-badge">✅ Zéro fausse promesse</div>
+</div>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat-item">
+    <div class="stat-number" data-count="48">0</div>
+    <div class="stat-label">Heures — soumission garantie</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-count="4">0</div>
+    <div class="stat-label">Refus vécus → expertise terrain</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-count="6">0</div>
+    <div class="stat-label">Pays africains accompagnés</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-count="95">0</div>
+    <div class="stat-label">% de dossiers validés complets</div>
+  </div>
+</div>
+
+<!-- EMAIL CAPTURE -->
+<div class="email-section reveal">
+  <div class="email-box">
+    <div class="section-tag" style="justify-content:center">Guide Gratuit</div>
+    <h3 class="email-title">Recevez <em style="font-style:italic;color:var(--gold)">les 10 erreurs</em> qui font refuser votre visa Canada</h3>
+    <p class="email-subtitle">Le guide que 8 familles sur 10 auraient dû lire avant de déposer leur dossier. Préparé par quelqu'un qui a vécu ces erreurs lui-même — 4 fois.</p>
+    <div class="email-form">
+      <input class="email-input" type="email" placeholder="Votre adresse email...">
+      <button class="email-btn">Recevoir →</button>
+    </div>
+    <p class="email-note">Gratuit. Immédiat. Aucun spam — désabonnement en un clic.</p>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem-section" id="probleme">
+  <div class="section-tag">Le Problème</div>
+  <h2 class="section-title reveal">Pourquoi <em>tant de refus</em><br>depuis l'Afrique ?</h2>
+  <div class="problem-grid">
+    <div class="problem-text reveal">
+      <p><strong>Vous avez tout fait correctement.</strong> Vous avez économisé pendant des années. Vous avez préparé les documents. Vous avez payé une agence locale — ou vous avez essayé seul. Et vous avez reçu un refus. Peut-être votre premier. Peut-être votre deuxième.</p>
+      <p>Ce n'est pas votre faute. Le système IRCC est délibérément complexe. Les formulaires changent. Les exigences évoluent sans préavis. Et l'IRCC ne vous explique pas ses décisions en détail. La moindre erreur suffit : un relevé bancaire sans tampon, une date incohérente, un scan illisible — et c'est le refus.</p>
+      <p><strong>J'ai reçu mon premier refus IRCC sans comprendre pourquoi. Mon deuxième aussi. Puis mon troisième. Et mon quatrième.</strong> Après chaque refus, j'ai analysé. J'ai compris. Et à ma cinquième tentative — j'ai été approuvé. Aujourd'hui, cette expérience est votre avantage.</p>
+    </div>
+    <div class="problem-cards">
+      <div class="problem-card">
+        <div class="problem-icon">📄</div>
+        <div><h4>Dossier incomplet ou mal organisé</h4><p>L'IRCC refuse systématiquement les dossiers incomplets. Pas de second avertissement. Un document manquant = refus immédiat.</p></div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">💰</div>
+        <div><h4>Preuve financière insuffisante</h4><p>Cause N°1 de refus depuis l'Afrique. Même avec assez d'argent — si c'est mal présenté, l'agent refuse. Relevés sans tampon. Dépôts suspects. Historique trop court.</p></div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">✍️</div>
+        <div><h4>Lettre de motivation générique</h4><p>Les agents IRCC lisent des milliers de lettres. Ils reconnaissent immédiatement les modèles copiés-collés. Une lettre qui ne vous ressemble pas = un dossier qui ne convainc pas.</p></div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🔗</div>
+        <div><h4>Liens insuffisants avec votre pays</h4><p>L'IRCC doit être convaincu que votre enfant reviendra. Sans preuve forte de vos attaches — propriété, emploi, famille — l'agent suppose qu'il ne reviendra pas.</p></div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">⚠️</div>
+        <div><h4>Agences locales peu fiables</h4><p>Trop d'agences à Kinshasa, Douala et Abidjan prennent votre argent et disparaissent. Ou elles soumettent un dossier bâclé sans vous prévenir. Résultat : refus. Argent perdu. Mois perdus.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-section">
+  <div class="story-inner">
+    <div class="story-quote-mark">"</div>
+    <div class="story-content reveal">
+      <div class="section-tag">Notre Histoire</div>
+      <h2 class="section-title" style="margin-bottom:30px"><em>4 refus.</em><br><strong>Une obsession.</strong><br>Un système.</h2>
+      <p>La première fois que j'ai reçu un refus IRCC, j'étais dévasté. J'avais tout préparé — du moins je le croyais. La deuxième fois, j'étais en colère. La troisième fois, j'avais honte. La quatrième fois — j'ai décidé de comprendre.</p>
+      <p>J'ai passé des mois à analyser. Des centaines de dossiers approuvés. Des dizaines de motifs de refus. Les rapports IRCC. Les forums. Les témoignages de familles africaines. J'ai tout décortiqué. <strong style="color:var(--gold);font-style:italic;font-size:20px">Ce que l'IRCC cherche vraiment — et comment le leur donner.</strong></p>
+      <p>Ma cinquième demande a été approuvée. Et j'ai réalisé que j'avais entre les mains quelque chose que personne d'autre ne possédait : une compréhension profonde, vécue, douloureuse de tout ce qui fait échouer un dossier canadien depuis l'Afrique — et de tout ce qui le fait réussir. <em>Revive Agency est née de cette expérience.</em></p>
+      <div class="story-signature">
+        <div class="signature-avatar">R</div>
+        <div>
+          <div class="signature-name">Fondateur, Revive Agency</div>
+          <div class="signature-role">Kinshasa · Expert Dossiers Canada</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="comment">
+  <div class="section-tag" style="justify-content:center">Le Processus</div>
+  <h2 class="section-title reveal"><em>Simple.</em> <strong>Rapide.</strong><br>Infaillible.</h2>
+  <p class="reveal" style="color:var(--white-dim);font-size:15px;max-width:520px;margin:0 auto 20px;font-weight:300;line-height:1.7">Trois étapes. De votre premier message jusqu'à la confirmation de soumission IRCC. Vous n'avez jamais à vous inquiéter de ce qui se passe ensuite.</p>
+  <div class="steps-row">
+    <div class="step-item">
+      <div class="step-number">01</div>
+      <div class="step-title">Vous nous contactez</div>
+      <p class="step-desc">Discussion WhatsApp gratuite. Notre équipe analyse votre profil, répond à vos questions et vous recommande le bon forfait. Aucun paiement immédiat — on s'assure d'abord que votre dossier est solide.</p>
+      <div class="step-time">Aujourd'hui</div>
+    </div>
+    <div class="step-item">
+      <div class="step-number">02</div>
+      <div class="step-title">Vous envoyez vos documents</div>
+      <p class="step-desc">Après paiement, notre formulaire sécurisé vous guide document par document. Notre système vérifie chaque pièce et vous redemande exactement ce qui manque. Aucune devinette. Aucune surprise.</p>
+      <div class="step-time">Jour 2–3</div>
+    </div>
+    <div class="step-item">
+      <div class="step-number">03</div>
+      <div class="step-title">Nous soumettons pour vous</div>
+      <p class="step-desc">Formulaires IRCC remplis à la perfection. Lettre de motivation écrite pour VOUS. Dossier organisé selon les exigences IRCC. Soumis en 48h. Vous recevez votre confirmation — et attendez en toute sérénité.</p>
+      <div class="step-time">48h garanties</div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages-section" id="packages">
+  <div class="packages-title-wrap">
+    <div class="section-tag" style="justify-content:center">Nos Forfaits</div>
+    <h2 class="section-title reveal">Choisissez votre<br><strong>formule <em>idéale</em></strong></h2>
+    <p class="reveal" style="color:var(--white-dim);font-size:14px;max-width:500px;margin:0 auto;font-weight:300;line-height:1.7">Soumission garantie en 48h après réception de tous vos documents.<br>Paiement en 2 fois disponible sur tous les forfaits.</p>
+  </div>
+  <div class="packages-grid">
+    <!-- SOLO -->
+    <div class="package-card">
+      <div class="package-type">Permis d'études / Visa Visiteur</div>
+      <div class="package-name">Solo</div>
+      <p class="package-desc">Pour 1 personne. Le dossier le plus solide possible, soumis en 48h — sans que vous ayez à vous inquiéter d'un seul détail technique.</p>
+      <div class="package-price-row">
+        <span class="price-old">$1 200</span>
+        <span class="price-currency">$</span>
+        <span class="price-current">850</span>
+      </div>
+      <div class="price-period">pour 1 personne · paiement en 2× disponible</div>
+      <div class="package-divider"></div>
+      <ul class="package-features">
+        <li><span class="feat-check">✦</span> Analyse approfondie de votre profil</li>
+        <li><span class="feat-check">✦</span> Vérification et organisation de tous vos documents</li>
+        <li><span class="feat-check">✦</span> Remplissage complet des formulaires IRCC</li>
+        <li><span class="feat-check">✦</span> Lettre de motivation personnalisée</li>
+        <li><span class="feat-check">✦</span> Score de solidité du dossier avant soumission</li>
+        <li><span class="feat-check">✦</span> Soumission garantie en 48h</li>
+        <li><span class="feat-check">✦</span> Aide réservation examen médical désigné IRCC</li>
+        <li><span class="feat-check">✦</span> Rappel rendez-vous biométrie obligatoire</li>
+        <li><span class="feat-x">○</span> Suivi post-soumission jusqu'à décision</li>
+        <li><span class="feat-x">○</span> Aide demande d'admission universitaire</li>
+      </ul>
+      <a href="https://wa.me/1234567890" class="package-btn package-btn-outline">Commencer Mon Dossier →</a>
+    </div>
+    <!-- DUO -->
+    <div class="package-card featured">
+      <div class="package-badge">⭐ Le Plus Choisi</div>
+      <div class="package-type">Permis d'études / Visa Visiteur</div>
+      <div class="package-name">Duo</div>
+      <p class="package-desc">Pour 2 personnes. Idéal pour un étudiant et un parent visiteur, ou deux étudiants. Deux dossiers coordonnés, cohérents, soumis ensemble.</p>
+      <div class="package-price-row">
+        <span class="price-old">$2 400</span>
+        <span class="price-currency">$</span>
+        <span class="price-current">1 500</span>
+      </div>
+      <div class="price-period">pour 2 personnes · économisez $900</div>
+      <p class="price-per-person">soit $750 par personne</p>
+      <div class="package-divider"></div>
+      <ul class="package-features">
+        <li><span class="feat-check">✦</span> Tout le Solo × 2 personnes</li>
+        <li><span class="feat-check">✦</span> Coordination des dossiers pour cohérence maximale</li>
+        <li><span class="feat-check">✦</span> Deux lettres de motivation distinctes et personnalisées</li>
+        <li><span class="feat-check">✦</span> Vérification croisée — aucune incohérence entre dossiers</li>
+        <li><span class="feat-check">✦</span> Soumission simultanée garantie 48h</li>
+        <li><span class="feat-check">✦</span> Suivi post-soumission jusqu'à la décision inclus</li>
+        <li><span class="feat-check">✦</span> Aide réservation examens médicaux des 2 personnes</li>
+        <li><span class="feat-check">✦</span> Support WhatsApp prioritaire</li>
+        <li><span class="feat-x">○</span> Aide demande d'admission universitaire</li>
+      </ul>
+      <a href="https://wa.me/1234567890" class="package-btn package-btn-solid">Choisir le Duo →</a>
+    </div>
+    <!-- FAMILLE -->
+    <div class="package-card">
+      <div class="package-type">Permis d'études / Visa Visiteur</div>
+      <div class="package-name">Famille</div>
+      <p class="package-desc">Jusqu'à 5 personnes. Toute la famille accompagnée, chaque dossier coordonné, chaque détail vérifié. La solution la plus complète.</p>
+      <div class="package-price-row">
+        <span class="price-old">$5 000</span>
+        <span class="price-currency">$</span>
+        <span class="price-current">2 200</span>
+      </div>
+      <div class="price-period">jusqu'à 5 personnes · économisez $2 800</div>
+      <p class="price-per-person">soit $440 / personne seulement</p>
+      <div class="package-divider"></div>
+      <ul class="package-features">
+        <li><span class="feat-check">✦</span> Tout le Duo pour jusqu'à 5 personnes</li>
+        <li><span class="feat-check">✦</span> Stratégie familiale globale — dossiers synchronisés</li>
+        <li><span class="feat-check">✦</span> Consultation téléphonique offerte avant démarrage</li>
+        <li><span class="feat-check">✦</span> Suivi prioritaire 24/7 jusqu'à toutes les décisions</li>
+        <li><span class="feat-check">✦</span> Aide complète demande d'admission universitaire</li>
+        <li><span class="feat-check">✦</span> Aide tous les rendez-vous médicaux désignés IRCC</li>
+        <li><span class="feat-check">✦</span> Personne supplémentaire au-delà de 5 : −80%</li>
+        <li><span class="feat-check">✦</span> Support WhatsApp dédié — réponse en moins d'1h</li>
+      </ul>
+      <a href="https://wa.me/1234567890" class="package-btn package-btn-outline">Choisir le Familial →</a>
+    </div>
+  </div>
+
+  <!-- ADD-ON -->
+  <div class="addon-section" style="padding:16px 0 0">
+    <div class="addon-box reveal">
+      <div class="addon-left">
+        <div class="addon-icon">➕</div>
+        <div class="addon-info">
+          <h4>Ajouter une personne à votre forfait Famille</h4>
+          <p>Famille de plus de 5 personnes ? Chaque personne supplémentaire bénéficie de 80% de réduction sur le prix Solo.</p>
+        </div>
+      </div>
+      <div class="addon-price">$170 / personne</div>
+    </div>
+  </div>
+
+  <!-- GARANTIE -->
+  <div style="padding:24px 0 0">
+    <div class="garantie-box reveal">
+      <div class="garantie-left">
+        <div class="garantie-icon">🛡️</div>
+        <div>
+          <div class="garantie-title">Garantie Succès — Votre Sécurité Totale</div>
+          <p class="garantie-desc">En cas de refus de l'IRCC, nous préparons et soumettons une nouvelle demande renforcée <strong style="color:var(--gold)">entièrement gratuitement</strong>. Frais gouvernementaux IRCC uniquement à votre charge (150 CAD + 85 CAD biométrie). Votre investissement est protégé.</p>
+        </div>
+      </div>
+      <div class="garantie-price">
+        <div class="garantie-amount">+$200</div>
+        <div class="garantie-label">à ajouter à votre forfait</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT METHODS -->
+<section class="payment-section">
+  <div class="section-tag" style="justify-content:center">Paiement</div>
+  <h2 class="section-title reveal">Payez depuis <em>n'importe où</em><br>en Afrique.</h2>
+  <p class="reveal" style="color:var(--white-dim);font-size:14px;font-weight:300;line-height:1.7;max-width:550px;margin:0 auto">Aucune carte internationale nécessaire. Nous acceptons tous les modes de paiement courants dans votre pays — directement, sans intermédiaire.</p>
+
+  <div class="payment-grid reveal">
+
+    <!-- WAVE -->
+    <div class="payment-badge">
+      <div class="payment-badge-logo">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="52" height="52" rx="14" fill="#1B4FFB"/>
+          <path d="M10 28C13 22 17 18 21 22C25 26 29 18 33 20C37 22 40 26 42 24" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <text x="26" y="42" text-anchor="middle" fill="white" font-family="Arial" font-weight="700" font-size="9" letter-spacing="0.5">wave</text>
+        </svg>
+      </div>
+      <div class="payment-badge-name">Wave</div>
+    </div>
+
+    <!-- ORANGE MONEY -->
+    <div class="payment-badge">
+      <div class="payment-badge-logo">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="52" height="52" rx="14" fill="#FF6600"/>
+          <circle cx="26" cy="22" r="10" fill="white"/>
+          <circle cx="26" cy="22" r="7" fill="#FF6600"/>
+          <text x="26" y="42" text-anchor="middle" fill="white" font-family="Arial" font-weight="700" font-size="7" letter-spacing="0">ORANGE</text>
+        </svg>
+      </div>
+      <div class="payment-badge-name">Orange Money</div>
+    </div>
+
+    <!-- MTN MOMO -->
+    <div class="payment-badge">
+      <div class="payment-badge-logo">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="52" height="52" rx="14" fill="#FFCC00"/>
+          <text x="26" y="24" text-anchor="middle" fill="#1C1C1C" font-family="Arial" font-weight="900" font-size="14" letter-spacing="-0.5">MTN</text>
+          <text x="26" y="38" text-anchor="middle" fill="#1C1C1C" font-family="Arial" font-weight="500" font-size="7.5" letter-spacing="0.3">MoMo</text>
+        </svg>
+      </div>
+      <div class="payment-badge-name">MTN MoMo</div>
+    </div>
+
+    <!-- AIRTEL MONEY -->
+    <div class="payment-badge">
+      <div class="payment-badge-logo">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="52" height="52" rx="14" fill="#E40000"/>
+          <path d="M26 12 C26 12 14 30 14 34 C14 38 18 40 22 38 C24 37 26 34 26 34 C26 34 28 37 30 38 C34 40 38 38 38 34 C38 30 26 12 26 12Z" fill="white"/>
+          <text x="26" y="47" text-anchor="middle" fill="white" font-family="Arial" font-weight="700" font-size="6.5" letter-spacing="0.3">AIRTEL</text>
+        </svg>
+      </div>
+      <div class="payment-badge-name">Airtel Money</div>
+    </div>
+
+    <!-- WESTERN UNION -->
+    <div class="payment-badge">
+      <div class="payment-badge-logo">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="52" height="52" rx="14" fill="#FBBA00"/>
+          <text x="26" y="24" text-anchor="middle" fill="#1C1C1C" font-family="Arial" font-weight="900" font-size="16" letter-spacing="-1">WU</text>
+          <text x="26" y="36" text-anchor="middle" fill="#1C1C1C" font-family="Arial" font-weight="500" font-size="5.5" letter-spacing="0.2">WESTERN</text>
+          <text x="26" y="44" text-anchor="middle" fill="#1C1C1C" font-family="Arial" font-weight="500" font-size="5.5" letter-spacing="0.2">UNION</text>
+        </svg>
+      </div>
+      <div class="payment-badge-name">Western Union</div>
+    </div>
+
+    <!-- MONEYGRAM -->
+    <div class="payment-badge">
+      <div class="payment-badge-logo">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="52" height="52" rx="14" fill="#660099"/>
+          <circle cx="26" cy="22" r="9" fill="none" stroke="white" stroke-width="2.5"/>
+          <circle cx="26" cy="22" r="4" fill="#E8006C"/>
+          <text x="26" y="42" text-anchor="middle" fill="white" font-family="Arial" font-weight="700" font-size="6" letter-spacing="0.2">MoneyGram</text>
+        </svg>
+      </div>
+      <div class="payment-badge-name">MoneyGram</div>
+    </div>
+
+    <!-- VIREMENT BANCAIRE -->
+    <div class="payment-badge">
+      <div class="payment-badge-logo">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="52" height="52" rx="14" fill="#1A1A2E"/>
+          <rect x="10" y="28" width="32" height="4" rx="1" fill="var(--gold)"/>
+          <rect x="13" y="22" width="4" height="6" rx="1" fill="var(--gold)"/>
+          <rect x="20" y="22" width="4" height="6" rx="1" fill="var(--gold)"/>
+          <rect x="27" y="22" width="4" height="6" rx="1" fill="var(--gold)"/>
+          <rect x="34" y="22" width="4" height="6" rx="1" fill="var(--gold)"/>
+          <polygon points="26,12 10,20 42,20" fill="var(--gold)"/>
+          <rect x="10" y="32" width="32" height="2.5" rx="1" fill="rgba(201,168,76,0.4)"/>
+          <text x="26" y="45" text-anchor="middle" fill="rgba(245,240,232,0.6)" font-family="Arial" font-weight="600" font-size="6" letter-spacing="0.3">VIREMENT</text>
+        </svg>
+      </div>
+      <div class="payment-badge-name">Virement Bancaire</div>
+    </div>
+
+    <!-- CARTE INTERNATIONALE — Visa + Mastercard -->
+    <div class="payment-badge">
+      <div class="payment-badge-logo">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="52" height="52" rx="14" fill="#1A1A2E"/>
+          <!-- Visa logo -->
+          <text x="14" y="23" fill="#1A71E0" font-family="Arial" font-weight="900" font-size="11" font-style="italic">VISA</text>
+          <!-- Mastercard circles -->
+          <circle cx="22" cy="34" r="7" fill="#EB001B" opacity="0.9"/>
+          <circle cx="31" cy="34" r="7" fill="#F79E1B" opacity="0.9"/>
+          <path d="M26.5 28.5 C28.2 30 29.2 32 29.2 34 C29.2 36 28.2 38 26.5 39.5 C24.8 38 23.8 36 23.8 34 C23.8 32 24.8 30 26.5 28.5Z" fill="#FF5F00" opacity="0.9"/>
+        </svg>
+      </div>
+      <div class="payment-badge-name">Carte Internationale</div>
+    </div>
+
+  </div>
+
+  <div class="payment-pills reveal">
+    <div class="payment-pill">💰 Paiement en <strong>2 fois</strong> disponible — 50% maintenant · 50% avant soumission</div>
+    <div class="payment-pill">🔒 Paiement <strong>100% sécurisé</strong> — reçu officiel émis à chaque transaction</div>
+  </div>
+  <p class="payment-note">Tous les paiements sont reçus directement par BUSYSCALLING Inc. Aucun intermédiaire. Aucun risque.</p>
+</section>
+
+<!-- DELAYS -->
+<section class="delays-section">
+  <div class="section-tag" style="justify-content:center">Délais Réels — Aucune Surprise</div>
+  <h2 class="section-title reveal"><em>Transparence</em> totale<br>sur les délais</h2>
+  <p class="reveal" style="color:var(--white-dim);font-size:14px;font-weight:300;line-height:1.7">Nous ne vous promettons pas ce que nous ne contrôlons pas. Ces délais viennent directement du site officiel de l'IRCC.</p>
+  <div class="delays-grid">
+    <div class="delay-card reveal">
+      <div class="delay-type">Permis d'Études</div>
+      <div class="delay-timeline">~5</div>
+      <div class="delay-unit">semaines</div>
+      <p class="delay-note">Délai de traitement IRCC actuel pour les ressortissants d'Afrique subsaharienne — DRC, Cameroun, Côte d'Ivoire, Sénégal, Congo-Brazzaville. Effectuer l'examen médical avant soumission peut accélérer ce délai.</p>
+      <div class="delay-ircc">Source : site officiel IRCC · mis à jour en temps réel</div>
+    </div>
+    <div class="delay-card reveal">
+      <div class="delay-type">Visa Visiteur</div>
+      <div class="delay-timeline">~50</div>
+      <div class="delay-unit">jours</div>
+      <p class="delay-note">Délai variable selon le profil et la période. La Coupe du Monde 2026 au Canada génère une augmentation significative des demandes. Plus vous attendez — plus le délai risque d'augmenter. Soumettez maintenant.</p>
+      <div class="delay-ircc">Source : site officiel IRCC · mis à jour en temps réel</div>
+    </div>
+  </div>
+  <div class="our-delay reveal">
+    ⚡ Notre engagement ferme : dossier soumis dans <strong>48 heures</strong> après réception de tous vos documents complets
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="compare-section">
+  <div class="section-tag">La Différence</div>
+  <h2 class="section-title reveal">Avec nous vs.<br><em>sans nous</em></h2>
+  <div class="compare-grid">
+    <div class="compare-col good">
+      <div class="compare-header">
+        <span class="compare-icon">✅</span>
+        <span class="compare-title">Avec Revive Agency</span>
+      </div>
+      <div class="compare-items">
+        <div class="compare-item"><span class="ci-icon">✦</span> Expertise fondée sur 4 refus personnels vécus et analysés</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Analyse gratuite de votre profil avant tout paiement</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Chaque document vérifié, renommé, classé selon normes IRCC</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Lettre de motivation rédigée spécifiquement pour votre profil</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Formulaires IMM 1294, IMM 5645, IMM 5257, IMM 5709 remplis sans erreur</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Vérification croisée — aucune incohérence dans votre dossier</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Score de solidité calculé — dossier faible : on vous le dit avant de payer</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Soumission en 48h garantie par écrit dans votre contrat</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Aide à la réservation de l'examen médical désigné IRCC</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Rappel automatique pour le rendez-vous biométrie obligatoire</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Support WhatsApp humain pendant tout le processus</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Mises à jour à chaque étape — jamais sans nouvelles</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Garantie Succès disponible — nouvelle demande gratuite si refus</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Paiement en 2 fois — accessible à toutes les familles</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Tous modes de paiement africains acceptés</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Contrat de service signé — vos droits sont protégés</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Zéro fausse promesse — transparence totale sur vos chances réelles</div>
+        <div class="compare-item"><span class="ci-icon">✦</span> Dossier soumis en votre nom — rien à faire sur le portail IRCC</div>
+      </div>
+    </div>
+    <div class="compare-col bad">
+      <div class="compare-header">
+        <span class="compare-icon">❌</span>
+        <span class="compare-title">Seul ou agence locale</span>
+      </div>
+      <div class="compare-items">
+        <div class="compare-item"><span class="ci-icon">✗</span> Aucune expertise sur les critères réels de décision IRCC</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Aucune analyse de profil — paiement immédiat exigé</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Documents mal organisés, scans illisibles, nommage incohérent</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Lettre générique copiée-collée — reconnue immédiatement par les agents</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Formulaires remplis avec des erreurs non détectées</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Aucune vérification croisée — incohérences non repérées</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Dossier soumis sans évaluation préalable de solidité</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Délais non respectés — soumission quand ça les arrange</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Examen médical jamais mentionné — découvert trop tard</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Biométrie oubliée — retards supplémentaires</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Agence injoignable après paiement — WhatsApp qui reste sur lu</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Aucune mise à jour — vous attendez dans le silence total</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Refus = argent perdu, tout à recommencer de zéro</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Paiement intégral exigé d'avance — aucune flexibilité</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Uniquement cash ou virement — aucune traçabilité</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Aucun contrat — aucune protection pour vous</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Fausses promesses de visa garanti à 100% — mensonge et illégal</div>
+        <div class="compare-item"><span class="ci-icon">✗</span> Vous devez vous débrouiller seul sur le portail IRCC</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="avis">
+  <div class="reviews-title-wrap">
+    <div class="section-tag" style="justify-content:center">Témoignages Vérifiés</div>
+    <h2 class="section-title reveal">Ce qu'ils disent<br><em>de leur expérience</em></h2>
+    <p class="reveal" style="color:var(--white-dim);font-size:14px;font-weight:300;margin-top:-10px">Des familles réelles. Des résultats réels. Des vies qui ont changé.</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-text">"Après 2 refus avec une agence de Kinshasa qui avait disparu avec notre argent, on avait perdu tout espoir. Revive Agency a analysé nos deux refus, identifié exactement ce qui clochait dans notre dossier financier, et réécrit entièrement la lettre de motivation de mon fils. Il est au Canada aujourd'hui. Je pleure encore en écrivant ces lignes."</p>
+      <div class="review-author">
+        <div class="author-avatar">M</div>
+        <div><div class="author-name">Maman Céleste K.</div><div class="author-location">Kinshasa, DRC → Ontario, Canada</div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-text">"Ce qui m'a convaincu, c'est l'honnêteté. Avant même que je paie, ils m'ont dit exactement ce qui manquait dans mon profil, pourquoi mon premier dossier avait échoué, et ce qu'on allait faire différemment. Pas une seule fausse promesse. Approuvé en 34 jours exactement."</p>
+      <div class="review-author">
+        <div class="author-avatar">J</div>
+        <div><div class="author-name">Jean-Pierre M.</div><div class="author-location">Douala, Cameroun → Québec, Canada</div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-text">"Forfait Famille pour 4 personnes. Mon mari, moi, et nos deux enfants. Tout soumis en 48h comme promis — c'était incroyable. Les mises à jour WhatsApp à chaque étape nous rassuraient vraiment. 3 visas approuvés, le 4ème en cours et Revive gère la resoumission gratuitement avec leur garantie."</p>
+      <div class="review-author">
+        <div class="author-avatar">F</div>
+        <div><div class="author-name">Famille Mwamba S.</div><div class="author-location">Abidjan, Côte d'Ivoire → Toronto, Canada</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-tag">Questions Fréquentes</div>
+  <h2 class="section-title reveal">Vos questions,<br><em>nos réponses</em></h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">Êtes-vous des consultants en immigration certifiés (RCIC) ?<div class="faq-toggle">+</div></div>
+      <div class="faq-answer"><p>Non — et nous préférons vous le dire clairement. Revive Agency est une agence d'assistance administrative. Nous vous aidons à préparer, organiser et soumettre votre dossier IRCC. Nous ne fournissons pas de conseil juridique en immigration. La décision finale appartient toujours aux agents IRCC. <strong>Nous ne garantissons jamais l'approbation d'un visa</strong> — nous garantissons un dossier complet, solide, soumis en 48h. Toute agence qui vous promet un visa approuvé vous ment.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Mon enfant a déjà eu un refus. Peut-il repostuler ?<div class="faq-toggle">+</div></div>
+      <div class="faq-answer"><p>Oui — et les dossiers avec refus antérieur sont notre spécialité. Un refus antérieur n'empêche pas une nouvelle demande. Il est cependant <strong>obligatoire de le déclarer</strong> — le cacher est considéré comme une fraude par l'IRCC et garantit un refus définitif avec possible interdiction de territoire. Soyez honnêtes avec nous. Nous construirons un dossier qui répond directement à chaque raison de refus précédente.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Quel montant dois-je prouver avoir en banque ?<div class="faq-toggle">+</div></div>
+      <div class="faq-answer"><p>Nous recommandons un <strong>minimum visible de 30 000 USD</strong> sur les comptes bancaires. Idéalement 60 000 USD ou plus pour une position vraiment solide. Les relevés doivent couvrir 6 à 8 mois minimum, porter le tampon officiel de la banque à chaque page, et être accompagnés des fiches de paie du tuteur financier. Des biens immobiliers (parcelles, maisons), véhicules ou autres actifs renforcent également considérablement le dossier. C'est la section la plus critique — nous la travaillons méticuleusement avec vous.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Comment fonctionne exactement la Garantie Succès à +$200 ?<div class="faq-toggle">+</div></div>
+      <div class="faq-answer"><p>En ajoutant la Garantie Succès à votre forfait, si l'IRCC refuse votre demande, nous analysons les raisons du refus, renforçons votre dossier, et soumettons une <strong>nouvelle demande entièrement gratuitement</strong>. Les seuls frais à votre charge sont les frais gouvernementaux IRCC : 150 CAD pour le permis d'études + 85 CAD pour la biométrie. Conditions : informations fournies complètes et exactes, et recommandations de l'agence respectées. Un refus devient simplement une étape vers le succès.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Quels modes de paiement acceptez-vous depuis l'Afrique ?<div class="faq-toggle">+</div></div>
+      <div class="faq-answer"><p>Nous acceptons tous les modes de paiement courants en Afrique : <strong>Wave, Orange Money, MTN Money, Airtel Money, Western Union, MoneyGram, virement bancaire international</strong>, et cartes bancaires internationales. Tous les paiements vont directement au compte de BUSYSCALLING Inc. Aucun intermédiaire. Un reçu officiel est émis pour chaque paiement. Le paiement en 2 fois est disponible sur tous nos forfaits.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Mon enfant n'a pas encore de lettre d'acceptation universitaire. Pouvez-vous l'aider ?<div class="faq-toggle">+</div></div>
+      <div class="faq-answer"><p>Oui — c'est inclus dans notre Forfait Famille. Nous vous guidons pour choisir les bons établissements selon votre profil académique et financier, et nous vous accompagnons dans la procédure de candidature : via <strong>OUAC 105</strong> pour les universités de l'Ontario, directement auprès des universités pour les autres provinces, et via le portail CAQ pour le Québec. Avoir une lettre d'acceptation avant de soumettre votre demande de permis est obligatoire — nous vous aidons à l'obtenir.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Pourquoi je ne peux pas envoyer mes documents par WhatsApp ?<div class="faq-toggle">+</div></div>
+      <div class="faq-answer"><p>Vos documents contiennent des informations extrêmement sensibles : numéros de passeport, relevés bancaires, actes de naissance. WhatsApp n'est pas un canal sécurisé pour ce type de données. Nous utilisons un <strong>formulaire sécurisé dédié</strong>, accessible via un lien privé. Vos fichiers sont stockés dans un dossier Google Drive protégé, accessible uniquement par notre équipe. WhatsApp sert uniquement à communiquer avec vous — jamais à transférer des documents.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Que se passe-t-il exactement après la soumission de mon dossier ?<div class="faq-toggle">+</div></div>
+      <div class="faq-answer"><p>Vous recevez immédiatement votre numéro de confirmation IRCC. Dans les jours suivants, l'IRCC vous enverra un email vous demandant de prendre rendez-vous pour vos <strong>données biométriques</strong> (empreintes digitales + photo) — à faire dès réception, c'est obligatoire. Le délai de traitement est d'environ 5 semaines pour un permis d'études et 50 jours pour un visa visiteur. Nous restons disponibles sur WhatsApp pendant toute cette période.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Est-ce que vous garantissez l'approbation de mon visa ?<div class="faq-toggle">+</div></div>
+      <div class="faq-answer"><p>Non. Jamais. <strong>Toute agence qui vous promet un visa approuvé vous ment</strong> — et c'est illégal. La décision finale appartient exclusivement aux agents d'immigration canadiens de l'IRCC. Ce que nous garantissons : un dossier complet, solide, vérifié, soumis en 48h. La meilleure version possible de votre candidature. Et si l'IRCC refuse malgré tout — la Garantie Succès vous protège.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Quelle est la différence entre un permis d'études et un visa visiteur ?<div class="faq-toggle">+</div></div>
+      <div class="faq-answer"><p>Le <strong>permis d'études</strong> autorise à suivre un programme de 6 mois ou plus dans un établissement canadien désigné. Il nécessite une lettre d'acceptation universitaire et une Lettre d'Attestation Provinciale (LAP pour l'Ontario, CAQ pour le Québec). Le <strong>visa visiteur</strong> est temporaire (maximum 6 mois), pour le tourisme, les visites familiales ou des événements comme la Coupe du Monde 2026 — sans droit de travailler ou d'étudier. Nous traitons les deux types de demandes.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Qu'est-ce que l'examen médical désigné IRCC et est-il obligatoire ?<div class="faq-toggle">+</div></div>
+      <div class="faq-answer"><p>L'examen médical désigné IRCC est réalisé par un médecin officiellement autorisé par le gouvernement canadien. Il est obligatoire pour tout permis d'études de plus de 6 mois. Pour un visa visiteur, il peut être requis selon votre profil. Nous vous aidons à trouver le médecin désigné le plus proche et à récupérer votre numéro IME/IUM (Immigration Medical Examination). Effectuer l'examen <strong>avant la soumission</strong> peut significativement accélérer le traitement. Ce service est inclus gratuitement dans tous nos forfaits.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Comment puis-je suivre l'avancement de ma demande après soumission ?<div class="faq-toggle">+</div></div>
+      <div class="faq-answer"><p>Après soumission, vous recevez votre numéro de confirmation IRCC. Vous pouvez vérifier les délais de traitement en temps réel directement sur le site officiel de l'IRCC. Nous restons disponibles sur WhatsApp pendant toute la période d'attente. Si l'IRCC demande des documents supplémentaires, nous vous contactons immédiatement et gérons la réponse avec vous. <strong>Vous n'êtes jamais seul pendant le processus</strong> — même après la soumission.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="section-tag" style="justify-content:center">Le Moment d'Agir</div>
+    <h2 class="cta-title reveal"><em>Votre avenir</em><br><strong>commence aujourd'hui.</strong></h2>
+    <p class="cta-sub reveal">Chaque famille que nous n'avons pas pu aider à temps avait une raison d'attendre encore un peu. Pendant ce temps — les délais IRCC continuent. Les sessions universitaires ne vous attendent pas. La Coupe du Monde 2026 approche et les demandes explosent déjà.<br><br><strong style="color:var(--white)">Chaque semaine d'attente est une semaine de plus entre vous et le Canada.</strong></p>
+    <div class="cta-urgency reveal">🍁 Coupe du Monde 2026 au Canada — demandes de visa en forte hausse. Soumettez maintenant.</div>
+    <div class="cta-btns reveal">
+      <a href="#packages" class="btn-primary"><span>Choisir Mon Forfait →</span></a>
+      <a href="https://wa.me/1234567890" class="btn-secondary">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Parler Gratuitement sur WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <span class="footer-top-logo">Revive Agency</span>
+    <p class="footer-top-tagline">L'agence africaine pour les visas et permis d'études au Canada.</p>
+  </div>
+
+  <div class="footer-cols">
+    <div class="footer-col">
+      <span class="footer-col-title">À Propos</span>
+      <ul>
+        <li><a href="#probleme">Notre Histoire</a></li>
+        <li><a href="#comment">Comment ça marche</a></li>
+        <li><a href="#avis">Témoignages</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="https://wa.me/1234567890">Nous Contacter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <span class="footer-col-title">Nos Services</span>
+      <ul>
+        <li>Permis d'études Canada</li>
+        <li>Visa visiteur Canada</li>
+        <li>Aide à l'admission universitaire</li>
+        <li>Analyse de dossier</li>
+        <li>Lettre de motivation</li>
+        <li>Garantie Succès</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <span class="footer-col-title">Pays Servis</span>
+      <ul>
+        <li>République Démocratique du Congo</li>
+        <li>Cameroun</li>
+        <li>Côte d'Ivoire</li>
+        <li>Sénégal</li>
+        <li>Congo-Brazzaville</li>
+        <li>Mali</li>
+        <li>Et toute l'Afrique francophone</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <span class="footer-col-title">Contact</span>
+      <ul>
+        <li><a href="https://wa.me/1234567890">WhatsApp : +1 (XXX) XXX-XXXX</a></li>
+        <li><a href="mailto:contact@reviveagency.com">contact@reviveagency.com</a></li>
+        <li>Réponse sous 12h garantie</li>
+        <li>Disponible 7j/7</li>
+        <li style="margin-top:8px;color:var(--gold)">Paiement : Wave · Orange Money · MTN · Western Union · Virement</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Revive Agency · BUSYSCALLING Inc. · Wyoming, USA</div>
+    <ul class="footer-policy-links">
+      <li><a href="#">Conditions d'utilisation</a></li>
+      <li><a href="#">Confidentialité</a></li>
+      <li><a href="#">Remboursements</a></li>
+      <li><a href="#">Mentions légales</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-disclaimer">
+    <p>Revive Agency (BUSYSCALLING Inc.) est une agence d'assistance administrative. Nous ne sommes pas des consultants en immigration certifiés (RCIC). Nous n'offrons pas de conseil juridique en immigration. Nous ne garantissons pas l'approbation des visas ou permis d'études. La décision finale appartient aux agents d'immigration canadiens de l'IRCC. Les délais de traitement indiqués sont basés sur les données officielles de l'IRCC et peuvent varier.</p>
+  </div>
+</footer>
+
+</div><!-- end smooth-wrapper -->
+
+<!-- STICKY WHATSAPP -->
+<a class="sticky-wa" href="https://wa.me/1234567890" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// CURSOR
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+function animCursor(){
+  cursor.style.transform=`translate(${mx-4}px,${my-4}px)`;
+  rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12;
+  ring.style.transform=`translate(${rx-18}px,${ry-18}px)`;
+  requestAnimationFrame(animCursor);
+}
+animCursor();
+document.querySelectorAll('a,button,.faq-question').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ring.style.transform+=' scale(1.5)';ring.style.borderColor='var(--gold)';});
+  el.addEventListener('mouseleave',()=>{ring.style.borderColor='rgba(201,168,76,0.4)';});
+});
+
+// PARTICLES
+const canvas=document.getElementById('particles');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth; canvas.height=window.innerHeight;
+window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;});
+const COLORS=['rgba(201,168,76,','rgba(232,201,109,','rgba(255,215,0,','rgba(139,105,20,'];
+class Particle{
+  constructor(){this.reset();}
+  reset(){
+    this.x=Math.random()*canvas.width; this.y=Math.random()*canvas.height;
+    this.size=Math.random()*2+0.5;
+    this.speedX=(Math.random()-0.5)*0.4; this.speedY=(Math.random()-0.5)*0.4-0.2;
+    this.opacity=Math.random()*0.5+0.1;
+    this.color=COLORS[Math.floor(Math.random()*COLORS.length)];
+    this.life=0; this.maxLife=Math.random()*300+100;
+    this.twinkle=Math.random()*Math.PI*2;
+    this.isSquare=Math.random()>0.7;
+  }
+  update(){
+    this.x+=this.speedX; this.y+=this.speedY;
+    this.life++; this.twinkle+=0.05;
+    if(this.life>this.maxLife||this.y<-10||this.x<-10||this.x>canvas.width+10)this.reset();
+  }
+  draw(){
+    const alpha=this.opacity*Math.abs(Math.sin(this.twinkle));
+    ctx.fillStyle=this.color+alpha+')';
+    if(this.isSquare){
+      ctx.save(); ctx.translate(this.x,this.y); ctx.rotate(this.twinkle);
+      ctx.fillRect(-this.size/2,-this.size/2,this.size,this.size);
+      ctx.restore();
+    } else {
+      ctx.beginPath(); ctx.arc(this.x,this.y,this.size,0,Math.PI*2); ctx.fill();
+    }
+  }
+}
+const particles=[];
+for(let i=0;i<180;i++) particles.push(new Particle());
+function animParticles(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>{p.update();p.draw();});
+  requestAnimationFrame(animParticles);
+}
+animParticles();
+
+// SCROLL REVEAL
+const reveals=document.querySelectorAll('.reveal,.stat-item,.problem-card,.step-item,.package-card,.review-card');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
+},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
+reveals.forEach(el=>observer.observe(el));
+
+// COUNTER
+const counters=document.querySelectorAll('.stat-number[data-count]');
+const countObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const target=parseInt(e.target.dataset.count);
+      let current=0; const step=target/60;
+      const timer=setInterval(()=>{
+        current=Math.min(current+step,target);
+        e.target.textContent=Math.floor(current);
+        if(current>=target)clearInterval(timer);
+      },20);
+      countObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.5});
+counters.forEach(el=>countObs.observe(el));
+
+// FAQ
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-question').addEventListener('click',()=>{
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen)item.classList.add('open');
+  });
+});
+
+// LUXURY SMOOTH SCROLL (desktop only)
+(function(){
+  const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth <= 900;
+  if (isMobile) return;
+
+  const wrapper = document.getElementById('smooth-wrapper');
+  if (!wrapper) return;
+
+  let currentY = 0;
+  let targetY = 0;
+  const ease = 0.072; // lower = dreamier / higher = snappier
+
+  function lerp(a, b, t) {
+    return a + (b - a) * t;
+  }
+
+  function setBodyHeight() {
+    document.body.style.height = wrapper.scrollHeight + 'px';
+  }
+
+  setBodyHeight();
+  window.addEventListener('resize', setBodyHeight);
+
+  // Smooth anchor scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const id = this.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      const rect = target.getBoundingClientRect();
+      const offsetTop = rect.top - wrapper.getBoundingClientRect().top;
+      window.scrollTo({ top: offsetTop, behavior: 'auto' });
+    });
+  });
+
+  function smoothRender() {
+    targetY = window.scrollY;
+    currentY = lerp(currentY, targetY, ease);
+    // Stop micro-jitter
+    if (Math.abs(currentY - targetY) < 0.05) currentY = targetY;
+    wrapper.style.transform = `translate3d(0, ${-currentY}px, 0)`;
+    requestAnimationFrame(smoothRender);
+  }
+
+  smoothRender();
+})();
+
+// NAV HIDE ON SCROLL DOWN / SHOW ON SCROLL UP
+(function(){
+  const nav = document.querySelector('nav');
+  let lastScroll = 0;
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const current = window.scrollY;
+        if (current > lastScroll && current > 80) {
+          nav.classList.add('nav-hidden');
+        } else {
+          nav.classList.remove('nav-hidden');
+        }
+        lastScroll = current <= 0 ? 0 : current;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+document.querySelectorAll('.problem-card').forEach((card,i)=>{card.style.transitionDelay=(i*0.1)+'s';});
+
+// MOBILE FIX
+(function(){
+  function fix(){
+    const isMobile=window.matchMedia("(max-width:900px)").matches||/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    document.querySelectorAll("a,button,input,textarea,select,.btn-primary,.btn-secondary,.package-btn,.nav-cta,.email-btn,.faq-question,.sticky-wa").forEach(el=>{el.style.pointerEvents="auto";});
+    if(isMobile){
+      ["cursor","cursorRing"].forEach(id=>{const el=document.getElementById(id);if(el)el.remove();});
+      document.body.style.cursor="auto";
+      document.documentElement.style.overflowX="hidden";
+      document.body.style.overflowX="hidden";
+    }
+  }
+  if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",fix);}
+  else{fix();}
+  window.addEventListener("load",fix);
+  window.addEventListener("resize",fix);
+})();
+</script>
+
+<script>
+/* FINAL SCROLL PATCH, FAST + NO WHITE PAGE */
+(function () {
+  const wrapper = document.getElementById('smooth-wrapper');
+  if (wrapper) {
+    wrapper.style.position = 'relative';
+    wrapper.style.transform = 'none';
+    wrapper.style.willChange = 'auto';
+    document.body.style.height = 'auto';
+    document.documentElement.style.background = '#050505';
+    document.body.style.background = '#050505';
+  }
+
+  // Fast anchor scrolling, without the slow fake motion engine.
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
+    anchor.addEventListener('click', function(e){
+      const id = this.getAttribute('href');
+      if (!id || id === '#') return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      const navOffset = 80;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - navOffset;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }, { passive: false });
+  });
+})();
+</script>
+
+</body>
+</html>
