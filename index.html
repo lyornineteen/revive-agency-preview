@@ -1994,6 +1994,162 @@ body.guarantee-enabled .price-current {
   }
 }
 
+
+/* FINAL REQUEST PATCH — MARQUEE, PACKAGE ALIGNMENT, MOBILE MENU, MOBILE REFINEMENTS */
+.uni-marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+.uni-marquee-track {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  width: max-content;
+  animation: uniScroll 35s linear infinite;
+}
+.uni-marquee-track:hover { animation-play-state: paused; }
+@keyframes uniScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.university-logo {
+  height: 36px;
+  width: auto;
+  flex-shrink: 0;
+  color: rgba(245,240,232,0.35);
+  transition: color 0.3s;
+}
+.university-logo:hover { color: rgba(245,240,232,0.75); }
+
+.packages-grid { align-items: stretch !important; }
+.package-card { display: flex !important; flex-direction: column !important; }
+.package-features { flex: 1 !important; }
+.package-card.featured .package-type { padding-right: 130px !important; }
+
+.package-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(201,168,76,0.45) !important;
+  background: linear-gradient(145deg, rgba(255,255,255,0.09), rgba(201,168,76,0.06), rgba(5,5,5,0.44)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.10), 0 20px 60px rgba(201,168,76,0.14), 0 0 40px rgba(201,168,76,0.06) !important;
+}
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 10px;
+  cursor: auto;
+  padding: 8px;
+  z-index: 1001;
+  position: relative;
+}
+.nav-hamburger span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  background: rgba(5,5,5,0.97);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  padding: 100px 32px 40px;
+  flex-direction: column;
+  gap: 8px;
+  transform: translateY(-100%);
+  transition: transform 0.45s cubic-bezier(0.16,1,0.3,1);
+  border-bottom: 1px solid var(--glass-border);
+}
+.mobile-menu.open { transform: translateY(0); }
+.mobile-menu-links { list-style: none; display: flex; flex-direction: column; gap: 0; margin-bottom: 24px; }
+.mobile-menu-link {
+  display: block;
+  font-family: 'Geist', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--white);
+  text-decoration: none;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+  transition: color 0.3s;
+  letter-spacing: -0.02em;
+}
+.mobile-menu-link:hover { color: var(--gold); }
+.mobile-menu-cta {
+  display: block;
+  text-align: center;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--black);
+  padding: 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 8px;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 900px) {
+  .university-logo { height: 26px; }
+  .uni-marquee-track { gap: 40px; }
+
+  .email-form { gap: 8px !important; }
+  .email-input { border-radius: 999px !important; border-right: 1px solid var(--glass-border) !important; }
+  .email-btn { border-radius: 999px !important; width: 100%; }
+
+  .trust-strip {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    justify-content: flex-start !important;
+    padding: 14px 20px !important;
+    gap: 20px !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .trust-strip::-webkit-scrollbar { display: none; }
+  .trust-badge { flex-shrink: 0; }
+
+  .nav-hamburger { display: flex !important; }
+  .nav-cta { display: none !important; }
+  .mobile-menu { display: flex; }
+
+  .problem-section, .story-section, .how-section, .packages-section,
+  .delays-section, .compare-section, .reviews-section, .faq-section,
+  .cta-section, .email-section, .addon-section, .payment-section,
+  .results-section, .post-payment-section, .countries-section,
+  .ircc-data-section, .prepay-section, .universities-section {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+  .hero { padding-left: 28px !important; padding-right: 28px !important; }
+
+  .hero-badge {
+    font-size: 9px !important;
+    letter-spacing: 0.12em !important;
+    padding: 6px 14px !important;
+    white-space: nowrap;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -2011,8 +2167,22 @@ body.guarantee-enabled .price-current {
     <li><a href="#avis">Témoignages</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
+  <button class="nav-hamburger" aria-label="Menu" type="button">
+    <span></span><span></span><span></span>
+  </button>
   <a href="https://wa.me/1234567890" class="nav-cta">Contactez-Nous</a>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-menu-links">
+    <li><a href="#comment" class="mobile-menu-link">Comment ça marche</a></li>
+    <li><a href="#packages" class="mobile-menu-link">Nos Forfaits</a></li>
+    <li><a href="#avis" class="mobile-menu-link">Témoignages</a></li>
+    <li><a href="#faq" class="mobile-menu-link">FAQ</a></li>
+  </ul>
+  <a href="https://wa.me/1234567890" class="mobile-menu-cta">Contactez-Nous</a>
+</div>
+
 
 <div id="smooth-wrapper">
 
@@ -2020,7 +2190,7 @@ body.guarantee-enabled .price-current {
 <section class="hero">
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
-  <div class="hero-badge">Agence Spécialiste Canada · Service Premium · Afrique Francophone</div>
+  <div class="hero-badge">Agence Spécialiste Canada · Service Premium</div>
   <h1 class="hero-title glitch" data-text="Votre Enfant">
     Votre Enfant
     <strong>Au Canada.</strong>
@@ -2065,7 +2235,37 @@ body.guarantee-enabled .price-current {
 
 <section id="universities" class="universities-section reveal">
   <div class="universities-title">Nos étudiants sont acceptés dans ces établissements</div>
-  <div class="universities-row">
+  <div class="uni-marquee-wrapper">
+  <div class="uni-marquee-track">
+    <svg class="university-logo" viewBox="0 0 90 38" role="img" aria-label="University of Toronto">
+      <path d="M40 4 L50 4 L54 10 L50 18 L40 18 L36 10 Z" fill="currentColor" opacity="0.55"/>
+      <text x="45" y="33" text-anchor="middle" font-family="Geist, Arial, sans-serif" font-size="13" font-weight="700" fill="currentColor">U of T</text>
+    </svg>
+    <svg class="university-logo" viewBox="0 0 95 38" role="img" aria-label="McGill University">
+      <path d="M48 4 v12 M42 10 h12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <text x="47" y="33" text-anchor="middle" font-family="Geist, Arial, sans-serif" font-size="13" font-weight="700" fill="currentColor">McGill</text>
+    </svg>
+    <svg class="university-logo" viewBox="0 0 120 38" role="img" aria-label="Concordia University">
+      <text x="60" y="25" text-anchor="middle" font-family="Geist, Arial, sans-serif" font-size="11" font-weight="500" fill="currentColor">Concordia</text>
+    </svg>
+    <svg class="university-logo" viewBox="0 0 105 38" role="img" aria-label="Collège Boréal">
+      <path d="M18 17 C12 8 23 6 27 14 C22 14 19 16 18 22 Z" fill="currentColor" opacity="0.65"/>
+      <text x="60" y="25" text-anchor="middle" font-family="Geist, Arial, sans-serif" font-size="13" font-weight="700" fill="currentColor">Boréal</text>
+    </svg>
+    <svg class="university-logo" viewBox="0 0 92 38" role="img" aria-label="La Cité">
+      <text x="46" y="25" text-anchor="middle" font-family="Geist, Arial, sans-serif" font-size="13" font-weight="700" fill="currentColor">La Cité</text>
+    </svg>
+    <svg class="university-logo" viewBox="0 0 120 38" role="img" aria-label="Algonquin College">
+      <text x="60" y="20" text-anchor="middle" font-family="Geist, Arial, sans-serif" font-size="11" font-weight="500" fill="currentColor">Algonquin</text>
+      <text x="60" y="31" text-anchor="middle" font-family="Geist, Arial, sans-serif" font-size="8" font-weight="400" fill="currentColor" opacity="0.75">College</text>
+    </svg>
+    <svg class="university-logo" viewBox="0 0 105 38" role="img" aria-label="University of Ottawa">
+      <text x="52" y="25" text-anchor="middle" font-family="Geist, Arial, sans-serif" font-size="12" font-weight="700" fill="currentColor">uOttawa</text>
+    </svg>
+    <svg class="university-logo" viewBox="0 0 110 38" role="img" aria-label="Université de Moncton">
+      <text x="55" y="13" text-anchor="middle" font-family="Geist, Arial, sans-serif" font-size="7" font-weight="400" fill="currentColor" opacity="0.7">Université</text>
+      <text x="55" y="27" text-anchor="middle" font-family="Geist, Arial, sans-serif" font-size="11" font-weight="500" fill="currentColor">Moncton</text>
+    </svg>
     <svg class="university-logo" viewBox="0 0 90 38" role="img" aria-label="University of Toronto">
       <path d="M40 4 L50 4 L54 10 L50 18 L40 18 L36 10 Z" fill="currentColor" opacity="0.55"/>
       <text x="45" y="33" text-anchor="middle" font-family="Geist, Arial, sans-serif" font-size="13" font-weight="700" fill="currentColor">U of T</text>
@@ -2096,6 +2296,7 @@ body.guarantee-enabled .price-current {
       <text x="55" y="27" text-anchor="middle" font-family="Geist, Arial, sans-serif" font-size="11" font-weight="500" fill="currentColor">Moncton</text>
     </svg>
   </div>
+</div>
 </section>
 
 <!-- STATS -->
@@ -2351,7 +2552,7 @@ body.guarantee-enabled .price-current {
         <li><span class="feat-x">○</span> Suivi post-soumission jusqu'à décision</li>
         <li><span class="feat-x">○</span> Aide demande d'admission universitaire</li>
       </ul>
-      <a href="https://wa.me/1234567890" class="package-btn package-btn-outline">Commencer Mon Dossier →</a>
+      <a href="https://wa.me/1234567890" class="package-btn package-btn-outline">Choisir le Solo →</a>
     </div>
     <!-- DUO -->
     <div class="package-card featured">
@@ -3336,6 +3537,35 @@ document.querySelectorAll('.problem-card').forEach((card,i)=>{card.style.transit
   } else {
     initNewElements();
   }
+})();
+</script>
+
+
+<script>
+(function() {
+  document.querySelectorAll('.package-btn').forEach(function(btn) {
+    var defaultText = btn.textContent.trim();
+    btn.addEventListener('mouseenter', function() { btn.textContent = 'Commencer Mon Dossier →'; });
+    btn.addEventListener('mouseleave', function() { btn.textContent = defaultText; });
+  });
+})();
+(function() {
+  var hamburger = document.querySelector('.nav-hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (!hamburger || !mobileMenu) return;
+  hamburger.addEventListener('click', function() {
+    var isOpen = mobileMenu.classList.contains('open');
+    mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    document.body.style.overflow = isOpen ? '' : 'hidden';
+  });
+  mobileMenu.querySelectorAll('.mobile-menu-link, .mobile-menu-cta').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
 })();
 </script>
 
