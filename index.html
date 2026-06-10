@@ -2150,6 +2150,563 @@ body.guarantee-enabled .price-current {
   }
 }
 
+
+/* FINAL MOBILE COMPACT + MARQUEE PATCH */
+.trust-strip { display: none !important; }
+.trust-strip-outer {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  background: rgba(201,168,76,0.03);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  padding: 14px 0;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+.trust-strip-track {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  width: max-content;
+  animation: trustScroll 25s linear infinite;
+}
+.trust-strip-track:hover { animation-play-state: paused; }
+@keyframes trustScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.trust-badge::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.uni-marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+.uni-marquee-track {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  width: max-content;
+  animation: uniScroll 35s linear infinite;
+}
+.uni-marquee-track:hover { animation-play-state: paused; }
+@keyframes uniScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.university-logo {
+  height: 36px;
+  width: auto;
+  flex-shrink: 0;
+  color: rgba(245,240,232,0.35);
+  transition: color 0.3s;
+}
+.university-logo:hover { color: rgba(245,240,232,0.75); }
+
+.universities-section {
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+}
+
+.problem-section,
+.story-inner,
+.how-section,
+.packages-section,
+.payment-section,
+.delays-section,
+.compare-section,
+.reviews-section,
+.faq-section,
+.email-section,
+.results-section,
+.post-payment-section,
+.countries-section,
+.ircc-data-section,
+.prepay-section,
+.universities-section {
+  max-width: 1200px !important;
+}
+
+.packages-grid { align-items: stretch !important; }
+.package-card { display: flex !important; flex-direction: column !important; }
+.package-features { flex: 1 !important; }
+.package-card.featured .package-type { padding-right: 130px !important; }
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 10px;
+  cursor: auto;
+  padding: 8px;
+  z-index: 1001;
+  position: relative;
+}
+.nav-hamburger span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  background: rgba(5,5,5,0.97);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  padding: 100px 32px 40px;
+  flex-direction: column;
+  gap: 8px;
+  transform: translateY(-100%);
+  transition: transform 0.45s cubic-bezier(0.16,1,0.3,1);
+  border-bottom: 1px solid var(--glass-border);
+}
+.mobile-menu.open { transform: translateY(0); }
+.mobile-menu-links { list-style: none; display: flex; flex-direction: column; gap: 0; margin-bottom: 24px; }
+.mobile-menu-link {
+  display: block;
+  font-family: 'Geist', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--white);
+  text-decoration: none;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+  transition: color 0.3s;
+  letter-spacing: -0.02em;
+}
+.mobile-menu-link:hover { color: var(--gold); }
+.mobile-menu-cta {
+  display: block;
+  text-align: center;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--black);
+  padding: 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 8px;
+  letter-spacing: 0.05em;
+}
+
+.package-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(201,168,76,0.45) !important;
+  background: linear-gradient(145deg, rgba(255,255,255,0.09), rgba(201,168,76,0.06), rgba(5,5,5,0.44)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.10), 0 20px 60px rgba(201,168,76,0.14), 0 0 40px rgba(201,168,76,0.06) !important;
+}
+
+@media (max-width: 900px) {
+  .university-logo { height: 34px !important; }
+  .uni-marquee-track { gap: 48px !important; }
+
+  .section-title {
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero-title {
+    font-size: 38px !important;
+    line-height: 1.05 !important;
+    margin-bottom: 6px !important;
+  }
+  .hero-title-sub {
+    font-size: 16px !important;
+    margin-bottom: 20px !important;
+  }
+  .hero-desc {
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 32px !important;
+  }
+
+  .email-title {
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+  }
+  .email-subtitle {
+    font-size: 12px !important;
+  }
+  .email-box {
+    padding: 28px 20px !important;
+  }
+  .email-form { gap: 8px !important; }
+  .email-input { border-radius: 999px !important; border-right: 1px solid var(--glass-border) !important; }
+  .email-btn { border-radius: 999px !important; width: 100%; }
+
+  .stat-number {
+    font-size: 28px !important;
+  }
+  .stat-label {
+    font-size: 9px !important;
+  }
+  .stats-strip {
+    padding: 20px 16px !important;
+    gap: 0 !important;
+  }
+
+  .problem-text p {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 14px !important;
+  }
+  .problem-card h4 {
+    font-size: 14px !important;
+  }
+  .problem-card p {
+    font-size: 12px !important;
+  }
+  .problem-card {
+    padding: 18px 20px !important;
+  }
+
+  .story-content p {
+    font-size: 15px !important;
+    line-height: 1.8 !important;
+    margin-bottom: 16px !important;
+  }
+  .story-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+  .story-quote-mark {
+    font-size: 100px !important;
+    top: -20px !important;
+    left: -10px !important;
+  }
+  .story-content {
+    padding-left: 0 !important;
+  }
+
+  .step-title {
+    font-size: 15px !important;
+  }
+  .step-desc {
+    font-size: 12px !important;
+  }
+  .step-number {
+    width: 64px !important;
+    height: 64px !important;
+    font-size: 26px !important;
+  }
+  .how-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .package-name {
+    font-size: 26px !important;
+  }
+  .price-current {
+    font-size: 36px !important;
+  }
+  .price-old {
+    font-size: 14px !important;
+  }
+  .price-currency {
+    font-size: 16px !important;
+  }
+  .package-desc {
+    font-size: 12px !important;
+  }
+  .package-features li {
+    font-size: 12px !important;
+  }
+  .package-card {
+    padding: 28px 24px !important;
+  }
+  .packages-section {
+    padding-top: 60px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .garantie-title {
+    font-size: 16px !important;
+  }
+  .garantie-desc {
+    font-size: 12px !important;
+  }
+  .garantie-amount {
+    font-size: 28px !important;
+  }
+  .garantie-box {
+    padding: 20px !important;
+  }
+
+  .result-number {
+    font-size: 34px !important;
+  }
+  .result-label {
+    font-size: 12px !important;
+  }
+  .result-sub {
+    font-size: 11px !important;
+  }
+  .result-card {
+    padding: 20px 16px !important;
+  }
+  .results-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .delay-timeline {
+    font-size: 44px !important;
+  }
+  .delay-note {
+    font-size: 11px !important;
+  }
+  .delay-card {
+    padding: 28px 20px !important;
+  }
+  .delays-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .compare-item {
+    font-size: 11px !important;
+  }
+  .compare-title {
+    font-size: 15px !important;
+  }
+  .compare-items {
+    padding: 14px 18px !important;
+    gap: 8px !important;
+  }
+  .compare-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .review-text {
+    font-size: 13px !important;
+  }
+  .review-card {
+    padding: 24px 20px !important;
+  }
+  .reviews-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .faq-question {
+    font-size: 13px !important;
+    padding: 16px 18px !important;
+  }
+  .faq-answer p {
+    font-size: 12px !important;
+    padding: 0 18px 16px !important;
+  }
+  .faq-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .cta-title {
+    font-size: 28px !important;
+    line-height: 1.15 !important;
+  }
+  .cta-sub {
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+  }
+  .cta-section {
+    padding: 70px 28px !important;
+  }
+
+  .payment-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+  .payment-badge {
+    padding: 16px 10px !important;
+  }
+  .payment-badge-name {
+    font-size: 8px !important;
+  }
+  .payment-badge-logo {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .footer-top {
+    padding: 30px 20px 20px !important;
+  }
+  .footer-top-logo {
+    font-size: 14px !important;
+  }
+  .footer-top-tagline {
+    font-size: 12px !important;
+  }
+  .footer-cols {
+    padding: 28px 20px !important;
+    gap: 20px !important;
+  }
+  .footer-col ul li {
+    font-size: 12px !important;
+  }
+
+  .section-tag {
+    font-size: 9px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 14px 28px !important;
+    font-size: 11px !important;
+  }
+  .hero-btns {
+    gap: 10px !important;
+  }
+
+  .spots-label {
+    font-size: 9px !important;
+  }
+  .spots-copy {
+    font-size: 11px !important;
+  }
+  .spots-bar {
+    width: 140px !important;
+  }
+  .spots-counter {
+    margin-top: 16px !important;
+  }
+
+  .timeline-content h3 {
+    font-size: 14px !important;
+  }
+  .timeline-content p {
+    font-size: 12px !important;
+  }
+  .post-payment-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .ircc-number {
+    font-size: 30px !important;
+  }
+  .ircc-label {
+    font-size: 12px !important;
+  }
+  .ircc-sub {
+    font-size: 11px !important;
+  }
+  .ircc-data-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .objection-card h3 {
+    font-size: 14px !important;
+  }
+  .objection-card p {
+    font-size: 12px !important;
+    line-height: 1.7 !important;
+  }
+  .objection-card {
+    padding: 20px 18px !important;
+  }
+  .prepay-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .country-card div {
+    font-size: 10px !important;
+  }
+  .country-card {
+    padding: 14px 8px !important;
+  }
+  .countries-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .price-anchor-box {
+    padding: 16px 18px !important;
+  }
+  .price-anchor-old, .price-anchor-new {
+    font-size: 16px !important;
+  }
+  .price-anchor-small {
+    font-size: 11px !important;
+  }
+
+  .addon-info h4 {
+    font-size: 14px !important;
+  }
+  .addon-info p {
+    font-size: 11px !important;
+  }
+  .addon-price {
+    font-size: 18px !important;
+  }
+  .addon-box {
+    padding: 20px !important;
+  }
+
+  .problem-section, .story-section, .how-section, .packages-section,
+  .delays-section, .compare-section, .reviews-section, .faq-section,
+  .cta-section, .email-section, .addon-section, .payment-section,
+  .results-section, .post-payment-section, .countries-section,
+  .ircc-data-section, .prepay-section, .universities-section {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+  .hero { padding-left: 28px !important; padding-right: 28px !important; }
+
+  .hero-badge {
+    font-size: 9px !important;
+    letter-spacing: 0.12em !important;
+    padding: 6px 14px !important;
+    white-space: nowrap;
+  }
+
+  .nav-hamburger { display: flex !important; }
+  .nav-cta { display: none !important; }
+  .mobile-menu { display: flex; }
+}
+
 </style>
 </head>
 <body>
@@ -2215,24 +2772,30 @@ body.guarantee-enabled .price-current {
     <div class="spots-copy"><strong>12</strong> sur 15 places prises</div>
   </div>
   <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    Découvrir
-  </div>
+    <div class="scroll-line"></div></div>
 </section>
 
 <!-- TRUST BADGES -->
-<div class="trust-strip">
-  <div class="trust-badge">⚡ Soumission en 48h garantie</div>
-  <div class="trust-badge">🔒 Dossier 100% sécurisé</div>
-  <div class="trust-badge">🍁 Permis d'études & visa visiteur</div>
-  <div class="trust-badge">💬 Support WhatsApp 7j/7</div>
-  <div class="trust-badge">🛡️ Garantie succès disponible</div>
-  <div class="trust-badge">📋 Formulaires IRCC inclus</div>
-  <div class="trust-badge">🌍 6 pays africains servis</div>
-  <div class="trust-badge">✅ Zéro fausse promesse</div>
+<div class="trust-strip-outer">
+  <div class="trust-strip-track">
+    <div class="trust-badge">⚡ Soumission en 48h garantie</div>
+    <div class="trust-badge">🔒 Dossier 100% sécurisé</div>
+    <div class="trust-badge">🍁 Permis d'études & visa visiteur</div>
+    <div class="trust-badge">💬 Support WhatsApp 7j/7</div>
+    <div class="trust-badge">🛡️ Garantie succès disponible</div>
+    <div class="trust-badge">📋 Formulaires IRCC inclus</div>
+    <div class="trust-badge">🌍 6 pays africains servis</div>
+    <div class="trust-badge">✅ Zéro fausse promesse</div>
+    <div class="trust-badge">⚡ Soumission en 48h garantie</div>
+    <div class="trust-badge">🔒 Dossier 100% sécurisé</div>
+    <div class="trust-badge">🍁 Permis d'études & visa visiteur</div>
+    <div class="trust-badge">💬 Support WhatsApp 7j/7</div>
+    <div class="trust-badge">🛡️ Garantie succès disponible</div>
+    <div class="trust-badge">📋 Formulaires IRCC inclus</div>
+    <div class="trust-badge">🌍 6 pays africains servis</div>
+    <div class="trust-badge">✅ Zéro fausse promesse</div>
+  </div>
 </div>
-
-
 <section id="universities" class="universities-section reveal">
   <div class="universities-title">Nos étudiants sont acceptés dans ces établissements</div>
   <div class="uni-marquee-wrapper">
@@ -3537,6 +4100,35 @@ document.querySelectorAll('.problem-card').forEach((card,i)=>{card.style.transit
   } else {
     initNewElements();
   }
+})();
+</script>
+
+
+<script>
+(function() {
+  document.querySelectorAll('.package-btn').forEach(function(btn) {
+    var defaultText = btn.textContent.trim();
+    btn.addEventListener('mouseenter', function() { btn.textContent = 'Commencer Mon Dossier →'; });
+    btn.addEventListener('mouseleave', function() { btn.textContent = defaultText; });
+  });
+})();
+(function() {
+  var hamburger = document.querySelector('.nav-hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (!hamburger || !mobileMenu) return;
+  hamburger.addEventListener('click', function() {
+    var isOpen = mobileMenu.classList.contains('open');
+    mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    document.body.style.overflow = isOpen ? '' : 'hidden';
+  });
+  mobileMenu.querySelectorAll('.mobile-menu-link, .mobile-menu-cta').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
 })();
 </script>
 
