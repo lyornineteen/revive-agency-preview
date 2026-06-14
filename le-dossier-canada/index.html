@@ -21,6 +21,7 @@
     --line:#E3E0DA;
     --line-strong:#17171A;
     --green:#2E7D46;
+    --wa:#25D366;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:16px}
@@ -75,9 +76,11 @@
   .byline .mono-r{width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-weight:700;font-size:.85rem;flex:none}
   .byline .sep{width:3px;height:3px;border-radius:50%;background:var(--muted);flex:none}
   .share{display:flex;align-items:center;gap:8px;margin-left:auto}
-  .share span{width:30px;height:30px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s}
-  .share span:hover{border-color:var(--red)}
+  .share button{width:30px;height:30px;border:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s}
+  .share button:hover{border-color:var(--red)}
   .share svg{width:14px;height:14px;fill:var(--muted)}
+  .share .copy-feedback{font-family:"Archivo",sans-serif;font-size:.65rem;color:var(--green);display:none}
+  .share.copied .copy-feedback{display:inline}
 
   /* ===== FIGURE ===== */
   figure.lead-fig{margin:26px 0 30px}
@@ -94,6 +97,7 @@
 
   h2{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.15rem);line-height:1.18;color:var(--ink);margin:44px 0 16px;padding-top:22px;border-top:1px solid var(--line)}
   h2.no-rule{border-top:none;padding-top:0}
+  h3{font-family:"Playfair Display",serif;font-weight:700;color:var(--ink)}
 
   .pull{margin:34px 0;padding:4px 0 4px 24px;border-left:3px solid var(--red);font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:clamp(1.4rem,3.4vw,1.85rem);line-height:1.34;color:var(--ink)}
 
@@ -194,6 +198,41 @@
   .engage-b p{font-size:1.04rem;line-height:1.62;margin-bottom:1rem}
   .engage-b p:last-child{margin-bottom:0}
 
+  /* ===== V4 ADDITIONS ===== */
+  .next-click{margin:34px 0;border:1px solid var(--line);background:var(--paper-2)}
+  .next-click .nh{background:#fff;border-bottom:1px solid var(--line);padding:12px 22px;font-family:"Archivo",sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+  .next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .next-item{padding:22px;border-right:1px solid var(--line)}
+  .next-item:last-child{border-right:none}
+  .next-item .num{font-family:"Archivo",sans-serif;font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+  .next-item b{font-family:"Archivo",sans-serif;font-size:.9rem;text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:5px}
+  .next-item p{font-size:.98rem;line-height:1.5;margin:0;color:var(--text)}
+  @media(max-width:680px){.next-grid{grid-template-columns:1fr}.next-item{border-right:none;border-bottom:1px solid var(--line)}.next-item:last-child{border-bottom:none}}
+
+  .anti-scam{margin:34px 0;border:1px solid var(--line-strong);background:#fff}
+  .anti-scam .ah{background:var(--ink);color:#fff;padding:12px 22px;font-family:"Archivo",sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .anti-list{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .anti-list div{padding:18px 20px;border-bottom:1px solid var(--line)}
+  .anti-list div:nth-child(odd){border-right:1px solid var(--line)}
+  .anti-list b{font-family:"Archivo",sans-serif;font-size:.86rem;text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:4px}
+  .anti-list p{font-size:.98rem;line-height:1.5;margin:0;color:var(--text)}
+  @media(max-width:620px){.anti-list{grid-template-columns:1fr}.anti-list div:nth-child(odd){border-right:none}}
+
+  .faq{margin:34px 0;border-top:2px solid var(--ink)}
+  .faq h2{border-top:none;margin-top:26px}
+  .faq details{border-bottom:1px solid var(--line);padding:16px 0}
+  .faq summary{font-family:"Archivo",sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:16px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--red);font-size:1.2rem;line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{font-size:1rem;line-height:1.58;margin:12px 0 0;color:var(--text)}
+
+  .sources{margin:34px 0;background:var(--paper-2);border:1px solid var(--line);padding:22px}
+  .sources h2{border-top:none;padding-top:0;margin:0 0 12px;font-size:1.4rem}
+  .sources ul{margin-left:18px}
+  .sources li{font-size:.98rem;line-height:1.55;margin-bottom:8px}
+  .sources .verify{font-family:"Archivo",sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:10px}
+
   /* ===== WHO FOR ===== */
   .who{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin:24px 0}
   .who-col{padding:24px 22px}
@@ -248,6 +287,7 @@
   .mbar .btn{flex:1;justify-content:center;padding:14px 10px;font-size:.72rem}
   .mbar .btn.wa{flex:none;width:52px;padding:14px 0}
   @media(max-width:900px){.mbar{display:flex}body{padding-bottom:74px}}
+  @media(max-width:560px){.cta-inline .btn,.final-cta .btn{width:100%;justify-content:center}.share{width:100%;margin-left:0;margin-top:4px}}
   @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}.progress{transition:none}}
 </style>
 </head>
@@ -299,12 +339,13 @@
     <div class="byline">
       <span class="pub"><span class="mono-r">R</span>Publié par Revive Agency</span>
       <span class="sep"></span><span>13 juin 2026</span>
-      <span class="sep"></span><span>Lecture 8 min</span>
-      <span class="share">
-        <span aria-label="Partager sur Facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v6h3v-6h3l1-3h-4V9z"/></svg></span>
-        <span aria-label="Partager sur X"><svg viewBox="0 0 24 24"><path d="M17 3h3l-7 8 8 10h-6l-4-5-5 5H3l7-9L3 3h6l4 5 4-5z"/></svg></span>
-        <span aria-label="Partager sur WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.6-5.9c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.6.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.7s1.8 2.9 4.5 3.9c1.7.6 2.3.7 3 .6a2.6 2.6 0 0 0 1.7-1.2c.2-.5.2-1 .1-1.1z"/></svg></span>
-        <span aria-label="Copier le lien"><svg viewBox="0 0 24 24"><path d="M9 13a3 3 0 0 0 4.2 0l3-3a3 3 0 1 0-4.2-4.2l-1 1M15 11a3 3 0 0 0-4.2 0l-3 3a3 3 0 1 0 4.2 4.2l1-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      <span class="sep"></span><span>Lecture 9 min</span>
+      <span class="share" id="shareBar">
+        <button type="button" data-share="facebook" aria-label="Partager sur Facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v6h3v-6h3l1-3h-4V9z"/></svg></button>
+        <button type="button" data-share="x" aria-label="Partager sur X"><svg viewBox="0 0 24 24"><path d="M17 3h3l-7 8 8 10h-6l-4-5-5 5H3l7-9L3 3h6l4 5 4-5z"/></svg></button>
+        <button type="button" data-share="whatsapp" aria-label="Partager sur WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20z"/></svg></button>
+        <button type="button" data-share="copy" aria-label="Copier le lien"><svg viewBox="0 0 24 24"><path d="M9 13a3 3 0 0 0 4.2 0l3-3a3 3 0 1 0-4.2-4.2l-1 1M15 11a3 3 0 0 0-4.2 0l-3 3a3 3 0 1 0 4.2 4.2l1-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <span class="copy-feedback">Lien copié</span>
       </span>
     </div>
 
@@ -342,7 +383,7 @@
       <div class="data-grid">
         <div class="data-cell">
           <div class="n">~27<b>%</b></div>
-          <div class="l">Taux d'approbation moyen des permis d'études pour les étudiants africains (2018-2023), contre environ 74&#8201;% pour le reste du monde.</div>
+          <div class="l">Taux d'approbation moyen des permis d'études pour les étudiants africains (2018-2023), contre environ 74&nbsp;% pour le reste du monde.</div>
           <div class="s">Source : rapport MPOWER, données IRCC</div>
         </div>
         <div class="data-cell">
@@ -351,12 +392,12 @@
           <div class="s">Source : rapport MPOWER, données IRCC</div>
         </div>
         <div class="data-cell">
-          <div class="n">22&#8201;895<b> $</b></div>
-          <div class="l">Fonds de subsistance à démontrer pour un candidat seul (hors Québec) depuis sept. 2025, hors scolarité — contre 10&#8201;000&#8201;$ il y a quelques années.</div>
+          <div class="n">22&nbsp;895<b> $</b></div>
+          <div class="l">Fonds de subsistance à démontrer pour un candidat seul (hors Québec) depuis sept. 2025, hors scolarité — contre 10&nbsp;000&nbsp;$ il y a quelques années.</div>
           <div class="s">Source : gouvernement du Canada, en CAD</div>
         </div>
       </div>
-      <div class="data-foot">À l'échelle mondiale, le taux de refus des nouvelles demandes de permis d'études a atteint environ 59&#8201;% sur les neuf premiers mois de 2025, contre 49&#8201;% un an plus tôt, selon les chiffres présentés au Parlement canadien. Les taux varient selon les profils et les périodes.</div>
+      <div class="data-foot">À vérifier avant diffusion payante : les taux et exigences doivent être confirmés avec les sources officielles ou sectorielles les plus récentes.</div>
     </div>
 
     <h2>Le malentendu : « complet » ne veut pas dire « solide »</h2>
@@ -385,7 +426,7 @@
     <!-- INLINE CTA after belief shift -->
     <div class="cta-inline">
       <div class="ct">Vous n'êtes pas certain que votre dossier raconte une histoire cohérente ?</div>
-      <a class="btn btn--red" href="#start-assessment">Vérifier la solidité de mon dossier
+      <a class="btn btn--red cta-link" href="#start-assessment">Vérifier la solidité de mon dossier
         <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
 
@@ -410,7 +451,7 @@
     <!-- DECRYPTAGE BOX -->
     <div class="callout c-insight">
       <div class="clab"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Ce que beaucoup de familles ne voient pas</div>
-      <p>Un dossier authentique peut tout de même créer le doute. Ce n'est pas une question d'honnêteté, mais de lecture : la famille connaît son histoire de l'intérieur et la trouve évidente&#8201;; l'agent, lui, ne dispose que des documents, et juge la cohérence de ce qu'il voit. Tout l'écart se joue là.</p>
+      <p>Un dossier authentique peut tout de même créer le doute. Ce n'est pas une question d'honnêteté, mais de lecture : la famille connaît son histoire de l'intérieur et la trouve évidente&nbsp;; l'agent, lui, ne dispose que des documents, et juge la cohérence de ce qu'il voit. Tout l'écart se joue là.</p>
     </div>
 
     <!-- FOUNDER -->
@@ -419,7 +460,7 @@
       <p>J'ai créé Revive Agency après avoir vécu, personnellement, quatre refus de visa pour le Canada. Je ne vais pas raconter une légende héroïque : la vérité est plus simple, et plus humble.</p>
       <p>Je croyais, comme beaucoup, qu'avoir l'admission, l'argent et les documents suffisait. À chaque refus, je recommençais en changeant des détails, sans comprendre ce qu'on me reprochait vraiment. Les lettres étaient courtes, presque interchangeables.</p>
       <div class="fpull">On ne me refusait pas parce que je manquais d'argent. On me refusait parce que mon dossier ne racontait pas une histoire cohérente.</div>
-      <p>Ce n'est qu'en cherchant plus loin — en analysant des dizaines de dossiers et la logique réelle des agents — que je l'ai compris. Les pièces étaient là&#8201;; le fil qui devait les relier, lui, était absent. Quand j'ai reconstruit mon dossier autour de cette idée, la réponse a changé. Revive Agency est née de cette expérience.</p>
+      <p>Ce n'est qu'en cherchant plus loin — en analysant des dizaines de dossiers et la logique réelle des agents — que je l'ai compris. Les pièces étaient là&nbsp;; le fil qui devait les relier, lui, était absent. Quand j'ai reconstruit mon dossier autour de cette idée, la réponse a changé. Revive Agency est née de cette expérience.</p>
       <div class="fsign">— Le fondateur de Revive Agency</div>
     </div>
 
@@ -447,10 +488,32 @@
       </div>
     </div>
 
+    <!-- V4: what happens after click -->
+    <div class="next-click">
+      <div class="nh">Ce qui se passe après le clic</div>
+      <div class="next-grid">
+        <div class="next-item">
+          <div class="num">Étape 1</div>
+          <b>Pré-diagnostic rapide</b>
+          <p>Vous répondez à quelques questions sur le profil, le projet d'études, le financement et les refus précédents.</p>
+        </div>
+        <div class="next-item">
+          <div class="num">Étape 2</div>
+          <b>Lecture de cohérence</b>
+          <p>Revive vérifie si les éléments principaux du dossier semblent alignés ou s'il existe des zones de doute.</p>
+        </div>
+        <div class="next-item">
+          <div class="num">Étape 3</div>
+          <b>Orientation honnête</b>
+          <p>Vous savez si le dossier mérite d'être structuré avant soumission, ou si le profil doit d'abord être renforcé.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- INLINE CTA after mechanism -->
     <div class="cta-inline">
       <div class="ct">Faites lire votre dossier avant qu'un agent ne le fasse.</div>
-      <a class="btn btn--red" href="#start-assessment">Commencer mon pré-diagnostic
+      <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon pré-diagnostic
         <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
 
@@ -458,8 +521,19 @@
     <div class="engage">
       <div class="engage-h"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>L'engagement de Revive Agency</div>
       <div class="engage-b">
-        <p><strong>Revive Agency ne garantit pas l'obtention d'un visa. Personne ne le peut légalement.</strong> La décision finale appartient exclusivement à IRCC. Toute structure qui promet un visa « garanti à 100&#8201;% » trompe ses clients, et ce mensonge peut coûter très cher — y compris une interdiction de territoire de plusieurs années en cas de fausse déclaration.</p>
+        <p><strong>Revive Agency ne garantit pas l'obtention d'un visa. Personne ne le peut légalement.</strong> La décision finale appartient exclusivement à IRCC. Toute structure qui promet un visa « garanti à 100&nbsp;% » trompe ses clients, et ce mensonge peut coûter très cher — y compris une interdiction de territoire de plusieurs années en cas de fausse déclaration.</p>
         <p>Ce qui est garanti, c'est le sérieux du travail : un dossier plus clair, plus cohérent, mieux structuré, et la vérité sur ses points faibles. Aucun document n'est fabriqué, aucune situation n'est maquillée. Et lorsqu'un profil n'est pas prêt, Revive le dit — même si cela signifie ne pas prendre l'argent du client ce jour-là.</p>
+      </div>
+    </div>
+
+    <!-- V4: anti scam -->
+    <div class="anti-scam">
+      <div class="ah">Comment reconnaître une agence sérieuse</div>
+      <div class="anti-list">
+        <div><b>Elle ne promet pas le visa</b><p>Elle rappelle que la décision finale appartient à IRCC.</p></div>
+        <div><b>Elle ne fabrique rien</b><p>Elle travaille seulement avec des informations et documents authentiques.</p></div>
+        <div><b>Elle explique les risques</b><p>Elle vous dit ce qui peut créer un doute, même si ce n'est pas agréable à entendre.</p></div>
+        <div><b>Elle peut dire non</b><p>Elle ne pousse pas un dossier fragile juste pour encaisser un paiement.</p></div>
       </div>
     </div>
 
@@ -484,8 +558,45 @@
       </div>
     </div>
 
+    <!-- V4 FAQ -->
+    <div class="faq">
+      <h2>Questions fréquentes</h2>
+      <details>
+        <summary>Est-ce que Revive Agency garantit l'obtention du permis d'études ?</summary>
+        <p>Non. Aucune agence sérieuse ne peut garantir une décision d'IRCC. Revive aide à clarifier, organiser et structurer les éléments du dossier, sans promettre le résultat.</p>
+      </details>
+      <details>
+        <summary>Est-ce que je peux faire ma demande seul ?</summary>
+        <p>Oui. Beaucoup de familles déposent seules. L'intérêt d'un diagnostic est surtout d'avoir un regard extérieur sur les incohérences possibles avant de soumettre.</p>
+      </details>
+      <details>
+        <summary>Et si j'ai déjà eu un refus ?</summary>
+        <p>Un refus ne veut pas toujours dire que le projet est impossible. Il faut comprendre ce qui a créé le doute, revoir la cohérence globale et éviter de renvoyer le même dossier avec seulement quelques documents en plus.</p>
+      </details>
+      <details>
+        <summary>Le garant peut-il être un oncle, une tante ou un proche ?</summary>
+        <p>Dans certains dossiers, oui, mais le lien, l'engagement financier et la logique de prise en charge doivent être clairs et documentés. C'est justement un point où beaucoup de dossiers deviennent flous.</p>
+      </details>
+      <details>
+        <summary>Est-ce que ce diagnostic remplace un conseil juridique en immigration ?</summary>
+        <p>Non. Revive fournit une assistance administrative et documentaire. Pour un avis juridique ou une représentation en immigration, il faut consulter un professionnel autorisé.</p>
+      </details>
+    </div>
+
     <p>Un dossier d'études Canada ne devrait pas être une pile de papiers. Il devrait être une histoire cohérente, appuyée par des preuves.</p>
     <p class="closing-q">Avant d'engager l'argent, le temps et l'espoir de toute une famille, la vraie question n'est pas seulement : avons-nous réuni tous les documents ? C'est : ces documents racontent-ils une histoire claire, crédible et cohérente ?</p>
+
+    <!-- V4 Sources -->
+    <div class="sources">
+      <div class="verify">À vérifier avant publication payante</div>
+      <h2 class="no-rule">Sources consultées / à confirmer</h2>
+      <ul>
+        <li>Données publiques d'Immigration, Réfugiés et Citoyenneté Canada (IRCC) sur les demandes de permis d'études.</li>
+        <li>Rapports sectoriels cités sur les taux d'approbation des étudiants africains et francophones.</li>
+        <li>Analyses sectorielles concernant les motifs de refus et l'intention de séjour temporaire.</li>
+        <li>Exigences financières officielles applicables au moment de la publication.</li>
+      </ul>
+    </div>
 
     <!-- FINAL CTA -->
     <div class="final" id="start-assessment">
@@ -493,9 +604,9 @@
       <h2 class="no-rule">Vérifiez la solidité de votre dossier</h2>
       <p>Une évaluation de votre profil. Honnête, sans fausse promesse — avant la soumission, pas après un refus.</p>
       <div class="final-cta">
-        <a class="btn btn--red" href="#start-assessment">Commencer mon pré-diagnostic
+        <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon pré-diagnostic
           <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn--outline btn--wa" id="whatsapp" href="#whatsapp">Parler à Revive sur WhatsApp
+        <a class="btn btn--outline btn--wa whatsapp-link" id="whatsapp" href="#whatsapp">Parler à Revive sur WhatsApp
           <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l1.4-3.6A7.5 7.5 0 1 1 8.6 18.6L4 19z"/><path d="M9 10c.4 2 2 3.6 4 4l1-1.4 2 .7.4 2c-3.4 1-7-1.4-8-5z"/></svg></a>
       </div>
     </div>
@@ -509,7 +620,7 @@
       <div class="sb">
         <ul class="retenir">
           <li><span class="rn">1</span><span>Un dossier complet n'est pas forcément un dossier solide.</span></li>
-          <li><span class="rn">2</span><span>Le premier motif de refus est le doute sur le retour au pays, pas l'absence de documents.</span></li>
+          <li><span class="rn">2</span><span>Le premier motif de refus est souvent le doute sur le retour au pays, pas l'absence de documents.</span></li>
           <li><span class="rn">3</span><span>Une seule incohérence — le « drapeau rouge invisible » — peut fragiliser tout le dossier.</span></li>
           <li><span class="rn">4</span><span>Un gros dépôt mal expliqué peut nuire au lieu d'aider.</span></li>
         </ul>
@@ -519,9 +630,9 @@
     <div class="side-cta">
       <div class="sct">Votre dossier raconte-t-il une histoire cohérente ?</div>
       <div class="scp">Faites-le évaluer avant la soumission.</div>
-      <a class="btn btn--red" href="#start-assessment">Vérifier la solidité de mon dossier
+      <a class="btn btn--red cta-link" href="#start-assessment">Vérifier la solidité de mon dossier
         <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="btn btn--outline btn--wa" href="#whatsapp">Parler à Revive sur WhatsApp
+      <a class="btn btn--outline btn--wa whatsapp-link" href="#whatsapp">Parler à Revive sur WhatsApp
         <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l1.4-3.6A7.5 7.5 0 1 1 8.6 18.6L4 19z"/><path d="M9 10c.4 2 2 3.6 4 4l1-1.4 2 .7.4 2c-3.4 1-7-1.4-8-5z"/></svg></a>
       <div class="side-note">Revive Agency (BUSYSCALLING Inc.) n'est pas affiliée au gouvernement du Canada et ne garantit pas l'obtention d'un visa. La décision finale appartient à IRCC.</div>
     </div>
@@ -535,10 +646,10 @@
     <div class="foot-name">Le Dossier<span class="pt"> </span>Canada</div>
     <div class="foot-sub">Une publication éditoriale de Revive Agency</div>
     <p class="foot-legal">
-      Ce contenu est un publireportage publié par Revive Agency, nom commercial opéré par BUSYSCALLING Inc. « Le Dossier Canada » est une publication éditoriale de Revive Agency et non un organe de presse indépendant. Revive Agency fournit une assistance administrative et documentaire ainsi qu'un diagnostic de cohérence de dossier&#8201;; elle n'est pas un consultant réglementé en immigration (CRIC) et ne fournit pas de conseils juridiques en matière d'immigration. Revive Agency n'est pas affiliée au gouvernement du Canada et ne garantit en aucun cas l'obtention d'un visa ou d'un permis d'études : la décision finale appartient exclusivement à Immigration, Réfugiés et Citoyenneté Canada (IRCC). Les données citées proviennent de sources publiques (IRCC / gouvernement du Canada, rapports sectoriels)&#8201;; les taux varient selon les profils, les périodes et les pays, et un dossier bien préparé améliore les chances sans jamais les garantir.
+      Ce contenu est un publireportage publié par Revive Agency, nom commercial opéré par BUSYSCALLING Inc. « Le Dossier Canada » est une publication éditoriale de Revive Agency et non un organe de presse indépendant. Revive Agency fournit une assistance administrative et documentaire ainsi qu'un diagnostic de cohérence de dossier&nbsp;; elle n'est pas un consultant réglementé en immigration (CRIC) et ne fournit pas de conseils juridiques en matière d'immigration. Revive Agency n'est pas affiliée au gouvernement du Canada et ne garantit en aucun cas l'obtention d'un visa ou d'un permis d'études : la décision finale appartient exclusivement à Immigration, Réfugiés et Citoyenneté Canada (IRCC). Une préparation sérieuse peut aider à réduire les erreurs, clarifier le dossier et présenter les informations de manière plus cohérente, sans garantir le résultat.
     </p>
     <div class="foot-links">
-      <a href="#start-assessment">Site officiel Revive</a>
+      <a class="cta-link" href="#start-assessment">Site officiel Revive</a>
       <a href="#">Conditions d'utilisation</a>
       <a href="#">Confidentialité</a>
       <a href="#">Mentions légales</a>
@@ -548,16 +659,47 @@
 
 <!-- ===== STICKY MOBILE CTA ===== -->
 <nav class="mbar">
-  <a class="btn btn--red" href="#start-assessment">Vérifier mon dossier</a>
-  <a class="btn btn--outline wa" href="#whatsapp" aria-label="WhatsApp">
+  <a class="btn btn--red cta-link" href="#start-assessment">Vérifier mon dossier</a>
+  <a class="btn btn--outline wa whatsapp-link" href="#whatsapp" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--green)"><path d="M4 19l1.4-3.6A7.5 7.5 0 1 1 8.6 18.6L4 19z"/><path d="M9 10c.4 2 2 3.6 4 4l1-1.4 2 .7.4 2c-3.4 1-7-1.4-8-5z"/></svg>
   </a>
 </nav>
 
 <script>
+  // Replace these two values before final publication:
+  var LANDING_URL = "#start-assessment";
+  var WHATSAPP_URL = "#whatsapp";
+
+  document.querySelectorAll(".cta-link").forEach(function(a){ a.setAttribute("href", LANDING_URL); });
+  document.querySelectorAll(".whatsapp-link").forEach(function(a){ a.setAttribute("href", WHATSAPP_URL); });
+
   var bar=document.getElementById('progress');
   function onScroll(){var h=document.documentElement;var max=(h.scrollHeight-h.clientHeight);bar.style.width=(max>0?(h.scrollTop/max)*100:0)+'%';}
   document.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var shareBar = document.getElementById("shareBar");
+  var pageTitle = document.title;
+  var pageUrl = window.location.href;
+  if (shareBar) {
+    shareBar.addEventListener("click", function(e){
+      var btn = e.target.closest("button[data-share]");
+      if (!btn) return;
+      var type = btn.getAttribute("data-share");
+      var u = encodeURIComponent(pageUrl);
+      var t = encodeURIComponent(pageTitle);
+      if (type === "facebook") window.open("https://www.facebook.com/sharer/sharer.php?u=" + u, "_blank", "noopener,noreferrer");
+      if (type === "x") window.open("https://twitter.com/intent/tweet?url=" + u + "&text=" + t, "_blank", "noopener,noreferrer");
+      if (type === "whatsapp") window.open("https://wa.me/?text=" + t + "%20" + u, "_blank", "noopener,noreferrer");
+      if (type === "copy") {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(pageUrl).then(function(){
+            shareBar.classList.add("copied");
+            setTimeout(function(){ shareBar.classList.remove("copied"); }, 1600);
+          });
+        }
+      }
+    });
+  }
 </script>
 </body>
 </html>
