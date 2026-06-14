@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Permis d'études Canada : pourquoi un dossier complet n'est pas forcément un dossier solide — Le Dossier Canada</title>
-<meta name="description" content="Publireportage — Le Dossier Canada, une publication éditoriale de Revive Agency. Pourquoi tant de dossiers complets sont quand même refusés, et ce qui distingue un dossier solide.">
+<meta name="description" content="Publireportage — Le Dossier Canada, une publication éditoriale de Revive Agency. Pourquoi tant de dossiers complets sont quand même refusés, et comment Revive accompagne la préparation d’un dossier plus clair et cohérent.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -180,7 +180,7 @@
   .cta-inline{margin:32px 0;border:1px solid var(--line-strong);padding:24px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
   .cta-inline .ct{font-family:"Playfair Display",serif;font-size:1.22rem;line-height:1.35;color:var(--ink);max-width:380px}
 
-  .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:"Archivo",sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:14px 22px;border:1px solid transparent;cursor:pointer;transition:all .2s ease;white-space:nowrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-family:"Archivo",sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.055em;text-transform:uppercase;padding:14px 22px;border:1px solid transparent;cursor:pointer;transition:all .2s ease;white-space:normal;text-align:center;line-height:1.22;max-width:100%;min-width:0;overflow-wrap:anywhere;word-break:normal}
   .btn svg{width:15px;height:15px;stroke:currentColor;fill:none;transition:transform .2s}
   .btn:hover svg.arr{transform:translateX(4px)}
   .btn--red{background:var(--red);border-color:var(--red);color:#fff}
@@ -233,6 +233,30 @@
   .sources li{font-size:.98rem;line-height:1.55;margin-bottom:8px}
   .sources .verify{font-family:"Archivo",sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:10px}
 
+
+
+  /* ===== V5 SERVICE POSITIONING ===== */
+  .service-stack{margin:34px 0;border:1px solid var(--line-strong);background:#fff}
+  .service-stack .sv-head{background:var(--ink);color:#fff;padding:14px 22px;font-family:"Archivo",sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .service-stack .sv-head .b{width:8px;height:8px;background:var(--red);flex:none}
+  .service-stack .sv-intro{padding:22px 22px 4px;font-size:1.05rem;line-height:1.62;color:var(--text)}
+  .service-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+  .service-item{padding:18px 20px;border-bottom:1px solid var(--line)}
+  .service-item:nth-child(odd){border-right:1px solid var(--line)}
+  .service-item b{font-family:"Archivo",sans-serif;font-size:.86rem;letter-spacing:.05em;text-transform:uppercase;display:block;margin-bottom:5px;color:var(--ink)}
+  .service-item p{font-size:.98rem;line-height:1.5;margin:0;color:var(--text)}
+  .service-foot{padding:18px 22px;background:var(--paper-2);font-style:italic;font-size:1rem;line-height:1.55;color:var(--text)}
+  @media(max-width:620px){.service-grid{grid-template-columns:1fr}.service-item:nth-child(odd){border-right:none}}
+
+  .agency-compare{margin:34px 0}
+  .agency-compare h2{margin-bottom:16px}
+  .agency-table{width:100%;border-collapse:collapse;font-size:1rem}
+  .agency-table th,.agency-table td{border:1px solid var(--line);padding:15px 16px;text-align:left;vertical-align:top;line-height:1.5}
+  .agency-table th{font-family:"Archivo",sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--paper-2);color:var(--muted)}
+  .agency-table th.rev{background:var(--ink);color:#fff}
+  .agency-table td.rev{background:#FCFBF9;border-left:2px solid var(--red)}
+  .agency-table b{font-family:"Archivo",sans-serif;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em}
+
   /* ===== WHO FOR ===== */
   .who{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin:24px 0}
   .who-col{padding:24px 22px}
@@ -242,9 +266,33 @@
   .who-col.no .wh{color:var(--muted)}
   .who-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
   .who-col li{display:flex;gap:10px;font-size:1rem;line-height:1.5}
-  .who-col li svg{width:17px;height:17px;flex:none;margin-top:4px;fill:none;stroke-width:2}
+  .who-col .wh svg,
+  .who-col li svg{
+    width:17px;
+    height:17px;
+    min-width:17px;
+    max-width:17px;
+    flex:0 0 17px;
+    fill:none;
+    stroke-width:2;
+  }
+  .who-col .wh svg{margin-top:0;}
+  .who-col li svg{margin-top:4px;}
+  .who-col.yes .wh svg,
   .who-col.yes li svg{stroke:var(--green)}
+  .who-col.no .wh svg,
   .who-col.no li svg{stroke:var(--muted)}
+
+
+  /* Defensive fix: prevent SVG icons inside who cards from rendering as huge black shapes */
+  .who svg{
+    display:inline-block;
+    overflow:visible;
+  }
+  .who svg path{
+    fill:none;
+  }
+
   @media(max-width:560px){.who{grid-template-columns:1fr}.who-col.yes{border-right:none;border-bottom:1px solid var(--line)}}
 
   .closing-q{font-family:"Playfair Display",serif;font-style:italic;font-size:1.28rem;line-height:1.5;color:var(--ink);margin:24px 0}
@@ -289,6 +337,442 @@
   @media(max-width:900px){.mbar{display:flex}body{padding-bottom:74px}}
   @media(max-width:560px){.cta-inline .btn,.final-cta .btn{width:100%;justify-content:center}.share{width:100%;margin-left:0;margin-top:4px}}
   @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}.progress{transition:none}}
+
+
+  /* ===== MOBILE FIX V5.1: real responsive, no page zoom-out ===== */
+  html, body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+  }
+  *, *::before, *::after{min-width:0;}
+  .layout,.topbar-in,.masthead-in,.nav-in,.foot-in{
+    max-width:100%;
+  }
+  svg{max-width:100%;}
+
+  @media(max-width:900px){
+    body{
+      font-size:1.05rem;
+      line-height:1.68;
+      padding-bottom:78px;
+    }
+    .topbar-in{
+      padding:8px 16px;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:5px;
+      letter-spacing:.08em;
+      font-size:.58rem;
+    }
+    .topbar .meta{
+      gap:8px;
+      line-height:1.35;
+    }
+    .masthead-in{
+      padding:18px 16px 13px;
+    }
+    .nameplate{
+      font-size:clamp(2rem,11vw,2.7rem);
+      line-height:.98;
+    }
+    .name-sub{
+      font-size:.56rem;
+      letter-spacing:.14em;
+      line-height:1.45;
+      max-width:320px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .nav{
+      position:sticky;
+      top:0;
+      overflow:hidden;
+    }
+    .nav-in{
+      padding:0 14px;
+      overflow-x:auto;
+      -webkit-overflow-scrolling:touch;
+    }
+    .nav a{
+      font-size:.68rem;
+      padding:11px 12px;
+      flex:0 0 auto;
+    }
+    .layout{
+      display:block;
+      padding:26px 16px 0;
+      width:100%;
+    }
+    main.article,
+    .article,
+    .aside{
+      width:100%;
+      max-width:100%;
+    }
+    h1{
+      font-size:clamp(2rem,9vw,2.55rem);
+      line-height:1.08;
+      overflow-wrap:anywhere;
+    }
+    .deck{
+      font-size:1.12rem;
+      line-height:1.48;
+    }
+    .byline{
+      align-items:flex-start;
+      gap:9px;
+      font-size:.7rem;
+    }
+    .share{
+      width:100%;
+      margin-left:0;
+      padding-top:4px;
+    }
+    .figbox{
+      padding:20px 14px;
+    }
+    .article .first,
+    .first{
+      font-size:1.08rem;
+    }
+    .dropcap::first-letter{
+      font-size:3.2em;
+      padding-right:.1em;
+    }
+    h2{
+      font-size:clamp(1.55rem,7vw,1.95rem);
+      line-height:1.16;
+      margin-top:34px;
+    }
+    .data{
+      margin-left:0;
+      margin-right:0;
+    }
+    .data-grid{
+      grid-template-columns:1fr;
+    }
+    .data-cell{
+      border-right:none;
+      border-bottom:1px solid var(--line);
+      padding:18px 16px;
+    }
+    .data-cell:last-child{border-bottom:none;}
+    .data-cell .n{
+      font-size:2.05rem;
+    }
+    .cmp-wrap{
+      overflow-x:visible;
+      width:100%;
+    }
+    table.cmp{
+      min-width:0;
+      width:100%;
+      display:block;
+      border-collapse:separate;
+      border-spacing:0;
+      font-size:.96rem;
+    }
+    table.cmp thead{
+      display:none;
+    }
+    table.cmp tbody,
+    table.cmp tr,
+    table.cmp td{
+      display:block;
+      width:100%;
+    }
+    table.cmp tr{
+      border:1px solid var(--line);
+      margin-bottom:14px;
+      background:#fff;
+    }
+    table.cmp td{
+      border:0;
+      border-bottom:1px solid var(--line);
+      padding:13px 14px;
+    }
+    table.cmp td:last-child{border-bottom:0;}
+    table.cmp td.dim{
+      width:100%;
+      background:var(--ink);
+      color:#fff;
+      font-size:.68rem;
+    }
+    table.cmp td:not(.dim):before{
+      display:block;
+      font-family:"Archivo",sans-serif;
+      font-size:.62rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:4px;
+    }
+    table.cmp td:nth-child(2):before{content:"Dossier complet";}
+    table.cmp td:nth-child(3):before{content:"Dossier solide"; color:var(--red);}
+    table.cmp tr td.solid{
+      border-left:0;
+      background:#FCFBF9;
+    }
+    .callout,
+    .explainer,
+    .founder,
+    .engage,
+    .final,
+    .cta-inline,
+    .side-cta,
+    .side-box{
+      padding-left:18px;
+      padding-right:18px;
+      margin-left:0;
+      margin-right:0;
+    }
+    .cta-inline{
+      display:block;
+    }
+    .cta-inline .ct{
+      max-width:100%;
+      margin-bottom:16px;
+      font-size:1.16rem;
+    }
+    .btn{
+      white-space:normal;
+      text-align:center;
+      justify-content:center;
+      line-height:1.25;
+    }
+    .cta-inline .btn,
+    .final .btn,
+    .side-cta .btn{
+      width:100%;
+      margin-bottom:10px;
+    }
+    .final-cta{
+      display:block;
+    }
+    .who{
+      grid-template-columns:1fr;
+    }
+    .who-col.yes{
+      border-right:none;
+      border-bottom:1px solid var(--line);
+    }
+    .aside{
+      margin-top:32px;
+    }
+    footer{
+      margin-top:34px;
+      padding-bottom:48px;
+    }
+    .foot-in{
+      padding:0 16px;
+    }
+    .mbar{
+      display:flex;
+      align-items:center;
+      padding:9px 10px calc(9px + env(safe-area-inset-bottom));
+      gap:8px;
+    }
+    .mbar .btn{
+      min-height:46px;
+      padding:12px 10px;
+      font-size:.67rem;
+      letter-spacing:.04em;
+    }
+    .mbar .btn.wa{
+      width:50px;
+      flex:0 0 50px;
+    }
+  }
+
+  @media(max-width:420px){
+    body{font-size:1.02rem;}
+    .layout{padding-left:14px;padding-right:14px;}
+    .nameplate{font-size:2.05rem;}
+    h1{font-size:2rem;}
+    .deck{font-size:1.06rem;}
+    .cat-tag,.pub-label{font-size:.62rem;}
+    .data-head,.engage-h{font-size:.64rem;}
+    .data-cell .n{font-size:1.9rem;}
+    .pull{font-size:1.28rem;padding-left:16px;}
+    .axis,.proc-step{gap:12px;}
+    .axis .ax-n{width:24px;}
+  }
+
+
+
+  /* ===== MOBILE BUTTON OVERFLOW FIX ===== */
+  @media(max-width:900px){
+    .btn{
+      width:100%;
+      max-width:100%;
+      min-width:0;
+      justify-content:center;
+      text-align:center;
+      white-space:normal;
+      overflow-wrap:anywhere;
+      word-break:normal;
+      line-height:1.25;
+      padding:14px 14px;
+      letter-spacing:.045em;
+    }
+    .side-cta .btn,
+    .cta-inline .btn,
+    .final-cta .btn{
+      width:100%;
+      max-width:100%;
+    }
+    .final-cta,
+    .cta-inline,
+    .side-cta{
+      overflow:hidden;
+    }
+    .mbar .btn{
+      white-space:normal;
+      overflow-wrap:normal;
+      letter-spacing:.035em;
+      font-size:.68rem;
+      line-height:1.15;
+      padding:12px 8px;
+    }
+    .mbar .btn.wa{
+      width:52px;
+      flex:0 0 52px;
+    }
+  }
+
+  @media(max-width:380px){
+    .btn{font-size:.72rem;letter-spacing:.035em;padding:13px 10px;}
+    .mbar .btn{font-size:.64rem;}
+  }
+
+
+  /* ===== GLOBAL BUTTON TEXT WRAP FIX ===== */
+  .cta-inline .btn,
+  .final-cta .btn,
+  .side-cta .btn,
+  .final .btn{
+    white-space:normal !important;
+    text-align:center !important;
+    line-height:1.22 !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    overflow-wrap:anywhere !important;
+    word-break:normal !important;
+  }
+  .side-cta .btn{
+    display:flex !important;
+    width:100% !important;
+    padding-left:14px !important;
+    padding-right:14px !important;
+  }
+  @media(max-width:1100px){
+    .side-cta .btn{
+      font-size:.70rem !important;
+      letter-spacing:.035em !important;
+    }
+  }
+  @media(max-width:520px){
+    .btn{
+      font-size:.72rem !important;
+      letter-spacing:.025em !important;
+      padding-left:12px !important;
+      padding-right:12px !important;
+    }
+    .side-cta .btn, .cta-inline .btn, .final-cta .btn{
+      min-height:54px;
+    }
+  }
+  @media(max-width:360px){
+    .btn{font-size:.66rem !important;}
+  }
+
+
+
+  /* ===== MOBILE WHO SECTION FIX V5.2: no zoom-out, no huge SVG icons ===== */
+  .who{
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+  }
+  .who-col{
+    min-height:auto !important;
+  }
+  .who-col .wh svg,
+  .who-col li svg{
+    display:none !important;
+  }
+  .who-col .wh{
+    position:relative;
+    padding-left:0;
+    min-height:auto;
+  }
+  .who-col li{
+    position:relative;
+    padding-left:24px;
+    display:block;
+  }
+  .who-col li::before{
+    position:absolute;
+    left:0;
+    top:.08em;
+    font-family:Arial, sans-serif;
+    font-size:1rem;
+    line-height:1;
+    font-weight:700;
+  }
+  .who-col.yes li::before{
+    content:"✓";
+    color:var(--green);
+  }
+  .who-col.no li::before{
+    content:"×";
+    color:var(--muted);
+  }
+
+  @media(max-width:900px){
+    .who{
+      display:block !important;
+      grid-template-columns:1fr !important;
+      border:1px solid var(--line);
+      margin:22px 0;
+    }
+    .who-col{
+      width:100%;
+      padding:20px 18px !important;
+    }
+    .who-col.yes{
+      border-right:none !important;
+      border-bottom:1px solid var(--line);
+    }
+    .who-col .wh{
+      font-size:.68rem;
+      line-height:1.35;
+      letter-spacing:.08em;
+      margin-bottom:14px;
+    }
+    .who-col ul{
+      gap:10px;
+    }
+    .who-col li{
+      font-size:.98rem;
+      line-height:1.48;
+      padding-left:24px;
+      overflow-wrap:break-word;
+    }
+  }
+
+  @media(max-width:420px){
+    .who-col{
+      padding:18px 16px !important;
+    }
+    .who-col li{
+      font-size:.95rem;
+      line-height:1.48;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -375,7 +859,7 @@
 
     <p>Et trop souvent, la réponse tombe, brève et froide : <em>« Je ne suis pas convaincu que vous quitterez le Canada à la fin de votre séjour. »</em> Si cette phrase vous est familière, vous savez ce qu'elle provoque : l'argent qui semble gaspillé, l'enfant qui rate une rentrée, le regard de la famille élargie.</p>
 
-    <p>Cet article — publié par <strong>Revive Agency</strong>, une structure d'accompagnement administratif spécialisée dans les dossiers d'études vers le Canada — n'a pas pour but de vendre un rêve. Il cherche à expliquer un malentendu rarement énoncé clairement, et qui coûte chaque année très cher à des familles sérieuses et solvables.</p>
+    <p>Cet article — publié par <strong>Revive Agency</strong>, une structure d'accompagnement administratif spécialisée dans les dossiers d'études vers le Canada — n'a pas pour but de vendre un rêve. Il explique un malentendu rarement énoncé clairement, puis montre pourquoi certaines familles choisissent de faire préparer leur dossier avec une approche plus structurée, plus cohérente et sans fausse promesse.</p>
 
     <!-- DATA STRIP -->
     <div class="data">
@@ -425,8 +909,8 @@
 
     <!-- INLINE CTA after belief shift -->
     <div class="cta-inline">
-      <div class="ct">Vous n'êtes pas certain que votre dossier raconte une histoire cohérente ?</div>
-      <a class="btn btn--red cta-link" href="#start-assessment">Vérifier la solidité de mon dossier
+      <div class="ct">Si votre dossier doit être soumis, il doit d’abord être construit autour d’une histoire cohérente.</div>
+      <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon accompagnement Canada
         <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
 
@@ -465,9 +949,9 @@
     </div>
 
     <!-- METHOD -->
-    <h2>C'est autour de cette logique que Revive Agency a développé son Audit de Cohérence du Dossier</h2>
+    <h2>Comment Revive transforme cette analyse en accompagnement concret</h2>
 
-    <p>Plutôt que d'empiler des documents, la méthode consiste à vérifier si le dossier raconte une seule histoire crédible, sur cinq axes qui doivent se répondre — en regardant le dossier avec les yeux d'un agent, pour repérer les faiblesses avant la soumission.</p>
+    <p>Le cœur de l'approche Revive reste l'<strong>Audit de Cohérence du Dossier</strong>. Mais l'objectif n'est pas seulement de regarder un dossier de loin. L'objectif est d'accompagner la famille dans la préparation administrative du dossier, l'organisation des pièces, la structuration des preuves et la présentation d'un projet plus clair avant la soumission.</p>
 
     <div class="axes">
       <div class="axis"><div class="ax-n">1</div><div class="ax-b"><b>Cohérence académique</b><p>Le choix de programme découle-t-il logiquement du parcours, et prépare-t-il une suite crédible ?</p></div></div>
@@ -477,43 +961,74 @@
       <div class="axis"><div class="ax-n">5</div><div class="ax-b"><b>Cohérence globale</b><p>Chaque document confirme-t-il les autres, sans contradiction qui sème le doute ?</p></div></div>
     </div>
 
+    <!-- V5: concrete service -->
+    <div class="service-stack">
+      <div class="sv-head"><span class="b"></span>Ce que Revive prépare concrètement avec vous</div>
+      <p class="sv-intro">Une famille ne paie pas Revive pour lire un simple article ou recevoir une opinion vague. Elle paie pour être accompagnée dans la préparation administrative d'un dossier d'études Canada plus clair, plus cohérent et mieux organisé.</p>
+      <div class="service-grid">
+        <div class="service-item"><b>Analyse du profil et du projet</b><p>Comprendre le parcours, le programme visé, les objectifs d'études et les points qui peuvent créer un doute.</p></div>
+        <div class="service-item"><b>Collecte et organisation des documents</b><p>Mettre de l'ordre dans les pièces, éviter les oublis et préparer une structure lisible.</p></div>
+        <div class="service-item"><b>Preuves financières et garant</b><p>Clarifier la logique de prise en charge, la provenance des fonds et la cohérence du sponsor.</p></div>
+        <div class="service-item"><b>Lettre d'explication</b><p>Aider à présenter le projet, le choix du programme et la logique de retour de façon plus claire.</p></div>
+        <div class="service-item"><b>Vérification finale</b><p>Relire l'ensemble du dossier pour repérer incohérences, zones floues et contradictions possibles.</p></div>
+        <div class="service-item"><b>Accompagnement jusqu'à la soumission</b><p>Guider la famille dans les étapes administratives, sans promettre la décision d'IRCC.</p></div>
+      </div>
+      <div class="service-foot">L'idée n'est pas de maquiller un profil. L'idée est de préparer les vrais éléments du dossier de manière plus claire, plus cohérente et plus sérieuse.</div>
+    </div>
+
+    <!-- V5: classic agency vs Revive -->
+    <div class="agency-compare">
+      <h2>Agence classique ou accompagnement structuré ?</h2>
+      <table class="agency-table">
+        <thead>
+          <tr><th>Approche fréquente</th><th class="rev">Approche Revive Agency</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>Collecter</b><br>On demande les documents et on vérifie surtout que les pièces sont présentes.</td><td class="rev"><b>Structurer</b><br>On regarde comment les documents se répondent et ce qu'ils racontent ensemble.</td></tr>
+          <tr><td><b>Remplir</b><br>Le travail se limite souvent aux formulaires et à la mise en ligne du dossier.</td><td class="rev"><b>Préparer</b><br>Le dossier est organisé autour du parcours, du financement, du garant et de la lettre d'explication.</td></tr>
+          <tr><td><b>Soumettre</b><br>Le dossier part parfois avec des zones floues que la famille ne voit pas.</td><td class="rev"><b>Clarifier avant soumission</b><br>Les incohérences visibles sont repérées avant que le dossier ne soit envoyé.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <div class="callout c-decryptage">
       <div class="clab">La méthode, étape par étape</div>
       <div class="proc">
-        <div class="proc-step"><div class="pn">01</div><div class="pb"><b>Pré-évaluation</b><span>On évalue le profil et le projet, honnêtement.</span></div></div>
-        <div class="proc-step"><div class="pn">02</div><div class="pb"><b>Diagnostic de cohérence</b><span>On lit le dossier comme le ferait un agent, axe par axe.</span></div></div>
-        <div class="proc-step"><div class="pn">03</div><div class="pb"><b>Identification des faiblesses</b><span>On repère incohérences, zones floues et drapeaux rouges invisibles.</span></div></div>
-        <div class="proc-step"><div class="pn">04</div><div class="pb"><b>Structuration administrative</b><span>On organise et clarifie les pièces pour une seule histoire cohérente.</span></div></div>
-        <div class="proc-step"><div class="pn">05</div><div class="pb"><b>Suite du parcours</b><span>On vous oriente vers votre espace d'évaluation ou un échange WhatsApp.</span></div></div>
+        <div class="proc-step"><div class="pn">01</div><div class="pb"><b>Pré-évaluation du profil</b><span>On comprend votre situation, votre projet d'études, le financement et les éventuels refus précédents.</span></div></div>
+        <div class="proc-step"><div class="pn">02</div><div class="pb"><b>Validation de l'accompagnement</b><span>Si le profil peut être accompagné, vous recevez les prochaines étapes et les conditions du service.</span></div></div>
+        <div class="proc-step"><div class="pn">03</div><div class="pb"><b>Paiement et ouverture du dossier client</b><span>Le dossier est ouvert, les informations sont organisées et la collecte des pièces commence.</span></div></div>
+        <div class="proc-step"><div class="pn">04</div><div class="pb"><b>Préparation administrative</b><span>Les documents, le garant, les preuves financières et la lettre d'explication sont structurés avec une logique de cohérence.</span></div></div>
+        <div class="proc-step"><div class="pn">05</div><div class="pb"><b>Vérification finale avant soumission</b><span>Le dossier est relu pour repérer les incohérences, les zones floues et les éléments mal expliqués.</span></div></div>
+        <div class="proc-step"><div class="pn">06</div><div class="pb"><b>Accompagnement jusqu'à la démarche suivante</b><span>Vous êtes guidé dans les étapes administratives, sans fausse promesse sur la décision finale.</span></div></div>
       </div>
     </div>
 
-    <!-- V4: what happens after click -->
+    <!-- V5: what happens after click -->
     <div class="next-click">
       <div class="nh">Ce qui se passe après le clic</div>
       <div class="next-grid">
         <div class="next-item">
           <div class="num">Étape 1</div>
-          <b>Pré-diagnostic rapide</b>
-          <p>Vous répondez à quelques questions sur le profil, le projet d'études, le financement et les refus précédents.</p>
+          <b>Quelques questions</b>
+          <p>Vous répondez à des questions simples sur le profil, le projet d'études, le financement, le garant et les refus précédents.</p>
         </div>
         <div class="next-item">
           <div class="num">Étape 2</div>
-          <b>Lecture de cohérence</b>
-          <p>Revive vérifie si les éléments principaux du dossier semblent alignés ou s'il existe des zones de doute.</p>
+          <b>Validation du profil</b>
+          <p>Revive vérifie si votre situation peut être accompagnée sérieusement, sans promesse automatique ni discours magique.</p>
         </div>
         <div class="next-item">
           <div class="num">Étape 3</div>
-          <b>Orientation honnête</b>
-          <p>Vous savez si le dossier mérite d'être structuré avant soumission, ou si le profil doit d'abord être renforcé.</p>
+          <b>Ouverture du dossier</b>
+          <p>Si vous décidez d'avancer, vous recevez les étapes pour payer le service, ouvrir votre dossier client et commencer la préparation.</p>
         </div>
       </div>
     </div>
 
     <!-- INLINE CTA after mechanism -->
     <div class="cta-inline">
-      <div class="ct">Faites lire votre dossier avant qu'un agent ne le fasse.</div>
-      <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon pré-diagnostic
+      <div class="ct">Ne payez pas seulement pour soumettre un dossier. Faites-le préparer avec une vraie logique de cohérence.</div>
+      <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon accompagnement Canada
         <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
 
@@ -522,7 +1037,7 @@
       <div class="engage-h"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>L'engagement de Revive Agency</div>
       <div class="engage-b">
         <p><strong>Revive Agency ne garantit pas l'obtention d'un visa. Personne ne le peut légalement.</strong> La décision finale appartient exclusivement à IRCC. Toute structure qui promet un visa « garanti à 100&nbsp;% » trompe ses clients, et ce mensonge peut coûter très cher — y compris une interdiction de territoire de plusieurs années en cas de fausse déclaration.</p>
-        <p>Ce qui est garanti, c'est le sérieux du travail : un dossier plus clair, plus cohérent, mieux structuré, et la vérité sur ses points faibles. Aucun document n'est fabriqué, aucune situation n'est maquillée. Et lorsqu'un profil n'est pas prêt, Revive le dit — même si cela signifie ne pas prendre l'argent du client ce jour-là.</p>
+        <p>Ce qui est garanti, c'est le sérieux de l'accompagnement administratif : des documents mieux organisés, une présentation plus claire, une cohérence mieux travaillée, et la vérité sur les points faibles visibles du dossier. Aucun document n'est fabriqué, aucune situation n'est maquillée. Et lorsqu'un profil n'est pas prêt à être accompagné correctement, Revive le dit — même si cela signifie ne pas prendre l'argent du client ce jour-là.</p>
       </div>
     </div>
 
@@ -543,9 +1058,9 @@
       <div class="who-col yes">
         <div class="wh"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg>C'est pour vous si</div>
         <ul>
-          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg>Vous voulez connaître la solidité réelle de votre dossier avant de l'envoyer.</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg>Vous voulez faire préparer votre dossier Canada avec sérieux avant la soumission.</li>
           <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg>Vous préférez une vérité utile à une promesse flatteuse.</li>
-          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg>Vous prenez le projet de votre enfant au sérieux.</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg>Vous voulez un accompagnement clair pour organiser les documents, le garant, les fonds et la lettre.</li>
         </ul>
       </div>
       <div class="who-col no">
@@ -563,11 +1078,11 @@
       <h2>Questions fréquentes</h2>
       <details>
         <summary>Est-ce que Revive Agency garantit l'obtention du permis d'études ?</summary>
-        <p>Non. Aucune agence sérieuse ne peut garantir une décision d'IRCC. Revive aide à clarifier, organiser et structurer les éléments du dossier, sans promettre le résultat.</p>
+        <p>Non. Aucune agence sérieuse ne peut garantir une décision d'IRCC. Revive accompagne la préparation administrative du dossier, aide à clarifier les éléments importants et organise les pièces avec une logique de cohérence, sans promettre le résultat.</p>
       </details>
       <details>
         <summary>Est-ce que je peux faire ma demande seul ?</summary>
-        <p>Oui. Beaucoup de familles déposent seules. L'intérêt d'un diagnostic est surtout d'avoir un regard extérieur sur les incohérences possibles avant de soumettre.</p>
+        <p>Oui. Beaucoup de familles déposent seules. Revive s'adresse surtout aux familles qui préfèrent déléguer la préparation administrative, organiser les documents avec méthode et éviter qu'un dossier sérieux soit affaibli par des incohérences visibles.</p>
       </details>
       <details>
         <summary>Et si j'ai déjà eu un refus ?</summary>
@@ -578,13 +1093,13 @@
         <p>Dans certains dossiers, oui, mais le lien, l'engagement financier et la logique de prise en charge doivent être clairs et documentés. C'est justement un point où beaucoup de dossiers deviennent flous.</p>
       </details>
       <details>
-        <summary>Est-ce que ce diagnostic remplace un conseil juridique en immigration ?</summary>
-        <p>Non. Revive fournit une assistance administrative et documentaire. Pour un avis juridique ou une représentation en immigration, il faut consulter un professionnel autorisé.</p>
+        <summary>Est-ce que l'accompagnement Revive remplace un conseil juridique en immigration ?</summary>
+        <p>Non. Revive fournit une assistance administrative et documentaire. Pour un avis juridique, une stratégie légale personnalisée ou une représentation en immigration, il faut consulter un professionnel autorisé.</p>
       </details>
     </div>
 
-    <p>Un dossier d'études Canada ne devrait pas être une pile de papiers. Il devrait être une histoire cohérente, appuyée par des preuves.</p>
-    <p class="closing-q">Avant d'engager l'argent, le temps et l'espoir de toute une famille, la vraie question n'est pas seulement : avons-nous réuni tous les documents ? C'est : ces documents racontent-ils une histoire claire, crédible et cohérente ?</p>
+    <p>Un dossier d'études Canada ne devrait pas être une pile de papiers. Il devrait être une histoire cohérente, appuyée par des preuves — et c'est précisément le type de préparation que Revive propose d'accompagner.</p>
+    <p class="closing-q">Avant d'engager l'argent, le temps et l'espoir de toute une famille, la vraie question n'est pas seulement : avons-nous réuni tous les documents ? C'est : avons-nous confié la préparation du dossier à une équipe qui comprend comment ces documents doivent se répondre ?</p>
 
     <!-- V4 Sources -->
     <div class="sources">
@@ -601,10 +1116,10 @@
     <!-- FINAL CTA -->
     <div class="final" id="start-assessment">
       <div class="fk">Première étape</div>
-      <h2 class="no-rule">Vérifiez la solidité de votre dossier</h2>
-      <p>Une évaluation de votre profil. Honnête, sans fausse promesse — avant la soumission, pas après un refus.</p>
+      <h2 class="no-rule">Faites préparer votre dossier Canada avec Revive</h2>
+      <p>Admission, garant, preuves financières, lettre d’explication, documents administratifs… Revive vous accompagne dans la préparation et la structuration de votre dossier, avec une approche claire, cohérente et sans fausse promesse.</p>
       <div class="final-cta">
-        <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon pré-diagnostic
+        <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon accompagnement Canada
           <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="btn btn--outline btn--wa whatsapp-link" id="whatsapp" href="#whatsapp">Parler à Revive sur WhatsApp
           <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l1.4-3.6A7.5 7.5 0 1 1 8.6 18.6L4 19z"/><path d="M9 10c.4 2 2 3.6 4 4l1-1.4 2 .7.4 2c-3.4 1-7-1.4-8-5z"/></svg></a>
@@ -621,16 +1136,16 @@
         <ul class="retenir">
           <li><span class="rn">1</span><span>Un dossier complet n'est pas forcément un dossier solide.</span></li>
           <li><span class="rn">2</span><span>Le premier motif de refus est souvent le doute sur le retour au pays, pas l'absence de documents.</span></li>
-          <li><span class="rn">3</span><span>Une seule incohérence — le « drapeau rouge invisible » — peut fragiliser tout le dossier.</span></li>
-          <li><span class="rn">4</span><span>Un gros dépôt mal expliqué peut nuire au lieu d'aider.</span></li>
+          <li><span class="rn">3</span><span>Une agence qui remplit seulement les formulaires peut passer à côté du vrai problème.</span></li>
+          <li><span class="rn">4</span><span>Revive accompagne la préparation du dossier avec une logique de cohérence avant soumission.</span></li>
         </ul>
       </div>
     </div>
 
     <div class="side-cta">
-      <div class="sct">Votre dossier raconte-t-il une histoire cohérente ?</div>
-      <div class="scp">Faites-le évaluer avant la soumission.</div>
-      <a class="btn btn--red cta-link" href="#start-assessment">Vérifier la solidité de mon dossier
+      <div class="sct">Prêt à faire préparer votre dossier Canada ?</div>
+      <div class="scp">Commencez l’accompagnement avec Revive Agency.</div>
+      <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon accompagnement Canada
         <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="btn btn--outline btn--wa whatsapp-link" href="#whatsapp">Parler à Revive sur WhatsApp
         <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l1.4-3.6A7.5 7.5 0 1 1 8.6 18.6L4 19z"/><path d="M9 10c.4 2 2 3.6 4 4l1-1.4 2 .7.4 2c-3.4 1-7-1.4-8-5z"/></svg></a>
@@ -646,10 +1161,10 @@
     <div class="foot-name">Le Dossier<span class="pt"> </span>Canada</div>
     <div class="foot-sub">Une publication éditoriale de Revive Agency</div>
     <p class="foot-legal">
-      Ce contenu est un publireportage publié par Revive Agency, nom commercial opéré par BUSYSCALLING Inc. « Le Dossier Canada » est une publication éditoriale de Revive Agency et non un organe de presse indépendant. Revive Agency fournit une assistance administrative et documentaire ainsi qu'un diagnostic de cohérence de dossier&nbsp;; elle n'est pas un consultant réglementé en immigration (CRIC) et ne fournit pas de conseils juridiques en matière d'immigration. Revive Agency n'est pas affiliée au gouvernement du Canada et ne garantit en aucun cas l'obtention d'un visa ou d'un permis d'études : la décision finale appartient exclusivement à Immigration, Réfugiés et Citoyenneté Canada (IRCC). Une préparation sérieuse peut aider à réduire les erreurs, clarifier le dossier et présenter les informations de manière plus cohérente, sans garantir le résultat.
+      Ce contenu est un publireportage publié par Revive Agency, nom commercial opéré par BUSYSCALLING Inc. « Le Dossier Canada » est une publication éditoriale de Revive Agency et non un organe de presse indépendant. Revive Agency fournit une assistance administrative et documentaire, incluant la préparation, l'organisation et la structuration des éléments du dossier&nbsp;; elle n'est pas un consultant réglementé en immigration (CRIC) et ne fournit pas de conseils juridiques en matière d'immigration. Revive Agency n'est pas affiliée au gouvernement du Canada et ne garantit en aucun cas l'obtention d'un visa ou d'un permis d'études : la décision finale appartient exclusivement à Immigration, Réfugiés et Citoyenneté Canada (IRCC). Une préparation sérieuse peut aider à réduire les erreurs, clarifier le dossier et présenter les informations de manière plus cohérente, sans garantir le résultat.
     </p>
     <div class="foot-links">
-      <a class="cta-link" href="#start-assessment">Site officiel Revive</a>
+      <a class="cta-link" href="#start-assessment">Page Revive Agency</a>
       <a href="#">Conditions d'utilisation</a>
       <a href="#">Confidentialité</a>
       <a href="#">Mentions légales</a>
@@ -659,7 +1174,7 @@
 
 <!-- ===== STICKY MOBILE CTA ===== -->
 <nav class="mbar">
-  <a class="btn btn--red cta-link" href="#start-assessment">Vérifier mon dossier</a>
+  <a class="btn btn--red cta-link" href="#start-assessment">Commencer</a>
   <a class="btn btn--outline wa whatsapp-link" href="#whatsapp" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--green)"><path d="M4 19l1.4-3.6A7.5 7.5 0 1 1 8.6 18.6L4 19z"/><path d="M9 10c.4 2 2 3.6 4 4l1-1.4 2 .7.4 2c-3.4 1-7-1.4-8-5z"/></svg>
   </a>
