@@ -3,1255 +3,561 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Un dossier complet n’est pas toujours un dossier solide | Le Dossier Canada</title>
-<meta name="description" content="Analyse éditoriale publiée par Le Dossier Canada, une publication éditoriale de Revive Agency, sur la cohérence des dossiers de permis d’études Canada.">
+<title>Permis d'études Canada : pourquoi un dossier complet n'est pas forcément un dossier solide — Le Dossier Canada</title>
+<meta name="description" content="Publireportage — Le Dossier Canada, une publication éditoriale de Revive Agency. Pourquoi tant de dossiers complets sont quand même refusés, et ce qui distingue un dossier solide.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#ffffff;
-  --paper:#f7f5ef;
-  --paper-2:#f1eee6;
-  --ink:#101010;
-  --text:#222222;
-  --muted:#6b6b6b;
-  --line:#dad7cf;
-  --red:#b90016;
-  --red-dark:#8b0011;
-  --black:#0b0b0b;
-  --soft-red:#fff0f2;
-  --green:#16884a;
-  --max:1180px;
-  --article:720px;
-  --side:320px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:Inter,Arial,sans-serif;
-  line-height:1.7;
-  font-size:17px;
-  -webkit-font-smoothing:antialiased;
-}
-a{color:inherit}
-img{max-width:100%;display:block}
-::selection{background:var(--red);color:white}
-
-.progress{
-  position:fixed;
-  top:0;left:0;height:3px;width:0;
-  background:var(--red);
-  z-index:9999;
-}
-
-.site-shell{min-height:100vh;background:#fff}
-.container{max-width:var(--max);margin:0 auto;padding:0 20px}
-
-/* ===== TOP MEDIA BARS ===== */
-.top-strip{
-  background:var(--black);
-  color:#fff;
-  font-size:12px;
-  letter-spacing:.02em;
-}
-.top-strip .container{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  min-height:34px;
-}
-.top-left,.top-right{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  flex-wrap:wrap;
-}
-.pill-partner{
-  background:var(--red);
-  color:#fff;
-  padding:4px 8px;
-  font-weight:700;
-  text-transform:uppercase;
-  font-size:11px;
-  letter-spacing:.06em;
-}
-.top-link{color:#e8e8e8;text-decoration:none}
-.top-link:hover{text-decoration:underline}
-
-.masthead{
-  background:#fff;
-  border-bottom:1px solid var(--line);
-}
-.masthead-main{
-  padding:22px 0 18px;
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap:18px;
-}
-.brand-block{min-width:0}
-.brand-name{
-  font-family:"Libre Baskerville",Georgia,serif;
-  font-size:clamp(2.05rem,5vw,4.2rem);
-  line-height:.92;
-  font-weight:700;
-  letter-spacing:-.055em;
-  color:#0a0a0a;
-}
-.brand-name span{color:var(--red)}
-.brand-sub{
-  margin-top:9px;
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:.13em;
-  color:var(--muted);
-  font-weight:700;
-}
-.mast-date{
-  text-align:right;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.45;
-  min-width:180px;
-}
-.mast-date b{display:block;color:var(--ink);font-size:12px;text-transform:uppercase;letter-spacing:.12em}
-
-.navbar{
-  border-top:3px solid var(--black);
-  border-bottom:1px solid var(--line);
-}
-.navbar .container{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  overflow-x:auto;
-  scrollbar-width:none;
-}
-.navbar .container::-webkit-scrollbar{display:none}
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:0;
-  white-space:nowrap;
-}
-.nav-links a{
-  text-decoration:none;
-  color:var(--ink);
-  padding:12px 15px;
-  border-right:1px solid var(--line);
-  font-size:13px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.04em;
-}
-.nav-links a:first-child{border-left:1px solid var(--line)}
-.nav-links a.active{background:var(--red);color:#fff;border-color:var(--red)}
-.search-mini{
-  flex:none;
-  width:34px;height:34px;border:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;
-}
-.search-mini svg{width:16px;height:16px;stroke:var(--ink);fill:none}
-
-/* ===== ARTICLE HEADER ===== */
-.article-head{
-  padding:34px 0 20px;
-  border-bottom:1px solid var(--line);
-}
-.article-head-grid{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:0 20px;
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 300px;
-  gap:34px;
-}
-.cat-row{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:16px;
-}
-.cat{
-  display:inline-flex;
-  align-items:center;
-  background:var(--red);
-  color:#fff;
-  padding:5px 8px;
-  font-size:12px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-}
-.label{
-  display:inline-flex;
-  align-items:center;
-  border:1px solid var(--line);
-  background:var(--paper);
-  padding:4px 8px;
-  font-size:12px;
-  color:#4a4a4a;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-}
-.article-title{
-  font-family:"Libre Baskerville",Georgia,serif;
-  font-size:clamp(2.25rem,6vw,4.95rem);
-  line-height:1.02;
-  letter-spacing:-.052em;
-  color:var(--ink);
-  max-width:950px;
-}
-.article-title em{font-style:normal;color:var(--red)}
-.deck{
-  max-width:820px;
-  margin-top:20px;
-  font-family:"Libre Baskerville",Georgia,serif;
-  font-size:clamp(1.12rem,2.3vw,1.45rem);
-  line-height:1.52;
-  color:#363636;
-}
-.meta-row{
-  margin-top:22px;
-  padding-top:18px;
-  border-top:1px solid var(--line);
-  display:flex;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-  font-size:13px;
-  color:var(--muted);
-}
-.meta-row b{color:var(--ink)}
-.meta-dot{width:4px;height:4px;background:var(--red);border-radius:50%}
-.share-row{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin-top:14px;
-}
-.share{
-  width:34px;height:34px;
-  border:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;
-  background:#fff;
-}
-.share svg{width:15px;height:15px;stroke:#111;fill:none}
-
-.head-side{
-  border-left:4px solid var(--red);
-  background:var(--paper);
-  padding:18px 18px;
-  align-self:start;
-}
-.head-side .small-title{
-  font-size:12px;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  color:var(--red);
-  margin-bottom:10px;
-}
-.head-side p{
-  font-size:14px;
-  line-height:1.55;
-  color:#353535;
-}
-
-/* ===== ARTICLE LAYOUT ===== */
-.content-layout{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:34px 20px 0;
-  display:grid;
-  grid-template-columns:minmax(0,var(--article)) var(--side);
-  gap:48px;
-  align-items:start;
-}
-.article-main{
-  min-width:0;
-}
-.article-main p{
-  margin-bottom:1.32rem;
-  font-size:1.05rem;
-}
-.article-main .lead{
-  font-size:1.17rem;
-  line-height:1.75;
-}
-.dropcap::first-letter{
-  float:left;
-  font-family:"Libre Baskerville",Georgia,serif;
-  font-size:4.4rem;
-  line-height:.82;
-  padding:8px 9px 0 0;
-  color:var(--red);
-  font-weight:700;
-}
-.article-main h2{
-  font-family:"Libre Baskerville",Georgia,serif;
-  font-size:clamp(1.72rem,3vw,2.45rem);
-  line-height:1.15;
-  letter-spacing:-.035em;
-  margin:48px 0 18px;
-  padding-top:16px;
-  border-top:4px solid var(--ink);
-  color:var(--ink);
-}
-.article-main h3{
-  font-size:1.08rem;
-  line-height:1.2;
-  margin:0 0 10px;
-  font-weight:900;
-  color:var(--ink);
-}
-.article-main em{color:#3e3e3e}
-.article-main strong{font-weight:800;color:#111}
-.section-tag{
-  display:inline-block;
-  color:var(--red);
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:.13em;
-  font-weight:900;
-  margin-bottom:7px;
-}
-.pullquote{
-  margin:34px 0;
-  padding:22px 0 22px 22px;
-  border-left:5px solid var(--red);
-  font-family:"Libre Baskerville",Georgia,serif;
-  font-size:clamp(1.35rem,3vw,2.05rem);
-  line-height:1.36;
-  letter-spacing:-.03em;
-  color:var(--ink);
-  background:linear-gradient(to right,var(--paper),transparent);
-}
-
-/* ===== SIDEBAR ===== */
-.sidebar{
-  position:sticky;
-  top:18px;
-  align-self:start;
-}
-.side-card{
-  border:1px solid var(--line);
-  background:#fff;
-  margin-bottom:18px;
-}
-.side-card-title{
-  background:var(--black);
-  color:#fff;
-  padding:10px 13px;
-  font-size:12px;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-}
-.side-card-body{
-  padding:15px 15px;
-}
-.key-list{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  list-style:none;
-}
-.key-list li{
-  display:flex;
-  gap:10px;
-  font-size:14px;
-  line-height:1.45;
-}
-.key-list li::before{
-  content:"";
-  width:7px;height:7px;
-  background:var(--red);
-  margin-top:7px;
-  flex:none;
-}
-.cta-card{
-  border:2px solid var(--red);
-  background:var(--soft-red);
-}
-.cta-card .side-card-title{background:var(--red)}
-.cta-card p{
-  font-size:14px;
-  line-height:1.5;
-  margin-bottom:13px;
-}
-.side-note{
-  font-size:12px;
-  line-height:1.55;
-  color:var(--muted);
-  margin-top:10px;
-}
-.side-mini-link{
-  display:block;
-  border-top:1px solid var(--line);
-  padding:11px 0 0;
-  margin-top:10px;
-  font-size:13px;
-  color:var(--red);
-  font-weight:800;
-  text-decoration:none;
-}
-
-/* ===== BUTTONS ===== */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  background:var(--red);
-  color:#fff;
-  border:2px solid var(--red);
-  text-decoration:none;
-  font-size:13px;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.05em;
-  padding:13px 16px;
-  transition:.18s ease;
-}
-.btn svg{width:16px;height:16px;stroke:currentColor;fill:none}
-.btn:hover{background:#fff;color:var(--red)}
-.btn.black{background:var(--black);border-color:var(--black);color:#fff}
-.btn.black:hover{background:#fff;color:var(--black)}
-.btn.light{background:#fff;color:var(--red)}
-.btn.light:hover{background:var(--red);color:#fff}
-.btn.wa{background:#fff;color:#0f7b3d;border-color:#0f7b3d}
-.btn.wa:hover{background:#0f7b3d;color:#fff}
-.full{width:100%}
-
-/* ===== EDITORIAL MODULES ===== */
-.news-strip{
-  margin:30px 0;
-  border-top:3px solid var(--ink);
-  border-bottom:1px solid var(--line);
-  padding:16px 0;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:0;
-}
-.strip-item{
-  padding:5px 16px;
-  border-right:1px solid var(--line);
-}
-.strip-item:first-child{padding-left:0}
-.strip-item:last-child{border-right:none;padding-right:0}
-.strip-num{
-  font-family:"Libre Baskerville",Georgia,serif;
-  font-size:2rem;
-  line-height:1;
-  font-weight:700;
-  letter-spacing:-.04em;
-  color:var(--red);
-  margin-bottom:6px;
-}
-.strip-label{
-  font-size:13px;
-  line-height:1.4;
-  font-weight:700;
-}
-.strip-source{
-  font-size:10px;
-  line-height:1.35;
-  text-transform:uppercase;
-  color:var(--muted);
-  letter-spacing:.08em;
-  margin-top:6px;
-}
-.explainer{
-  margin:30px 0;
-  border:1px solid var(--line);
-  background:var(--paper);
-}
-.explainer-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding:11px 14px;
-  border-bottom:1px solid var(--line);
-  background:#fff;
-}
-.explainer-type{
-  color:#fff;
-  background:var(--red);
-  padding:4px 7px;
-  font-size:11px;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-}
-.explainer-title{
-  font-size:12px;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  color:var(--ink);
-}
-.explainer-body{padding:18px 18px 4px}
-.explainer-body p{font-size:1rem}
-.analysis-box{
-  margin:30px 0;
-  background:#fff;
-  border-top:4px solid var(--red);
-  box-shadow:0 0 0 1px var(--line);
-  padding:22px 22px 8px;
-}
-.analysis-box .box-label{
-  display:inline-block;
-  font-size:11px;
-  letter-spacing:.12em;
-  font-weight:900;
-  text-transform:uppercase;
-  color:var(--red);
-  margin-bottom:10px;
-}
-
-/* ===== COMPARISON TABLE ===== */
-.compare-table{
-  margin:30px 0;
-  border:1px solid var(--line);
-}
-.compare-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  border-bottom:1px solid var(--line);
-}
-.compare-row:last-child{border-bottom:none}
-.compare-cell{
-  padding:18px 18px;
-  background:#fff;
-}
-.compare-cell:first-child{border-right:1px solid var(--line)}
-.compare-cell.weak{background:#fbfbfb}
-.compare-cell.strong{background:#111;color:#fff}
-.compare-cell .tag{
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  font-weight:900;
-  color:var(--muted);
-  margin-bottom:7px;
-}
-.compare-cell.strong .tag{color:#ffb7bd}
-.compare-cell b{
-  display:block;
-  font-size:1.05rem;
-  line-height:1.35;
-  margin-bottom:8px;
-}
-.compare-cell.strong b{color:#fff}
-.compare-cell p{
-  font-size:.96rem;
-  line-height:1.5;
-  margin:0;
-}
-.compare-cell.strong p{color:#e6e6e6}
-
-/* ===== FOUNDER STORY ===== */
-.founder-panel{
-  margin:44px 0;
-  background:var(--black);
-  color:#fff;
-  border-top:5px solid var(--red);
-}
-.founder-inner{
-  padding:28px 26px 12px;
-}
-.founder-badge{
-  display:inline-flex;
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  font-weight:900;
-  color:#fff;
-  background:var(--red);
-  padding:5px 8px;
-  margin-bottom:14px;
-}
-.founder-panel h2{
-  border-top:none;
-  padding-top:0;
-  color:#fff;
-  margin-top:0;
-}
-.founder-panel p{color:#eeeeee}
-.founder-panel .quote{
-  font-family:"Libre Baskerville",Georgia,serif;
-  font-size:1.4rem;
-  line-height:1.4;
-  letter-spacing:-.03em;
-  border-left:4px solid var(--red);
-  padding-left:18px;
-  margin:24px 0;
-  color:#fff;
-}
-
-/* ===== METHOD CARDS ===== */
-.method-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-  margin:24px 0 8px;
-}
-.method-card{
-  border:1px solid var(--line);
-  background:#fff;
-  padding:18px;
-}
-.method-num{
-  color:var(--red);
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  margin-bottom:8px;
-}
-.method-card p{
-  font-size:.96rem;
-  margin:0;
-  line-height:1.5;
-}
-
-/* ===== PROCESS ===== */
-.process{
-  margin:30px 0;
-  border-left:4px solid var(--red);
-  padding-left:18px;
-}
-.process-step{
-  padding:0 0 18px;
-  border-bottom:1px solid var(--line);
-  margin-bottom:18px;
-}
-.process-step:last-child{border-bottom:none;margin-bottom:0}
-.process-step .num{
-  color:var(--red);
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  margin-bottom:6px;
-}
-.process-step h3{margin-bottom:5px}
-.process-step p{
-  font-size:.98rem;
-  margin:0;
-}
-
-/* ===== WHO ===== */
-.who-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin:24px 0 8px;
-}
-.who-card{
-  border:1px solid var(--line);
-  padding:18px;
-  background:#fff;
-}
-.who-card.no{background:#f8f8f8}
-.who-card h3{
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  color:var(--red);
-  margin-bottom:13px;
-}
-.who-card.no h3{color:#555}
-.who-card ul{
-  list-style:none;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-.who-card li{
-  font-size:.95rem;
-  line-height:1.45;
-  display:flex;
-  gap:9px;
-}
-.who-card li::before{
-  content:"";
-  width:7px;height:7px;
-  background:var(--red);
-  margin-top:8px;
-  flex:none;
-}
-.who-card.no li::before{background:#777}
-
-/* ===== CTA BLOCKS ===== */
-.editorial-cta{
-  margin:36px 0;
-  border:1px solid var(--line);
-  background:var(--paper);
-  display:grid;
-  grid-template-columns:minmax(0,1fr) auto;
-  gap:18px;
-  align-items:center;
-  padding:20px 20px;
-}
-.editorial-cta .small{
-  font-size:11px;
-  color:var(--red);
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  margin-bottom:5px;
-}
-.editorial-cta .title{
-  font-family:"Libre Baskerville",Georgia,serif;
-  font-size:1.3rem;
-  line-height:1.35;
-  letter-spacing:-.03em;
-  color:var(--ink);
-}
-.final-cta{
-  margin-top:42px;
-  background:var(--black);
-  color:#fff;
-  padding:30px 24px;
-  border-top:5px solid var(--red);
-  text-align:center;
-}
-.final-cta h2{
-  border-top:none;
-  padding-top:0;
-  color:#fff;
-  margin:0 0 12px;
-}
-.final-cta p{
-  color:#e8e8e8;
-  max-width:590px;
-  margin:0 auto 20px;
-}
-.final-btns{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-/* ===== FOOTER ===== */
-.site-footer{
-  margin-top:50px;
-  background:#0e0e0e;
-  color:#d5d5d5;
-  padding:38px 0 74px;
-}
-.footer-title{
-  font-family:"Libre Baskerville",Georgia,serif;
-  font-size:1.55rem;
-  font-weight:700;
-  letter-spacing:-.03em;
-  margin-bottom:10px;
-}
-.footer-title span{color:#ff2940}
-.legal{
-  font-size:12px;
-  line-height:1.75;
-  color:#bfbfbf;
-  max-width:980px;
-}
-.footer-links{
-  margin-top:18px;
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
-}
-.footer-links a{
-  color:#fff;
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  text-decoration:none;
-}
-.footer-links a:hover{text-decoration:underline}
-
-/* ===== MOBILE CTA ===== */
-.mobile-cta{
-  display:none;
-  position:fixed;
-  left:0;right:0;bottom:0;
-  z-index:100;
-  background:rgba(10,10,10,.96);
-  backdrop-filter:blur(8px);
-  padding:10px 12px;
-  gap:10px;
-  border-top:1px solid #333;
-}
-.mobile-cta .btn{flex:1;font-size:12px;padding:12px 10px}
-.mobile-cta .btn.wa-icon{flex:0 0 52px;padding:12px 0}
-
-/* ===== JS ANIMATION ===== */
-.reveal{opacity:0;transform:translateY(12px);transition:.55s ease}
-.reveal.in{opacity:1;transform:none}
-
-@media(max-width:980px){
-  .article-head-grid,
-  .content-layout{
-    grid-template-columns:1fr;
-    gap:22px;
+  :root{
+    --bg:#ffffff;
+    --paper-2:#F5F3EF;
+    --ink:#17171A;
+    --text:#26241F;
+    --muted:#6C6962;
+    --red:#B4232A;
+    --red-dark:#8E1A20;
+    --red-tint:#FBF1F1;
+    --line:#E3E0DA;
+    --line-strong:#17171A;
+    --green:#2E7D46;
   }
-  .head-side{display:none}
-  .sidebar{
-    position:static;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:16px;
-  }
-  .side-card{margin-bottom:0}
-}
-@media(max-width:760px){
-  body{font-size:16px}
-  .top-strip .container{justify-content:center}
-  .top-right{display:none}
-  .masthead-main{
-    align-items:flex-start;
-    flex-direction:column;
-    padding:18px 0 14px;
-  }
-  .mast-date{text-align:left;min-width:0}
-  .navbar .container{padding:0}
-  .nav-links a{padding:11px 13px;font-size:12px}
-  .article-head{padding:24px 0 15px}
-  .article-head-grid{padding:0 18px}
-  .content-layout{padding:24px 18px 0}
-  .article-title{letter-spacing:-.045em}
-  .news-strip{grid-template-columns:1fr}
-  .strip-item{
-    border-right:none;
-    border-bottom:1px solid var(--line);
-    padding:14px 0;
-  }
-  .strip-item:last-child{border-bottom:none}
-  .compare-row,
-  .method-grid,
-  .who-grid,
-  .editorial-cta{
-    grid-template-columns:1fr;
-  }
-  .compare-cell:first-child{border-right:none;border-bottom:1px solid var(--line)}
-  .sidebar{display:block}
-  .side-card{margin-bottom:16px}
-  .mobile-cta{display:flex}
-  body{padding-bottom:72px}
-  .site-footer{padding-bottom:100px}
-}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .reveal{opacity:1;transform:none;transition:none}
-}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:16px}
+  body{background:var(--bg);color:var(--text);font-family:"Source Serif 4",Georgia,serif;font-size:1.16rem;line-height:1.72;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:var(--red);color:#fff}
+  a{color:inherit}
+  .sans{font-family:"Archivo",system-ui,sans-serif}
+
+  .progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--red);z-index:90;transition:width .08s linear}
+
+  /* ===== TOP BAR ===== */
+  .topbar{background:var(--ink);color:#C9C4B9}
+  .topbar-in{max-width:1180px;margin:0 auto;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;font-family:"Archivo",sans-serif;font-size:.66rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+  .topbar .pc{display:flex;align-items:center;gap:8px;color:#fff}
+  .topbar .pc .dot{width:6px;height:6px;background:var(--red);border-radius:50%;flex:none}
+  .topbar .meta{color:#9A958B;display:flex;gap:14px;flex-wrap:wrap}
+  .topbar .meta .sx{color:#C9C4B9}
+
+  /* ===== MASTHEAD ===== */
+  .masthead{background:var(--bg);border-bottom:3px solid var(--line-strong)}
+  .masthead-in{max-width:1180px;margin:0 auto;padding:24px 24px 16px;text-align:center;position:relative}
+  .nameplate{font-family:"Playfair Display",serif;font-weight:800;font-size:clamp(2rem,6.5vw,3.3rem);letter-spacing:.01em;color:var(--ink);line-height:1}
+  .nameplate .pt{color:var(--red)}
+  .name-sub{font-family:"Archivo",sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+  .mh-icon{position:absolute;right:24px;top:50%;transform:translateY(-50%);width:22px;height:22px;stroke:var(--ink);fill:none;opacity:.7}
+  @media(max-width:680px){.mh-icon{display:none}}
+
+  /* ===== NAV ===== */
+  .nav{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+  .nav-in{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none}
+  .nav-in::-webkit-scrollbar{display:none}
+  .nav a{font-family:"Archivo",sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:13px 16px;white-space:nowrap;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+  .nav a:first-child{padding-left:0}
+  .nav a:hover{color:var(--red)}
+  .nav a.cur{color:var(--red);border-bottom-color:var(--red)}
+  .nav .nav-search{margin-left:auto;padding:13px 0 13px 16px}
+  .nav .nav-search svg{width:18px;height:18px;stroke:var(--muted);fill:none}
+
+  /* ===== LAYOUT ===== */
+  .layout{max-width:1120px;margin:0 auto;padding:40px 24px 10px;display:grid;grid-template-columns:minmax(0,1fr) 322px;gap:52px;align-items:start}
+  .aside{position:sticky;top:64px}
+  @media(max-width:900px){.layout{grid-template-columns:1fr;gap:34px;padding-top:30px}.aside{position:static}}
+
+  /* ===== ARTICLE HEADER ===== */
+  .cat-tag{font-family:"Archivo",sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:8px;margin-bottom:12px}
+  .cat-tag::before{content:"";width:9px;height:9px;background:var(--red);flex:none}
+  .pub-label{font-family:"Archivo",sans-serif;font-size:.64rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:4px 9px;display:inline-block;margin-bottom:20px}
+  h1{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(2.05rem,5.2vw,3.35rem);line-height:1.08;letter-spacing:-.005em;color:var(--ink);margin-bottom:20px}
+  .deck{font-size:clamp(1.16rem,2.5vw,1.42rem);line-height:1.5;color:#46433c;margin-bottom:26px;font-weight:400}
+  .byline{display:flex;align-items:center;gap:13px;flex-wrap:wrap;font-family:"Archivo",sans-serif;font-size:.76rem;letter-spacing:.03em;color:var(--muted);padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:14px}
+  .byline .pub{display:flex;align-items:center;gap:9px;color:var(--ink);font-weight:600}
+  .byline .mono-r{width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-weight:700;font-size:.85rem;flex:none}
+  .byline .sep{width:3px;height:3px;border-radius:50%;background:var(--muted);flex:none}
+  .share{display:flex;align-items:center;gap:8px;margin-left:auto}
+  .share span{width:30px;height:30px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s}
+  .share span:hover{border-color:var(--red)}
+  .share svg{width:14px;height:14px;fill:var(--muted)}
+
+  /* ===== FIGURE ===== */
+  figure.lead-fig{margin:26px 0 30px}
+  .figbox{background:var(--paper-2);border:1px solid var(--line);padding:30px 24px;display:flex;justify-content:center}
+  .figbox svg{width:100%;max-width:440px;height:auto}
+  figcaption{font-style:italic;font-size:.92rem;color:var(--muted);margin-top:10px;line-height:1.45;border-left:2px solid var(--red);padding-left:12px}
+
+  /* ===== BODY ===== */
+  .article p{margin-bottom:1.45rem}
+  .article em{color:#46433c}
+  strong{font-weight:600;color:var(--ink)}
+  .article .first{font-size:1.2rem}
+  .dropcap::first-letter{font-family:"Playfair Display",serif;font-weight:700;color:var(--red);float:left;font-size:4em;line-height:.8;padding:.05em .12em 0 0}
+
+  h2{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.15rem);line-height:1.18;color:var(--ink);margin:44px 0 16px;padding-top:22px;border-top:1px solid var(--line)}
+  h2.no-rule{border-top:none;padding-top:0}
+
+  .pull{margin:34px 0;padding:4px 0 4px 24px;border-left:3px solid var(--red);font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:clamp(1.4rem,3.4vw,1.85rem);line-height:1.34;color:var(--ink)}
+
+  /* ===== DATA STRIP ===== */
+  .data{border:1px solid var(--line-strong);margin:30px 0}
+  .data-head{background:var(--ink);color:#fff;font-family:"Archivo",sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:11px 18px;display:flex;align-items:center;gap:10px}
+  .data-head .b{width:9px;height:9px;background:var(--red)}
+  .data-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+  .data-cell{padding:22px 18px;border-right:1px solid var(--line)}
+  .data-cell:last-child{border-right:none}
+  .data-cell .n{font-family:"Archivo",sans-serif;font-weight:700;font-size:clamp(1.9rem,4.5vw,2.5rem);line-height:1;color:var(--ink);margin-bottom:4px}
+  .data-cell .n b{color:var(--red);font-weight:700}
+  .data-cell .l{font-size:.96rem;line-height:1.45;color:var(--text);margin:10px 0}
+  .data-cell .s{font-family:"Archivo",sans-serif;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .data-foot{border-top:1px solid var(--line);padding:13px 18px;font-size:.92rem;font-style:italic;color:var(--muted);background:var(--paper-2)}
+  @media(max-width:560px){.data-grid{grid-template-columns:1fr}.data-cell{border-right:none;border-bottom:1px solid var(--line)}}
+
+  /* ===== CALLOUTS ===== */
+  .callout{margin:30px 0;padding:24px 26px}
+  .callout .clab{font-family:"Archivo",sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:9px}
+  .callout p{font-size:1.04rem;line-height:1.6;margin-bottom:.9rem}
+  .callout p:last-child{margin-bottom:0}
+  .c-analyse{border-left:3px solid var(--red);background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+  .c-analyse .clab{color:var(--red)}
+  .c-decryptage{background:var(--paper-2);border:1px solid var(--line)}
+  .c-decryptage .clab{color:var(--ink)}
+  .c-insight{background:#fff;border:1px solid var(--line-strong)}
+  .c-insight .clab{color:var(--ink)}
+  .c-insight .clab svg{width:16px;height:16px;stroke:var(--red);fill:none}
+
+  /* ===== COMPARISON TABLE ===== */
+  .cmp-wrap{margin:30px 0;overflow-x:auto}
+  table.cmp{width:100%;border-collapse:collapse;font-size:1rem;min-width:520px}
+  table.cmp th,table.cmp td{text-align:left;padding:14px 16px;border:1px solid var(--line);vertical-align:top;line-height:1.45}
+  table.cmp thead th{font-family:"Archivo",sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--paper-2)}
+  table.cmp thead th.c-solid{color:#fff;background:var(--ink)}
+  table.cmp thead th.c-comp{color:var(--muted)}
+  table.cmp td.dim{font-family:"Archivo",sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:#fff;width:130px}
+  table.cmp td.solid{background:#FCFBF9}
+  table.cmp tr td.solid{border-left:2px solid var(--red)}
+
+  /* ===== HIGHLIGHT EXPLAINER (Drapeau rouge) ===== */
+  .explainer{margin:34px 0;background:var(--red-tint);border-top:3px solid var(--red);padding:30px 28px 14px}
+  .explainer .elab{font-family:"Archivo",sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:9px;margin-bottom:14px}
+  .explainer .elab svg{width:18px;height:18px;stroke:var(--red);fill:none}
+  .explainer h2{border-top:none;padding-top:0;margin:0 0 14px;color:var(--ink)}
+  .explainer p{font-size:1.05rem;line-height:1.62;margin-bottom:1rem}
+
+  /* ===== SPECIAL INSERT (Paradoxe) ===== */
+  .insert{margin:36px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:24px 0}
+  .insert .ilab{font-family:"Archivo",sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+  .insert h2{border-top:none;padding-top:0;margin:0 0 14px}
+  .insert p{margin-bottom:1rem}
+
+  /* ===== FOUNDER ASIDE ===== */
+  .founder{margin:38px 0;background:var(--ink);color:#E9E4DA;padding:34px 30px}
+  .founder .flab{font-family:"Archivo",sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#D98A8E;display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .founder .mono-r{width:34px;height:34px;border-radius:50%;border:1px solid #D98A8E;color:#D98A8E;display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-weight:700;font-size:1.05rem;flex:none}
+  .founder p{color:#E9E4DA;margin-bottom:1.1rem;font-size:1.06rem;line-height:1.65}
+  .founder .fpull{font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(1.35rem,3.2vw,1.7rem);line-height:1.38;color:#fff;border-left:3px solid var(--red);padding-left:22px;margin:22px 0}
+  .founder .fsign{font-family:"Archivo",sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#9A958B;margin-top:18px}
+
+  /* ===== METHOD LIST ===== */
+  .axes{margin:24px 0;border-top:1px solid var(--line)}
+  .axis{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .axis .ax-n{flex:none;font-family:"Playfair Display",serif;font-weight:700;font-size:1.3rem;color:var(--red);width:30px;line-height:1.3}
+  .axis .ax-b b{font-family:"Archivo",sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:5px}
+  .axis .ax-b p{font-size:1rem;line-height:1.55;margin:0;color:var(--text)}
+
+  /* ===== PROCESS ===== */
+  .proc{margin:26px 0}
+  .proc-step{display:flex;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line)}
+  .proc-step:last-child{border-bottom:none}
+  .proc-step .pn{flex:none;width:34px;height:34px;border:1px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:"Archivo",sans-serif;font-weight:700;font-size:.82rem;color:var(--ink)}
+  .proc-step:last-child .pn{background:var(--red);border-color:var(--red);color:#fff}
+  .proc-step .pb b{font-family:"Archivo",sans-serif;font-size:.95rem;color:var(--ink);display:block;margin-bottom:3px}
+  .proc-step .pb span{font-size:.98rem;color:var(--text)}
+
+  /* ===== INLINE CTA ===== */
+  .cta-inline{margin:32px 0;border:1px solid var(--line-strong);padding:24px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .cta-inline .ct{font-family:"Playfair Display",serif;font-size:1.22rem;line-height:1.35;color:var(--ink);max-width:380px}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:"Archivo",sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:14px 22px;border:1px solid transparent;cursor:pointer;transition:all .2s ease;white-space:nowrap}
+  .btn svg{width:15px;height:15px;stroke:currentColor;fill:none;transition:transform .2s}
+  .btn:hover svg.arr{transform:translateX(4px)}
+  .btn--red{background:var(--red);border-color:var(--red);color:#fff}
+  .btn--red:hover{background:var(--red-dark);border-color:var(--red-dark)}
+  .btn--outline{background:#fff;border-color:var(--line-strong);color:var(--ink)}
+  .btn--outline:hover{border-color:var(--red);color:var(--red)}
+  .btn--wa svg{stroke:var(--green)}
+  .btn:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+  /* ===== ENGAGEMENT ===== */
+  .engage{margin:34px 0;border:1px solid var(--line-strong);padding:0}
+  .engage-h{background:var(--paper-2);border-bottom:1px solid var(--line-strong);padding:12px 22px;font-family:"Archivo",sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:10px}
+  .engage-h svg{width:16px;height:16px;stroke:var(--red);fill:none}
+  .engage-b{padding:22px}
+  .engage-b p{font-size:1.04rem;line-height:1.62;margin-bottom:1rem}
+  .engage-b p:last-child{margin-bottom:0}
+
+  /* ===== WHO FOR ===== */
+  .who{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin:24px 0}
+  .who-col{padding:24px 22px}
+  .who-col.yes{border-right:1px solid var(--line)}
+  .who-col .wh{font-family:"Archivo",sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:9px}
+  .who-col.yes .wh{color:var(--green)}
+  .who-col.no .wh{color:var(--muted)}
+  .who-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .who-col li{display:flex;gap:10px;font-size:1rem;line-height:1.5}
+  .who-col li svg{width:17px;height:17px;flex:none;margin-top:4px;fill:none;stroke-width:2}
+  .who-col.yes li svg{stroke:var(--green)}
+  .who-col.no li svg{stroke:var(--muted)}
+  @media(max-width:560px){.who{grid-template-columns:1fr}.who-col.yes{border-right:none;border-bottom:1px solid var(--line)}}
+
+  .closing-q{font-family:"Playfair Display",serif;font-style:italic;font-size:1.28rem;line-height:1.5;color:var(--ink);margin:24px 0}
+
+  /* ===== FINAL CTA ===== */
+  .final{margin:30px 0 8px;border:2px solid var(--ink);padding:34px 30px;text-align:center;background:#fff}
+  .final .fk{font-family:"Archivo",sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+  .final h2{border-top:none;padding-top:0;margin:0 0 12px}
+  .final p{color:var(--muted);font-size:1.04rem;margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto}
+  .final-cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+
+  /* ===== SIDEBAR ===== */
+  .side-box{border:1px solid var(--line);margin-bottom:24px}
+  .side-box .sh{background:var(--ink);color:#fff;font-family:"Archivo",sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:11px 16px;display:flex;align-items:center;gap:9px}
+  .side-box .sh .b{width:8px;height:8px;background:var(--red)}
+  .side-box .sb{padding:16px}
+  .retenir{list-style:none;display:flex;flex-direction:column;gap:13px}
+  .retenir li{display:flex;gap:11px;font-size:.96rem;line-height:1.45}
+  .retenir li .rn{flex:none;font-family:"Archivo",sans-serif;font-weight:700;font-size:.8rem;color:var(--red)}
+  .side-cta{border:2px solid var(--ink);padding:20px 18px;background:var(--paper-2)}
+  .side-cta .sct{font-family:"Playfair Display",serif;font-weight:600;font-size:1.18rem;line-height:1.25;color:var(--ink);margin-bottom:8px}
+  .side-cta .scp{font-size:.92rem;color:var(--muted);margin-bottom:16px;line-height:1.45}
+  .side-cta .btn{width:100%;justify-content:center;margin-bottom:9px}
+  .side-cta .btn:last-child{margin-bottom:0}
+  .side-note{font-family:"Archivo",sans-serif;font-size:.68rem;line-height:1.55;letter-spacing:.02em;color:var(--muted);margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--ink);color:#9A958B;padding:46px 0 56px;margin-top:48px}
+  .foot-in{max-width:1120px;margin:0 auto;padding:0 24px}
+  .foot-name{font-family:"Playfair Display",serif;font-weight:700;font-size:1.5rem;color:#fff}
+  .foot-name .pt{color:var(--red)}
+  .foot-sub{font-family:"Archivo",sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#9A958B;margin:8px 0 22px}
+  .foot-legal{font-family:"Archivo",sans-serif;font-size:.7rem;line-height:1.8;letter-spacing:.01em;color:#8A857B;max-width:820px}
+  .foot-links{margin-top:22px;display:flex;gap:20px;flex-wrap:wrap;font-family:"Archivo",sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+  .foot-links a{color:#C9C4B9;text-decoration:none}
+  .foot-links a:hover{color:var(--red)}
+
+  /* ===== STICKY MOBILE CTA ===== */
+  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;gap:9px;padding:10px 14px;background:#fff;border-top:1px solid var(--line-strong)}
+  .mbar .btn{flex:1;justify-content:center;padding:14px 10px;font-size:.72rem}
+  .mbar .btn.wa{flex:none;width:52px;padding:14px 0}
+  @media(max-width:900px){.mbar{display:flex}body{padding-bottom:74px}}
+  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}.progress{transition:none}}
 </style>
 </head>
 <body>
 <div class="progress" id="progress"></div>
 
-<div class="site-shell">
-
-  <div class="top-strip">
-    <div class="container">
-      <div class="top-left">
-        <span class="pill-partner">Contenu partenaire</span>
-        <span>Afrique · Éducation · Mobilité · Canada</span>
-      </div>
-      <div class="top-right">
-        <span>Samedi 13 juin 2026</span>
-        <a class="top-link" href="#start-assessment">Pré-diagnostic</a>
-      </div>
-    </div>
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="pc"><span class="dot"></span>Contenu partenaire · Publireportage</div>
+    <div class="meta"><span class="sx">Afrique · Éducation · Mobilité · Canada</span><span>13 juin 2026</span></div>
   </div>
+</div>
 
-  <header class="masthead">
-    <div class="container masthead-main">
-      <div class="brand-block">
-        <div class="brand-name">Le Dossier <span>Canada</span></div>
-        <div class="brand-sub">Une publication éditoriale de Revive Agency</div>
+<!-- ===== MASTHEAD ===== -->
+<div class="masthead">
+  <div class="masthead-in">
+    <div class="nameplate">Le Dossier<span class="pt"> </span>Canada</div>
+    <div class="name-sub">Une publication éditoriale de Revive Agency</div>
+    <svg class="mh-icon" viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+  </div>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="nav-in">
+    <a href="#">Afrique</a>
+    <a href="#" class="cur">Éducation</a>
+    <a href="#">Immigration</a>
+    <a href="#">Canada</a>
+    <a href="#">Business</a>
+    <a href="#">Opinion</a>
+    <span class="nav-search"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+  </div>
+</nav>
+
+<!-- ===== LAYOUT ===== -->
+<div class="layout">
+
+  <!-- MAIN -->
+  <main class="article">
+    <div class="cat-tag">Éducation internationale</div>
+    <div class="pub-label">Contenu partenaire · Publireportage</div>
+
+    <h1>Permis d'études Canada : pourquoi un dossier complet n'est pas forcément un dossier solide</h1>
+
+    <p class="deck">Des milliers de familles d'Afrique francophone réunissent l'admission, l'argent et les documents — et reçoivent quand même un refus. Décryptage d'un malentendu coûteux, et de ce qui distingue vraiment un dossier qui convainc.</p>
+
+    <div class="byline">
+      <span class="pub"><span class="mono-r">R</span>Publié par Revive Agency</span>
+      <span class="sep"></span><span>13 juin 2026</span>
+      <span class="sep"></span><span>Lecture 8 min</span>
+      <span class="share">
+        <span aria-label="Partager sur Facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v6h3v-6h3l1-3h-4V9z"/></svg></span>
+        <span aria-label="Partager sur X"><svg viewBox="0 0 24 24"><path d="M17 3h3l-7 8 8 10h-6l-4-5-5 5H3l7-9L3 3h6l4 5 4-5z"/></svg></span>
+        <span aria-label="Partager sur WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.6-5.9c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.6.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.7s1.8 2.9 4.5 3.9c1.7.6 2.3.7 3 .6a2.6 2.6 0 0 0 1.7-1.2c.2-.5.2-1 .1-1.1z"/></svg></span>
+        <span aria-label="Copier le lien"><svg viewBox="0 0 24 24"><path d="M9 13a3 3 0 0 0 4.2 0l3-3a3 3 0 1 0-4.2-4.2l-1 1M15 11a3 3 0 0 0-4.2 0l-3 3a3 3 0 1 0 4.2 4.2l1-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      </span>
+    </div>
+
+    <figure class="lead-fig">
+      <div class="figbox">
+        <svg viewBox="0 0 440 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration éditoriale : un dossier complet contenant une incohérence signalée en rouge">
+          <rect x="30" y="22" width="230" height="176" fill="#fff" stroke="#17171A" stroke-width="2"/>
+          <rect x="30" y="22" width="230" height="30" fill="#17171A"/>
+          <circle cx="48" cy="37" r="5" fill="#B4232A"/>
+          <text x="64" y="42" font-family="Archivo,sans-serif" font-size="13" font-weight="700" fill="#fff" letter-spacing="1">DOSSIER</text>
+          <line x1="52" y1="78" x2="238" y2="78" stroke="#E3E0DA" stroke-width="6"/>
+          <line x1="52" y1="98" x2="238" y2="98" stroke="#E3E0DA" stroke-width="6"/>
+          <line x1="52" y1="118" x2="200" y2="118" stroke="#E3E0DA" stroke-width="6"/>
+          <line x1="52" y1="150" x2="238" y2="150" stroke="#E3E0DA" stroke-width="6"/>
+          <line x1="52" y1="170" x2="180" y2="170" stroke="#E3E0DA" stroke-width="6"/>
+          <path d="M205 112l5 5 9-10" fill="none" stroke="#2E7D46" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="300" cy="118" r="26" fill="#FBF1F1" stroke="#B4232A" stroke-width="2"/>
+          <path d="M300 106v14M300 128v.5" stroke="#B4232A" stroke-width="3" stroke-linecap="round"/>
+          <path d="M352 70l0 96M352 70l46 14-46 16" fill="none" stroke="#17171A" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M352 84l46 14-46 16z" fill="#B4232A"/>
+        </svg>
       </div>
-      <div class="mast-date">
-        <b>Édition spéciale</b>
-        Études internationales · Afrique francophone
+      <figcaption>Un dossier peut être complet — toutes les pièces présentes — et contenir pourtant une seule incohérence qui suffit à installer le doute. Illustration : Le Dossier Canada.</figcaption>
+    </figure>
+
+    <p class="first dropcap">Dans beaucoup de familles d'Afrique francophone, le projet Canada ne commence pas par un formulaire. Il commence par un sacrifice. On rassemble l'argent, parfois sur plusieurs années. On paie un acompte de scolarité. On réunit les relevés bancaires, les diplômes, les actes de naissance. Puis on attend.</p>
+
+    <p>Et trop souvent, la réponse tombe, brève et froide : <em>« Je ne suis pas convaincu que vous quitterez le Canada à la fin de votre séjour. »</em> Si cette phrase vous est familière, vous savez ce qu'elle provoque : l'argent qui semble gaspillé, l'enfant qui rate une rentrée, le regard de la famille élargie.</p>
+
+    <p>Cet article — publié par <strong>Revive Agency</strong>, une structure d'accompagnement administratif spécialisée dans les dossiers d'études vers le Canada — n'a pas pour but de vendre un rêve. Il cherche à expliquer un malentendu rarement énoncé clairement, et qui coûte chaque année très cher à des familles sérieuses et solvables.</p>
+
+    <!-- DATA STRIP -->
+    <div class="data">
+      <div class="data-head"><span class="b"></span>Les chiffres clés</div>
+      <div class="data-grid">
+        <div class="data-cell">
+          <div class="n">~27<b>%</b></div>
+          <div class="l">Taux d'approbation moyen des permis d'études pour les étudiants africains (2018-2023), contre environ 74&#8201;% pour le reste du monde.</div>
+          <div class="s">Source : rapport MPOWER, données IRCC</div>
+        </div>
+        <div class="data-cell">
+          <div class="n">~22<b>%</b></div>
+          <div class="l">Les étudiants d'Afrique francophone figurent parmi les plus touchés, avec un taux d'approbation moyen encore plus bas.</div>
+          <div class="s">Source : rapport MPOWER, données IRCC</div>
+        </div>
+        <div class="data-cell">
+          <div class="n">22&#8201;895<b> $</b></div>
+          <div class="l">Fonds de subsistance à démontrer pour un candidat seul (hors Québec) depuis sept. 2025, hors scolarité — contre 10&#8201;000&#8201;$ il y a quelques années.</div>
+          <div class="s">Source : gouvernement du Canada, en CAD</div>
+        </div>
+      </div>
+      <div class="data-foot">À l'échelle mondiale, le taux de refus des nouvelles demandes de permis d'études a atteint environ 59&#8201;% sur les neuf premiers mois de 2025, contre 49&#8201;% un an plus tôt, selon les chiffres présentés au Parlement canadien. Les taux varient selon les profils et les périodes.</div>
+    </div>
+
+    <h2>Le malentendu : « complet » ne veut pas dire « solide »</h2>
+
+    <p>Beaucoup de familles pensent qu'un bon dossier est un dossier <strong>complet</strong>. On coche les cases, on ajoute des documents, on empile les relevés et les attestations, en se disant : <em>« plus j'en mets, plus c'est crédible. »</em></p>
+
+    <p>Mais un agent d'immigration ne compte pas les pages. Il lit une histoire. Son travail n'est pas seulement de vérifier que les documents existent — c'est de déterminer si l'ensemble est <strong>cohérent et crédible</strong>. Selon une analyse d'ApplyBoard portant sur les refus de 2024, le premier motif de rejet, cité dans plus de trois quarts des cas, n'était pas l'absence de documents, mais le doute de l'agent sur le fait que le candidat quitterait le Canada après ses études.</p>
+
+    <!-- COMPARISON TABLE -->
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead>
+          <tr><th></th><th class="c-comp">Dossier complet</th><th class="c-solid">Dossier solide</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="dim">Les documents</td><td>Toutes les pièces sont présentes et empilées.</td><td class="solid">Chaque pièce confirme et renforce les autres.</td></tr>
+          <tr><td class="dim">La logique</td><td>Rien ne garantit qu'elles racontent la même histoire.</td><td class="solid">Parcours, programme et projet pointent dans le même sens.</td></tr>
+          <tr><td class="dim">Le financement</td><td>Une somme est là, sans toujours d'explication claire.</td><td class="solid">Des fonds clairs, traçables, cohérents avec le garant.</td></tr>
+          <tr><td class="dim">Le regard de l'agent</td><td>Il voit une pile de pages.</td><td class="solid">Il lit une histoire qui tient debout.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="pull">Le problème n'est pas toujours ce qui manque. C'est souvent ce qui ne s'aligne pas.</p>
+
+    <!-- INLINE CTA after belief shift -->
+    <div class="cta-inline">
+      <div class="ct">Vous n'êtes pas certain que votre dossier raconte une histoire cohérente ?</div>
+      <a class="btn btn--red" href="#start-assessment">Vérifier la solidité de mon dossier
+        <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <!-- EXPLAINER : DRAPEAU ROUGE -->
+    <div class="explainer">
+      <div class="elab"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4l13 4-13 4"/></svg>Décryptage</div>
+      <h2 class="no-rule">Le Drapeau Rouge Invisible</h2>
+      <p>La plupart des familles cherchent ce qui <em>manque</em> à leur dossier. Mais souvent, ce qui le fragilise n'est pas une pièce absente — c'est une petite incohérence présente, invisible pour qui ne sait pas la repérer.</p>
+      <p>Une date qui ne concorde pas tout à fait d'un document à l'autre. Un programme en décalage avec le parcours. Un montant qui ne colle pas avec la situation déclarée du garant. Pris isolément, chaque détail paraît anodin. Mais pour un agent qui lit des centaines de dossiers, une seule contradiction peut suffire à installer le doute sur l'ensemble — même quand toutes les pièces sont authentiques.</p>
+      <p>Le travail sérieux consiste à trouver ce drapeau rouge <em>avant</em> la soumission, pas à le découvrir dans une lettre de refus.</p>
+    </div>
+
+    <!-- SPECIAL INSERT : PARADOXE -->
+    <div class="insert">
+      <div class="ilab">Analyse spéciale</div>
+      <h2 class="no-rule">Le Paradoxe de l'Épargne Administrative</h2>
+      <p>Beaucoup de familles pensent qu'un gros solde bancaire suffit à rassurer. Pourtant, une somme importante peut parfois <em>affaiblir</em> un dossier au lieu de le renforcer.</p>
+      <p>La raison est simple. Un agent ne se demande pas seulement <em>« y a-t-il assez d'argent ? »</em>, mais <em>« cet argent est-il réel, stable, traçable, et cohérent avec la réalité du garant ? »</em>. Un dépôt soudain et important, apparu peu avant la demande sans explication claire de son origine, soulève précisément la question inverse de celle qu'on voulait éviter.</p>
+      <p>La capacité financière figure parmi les tout premiers motifs de doute relevés dans les refus — non parce que les familles manquent de moyens, mais parce que la richesse, mal expliquée, devient suspecte. L'enjeu n'est pas d'avoir <em>plus</em>, mais d'avoir des fonds clairs, documentés et cohérents.</p>
+    </div>
+
+    <!-- DECRYPTAGE BOX -->
+    <div class="callout c-insight">
+      <div class="clab"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Ce que beaucoup de familles ne voient pas</div>
+      <p>Un dossier authentique peut tout de même créer le doute. Ce n'est pas une question d'honnêteté, mais de lecture : la famille connaît son histoire de l'intérieur et la trouve évidente&#8201;; l'agent, lui, ne dispose que des documents, et juge la cohérence de ce qu'il voit. Tout l'écart se joue là.</p>
+    </div>
+
+    <!-- FOUNDER -->
+    <div class="founder">
+      <div class="flab"><span class="mono-r">R</span>Le mot du fondateur de Revive Agency</div>
+      <p>J'ai créé Revive Agency après avoir vécu, personnellement, quatre refus de visa pour le Canada. Je ne vais pas raconter une légende héroïque : la vérité est plus simple, et plus humble.</p>
+      <p>Je croyais, comme beaucoup, qu'avoir l'admission, l'argent et les documents suffisait. À chaque refus, je recommençais en changeant des détails, sans comprendre ce qu'on me reprochait vraiment. Les lettres étaient courtes, presque interchangeables.</p>
+      <div class="fpull">On ne me refusait pas parce que je manquais d'argent. On me refusait parce que mon dossier ne racontait pas une histoire cohérente.</div>
+      <p>Ce n'est qu'en cherchant plus loin — en analysant des dizaines de dossiers et la logique réelle des agents — que je l'ai compris. Les pièces étaient là&#8201;; le fil qui devait les relier, lui, était absent. Quand j'ai reconstruit mon dossier autour de cette idée, la réponse a changé. Revive Agency est née de cette expérience.</p>
+      <div class="fsign">— Le fondateur de Revive Agency</div>
+    </div>
+
+    <!-- METHOD -->
+    <h2>C'est autour de cette logique que Revive Agency a développé son Audit de Cohérence du Dossier</h2>
+
+    <p>Plutôt que d'empiler des documents, la méthode consiste à vérifier si le dossier raconte une seule histoire crédible, sur cinq axes qui doivent se répondre — en regardant le dossier avec les yeux d'un agent, pour repérer les faiblesses avant la soumission.</p>
+
+    <div class="axes">
+      <div class="axis"><div class="ax-n">1</div><div class="ax-b"><b>Cohérence académique</b><p>Le choix de programme découle-t-il logiquement du parcours, et prépare-t-il une suite crédible ?</p></div></div>
+      <div class="axis"><div class="ax-n">2</div><div class="ax-b"><b>Cohérence financière</b><p>Les fonds sont-ils clairs, traçables et compatibles avec la réalité du garant, plutôt qu'apparus subitement ?</p></div></div>
+      <div class="axis"><div class="ax-n">3</div><div class="ax-b"><b>Cohérence du garant</b><p>Le lien et l'engagement du sponsor sont-ils documentés de façon compréhensible pour un agent qui ne vous connaît pas ?</p></div></div>
+      <div class="axis"><div class="ax-n">4</div><div class="ax-b"><b>Cohérence de la lettre d'explication</b><p>Dit-elle vraiment pourquoi vous, pourquoi ce programme, pourquoi maintenant, et pourquoi le retour a du sens ?</p></div></div>
+      <div class="axis"><div class="ax-n">5</div><div class="ax-b"><b>Cohérence globale</b><p>Chaque document confirme-t-il les autres, sans contradiction qui sème le doute ?</p></div></div>
+    </div>
+
+    <div class="callout c-decryptage">
+      <div class="clab">La méthode, étape par étape</div>
+      <div class="proc">
+        <div class="proc-step"><div class="pn">01</div><div class="pb"><b>Pré-évaluation</b><span>On évalue le profil et le projet, honnêtement.</span></div></div>
+        <div class="proc-step"><div class="pn">02</div><div class="pb"><b>Diagnostic de cohérence</b><span>On lit le dossier comme le ferait un agent, axe par axe.</span></div></div>
+        <div class="proc-step"><div class="pn">03</div><div class="pb"><b>Identification des faiblesses</b><span>On repère incohérences, zones floues et drapeaux rouges invisibles.</span></div></div>
+        <div class="proc-step"><div class="pn">04</div><div class="pb"><b>Structuration administrative</b><span>On organise et clarifie les pièces pour une seule histoire cohérente.</span></div></div>
+        <div class="proc-step"><div class="pn">05</div><div class="pb"><b>Suite du parcours</b><span>On vous oriente vers votre espace d'évaluation ou un échange WhatsApp.</span></div></div>
       </div>
     </div>
-    <nav class="navbar" aria-label="Navigation éditoriale">
-      <div class="container">
-        <div class="nav-links">
-          <a class="active" href="#">Analyse</a>
-          <a href="#">Afrique</a>
-          <a href="#">Éducation</a>
-          <a href="#">Immigration</a>
-          <a href="#">Canada</a>
-          <a href="#">Business</a>
-          <a href="#">Opinion</a>
-        </div>
-        <div class="search-mini" aria-label="Recherche">
-          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-        </div>
-      </div>
-    </nav>
-  </header>
 
-  <section class="article-head">
-    <div class="article-head-grid">
-      <div>
-        <div class="cat-row">
-          <span class="cat">Éducation internationale</span>
-          <span class="label">Publireportage</span>
-        </div>
-        <h1 class="article-title">Un dossier complet n’est pas toujours un dossier <em>solide</em></h1>
-        <p class="deck">Des milliers de familles réunissent l’admission, l’argent et les documents — et reçoivent quand même un refus. La vraie question n’est pas « avons-nous tout ? », mais « est-ce que tout raconte la même histoire ? »</p>
-        <div class="meta-row">
-          <span><b>Publié par Revive Agency</b></span>
-          <span class="meta-dot"></span>
-          <span>Analyse partenaire</span>
-          <span class="meta-dot"></span>
-          <span>Lecture 9 min</span>
-          <span class="meta-dot"></span>
-          <span>Mis à jour : Juin 2026</span>
-        </div>
-        <div class="share-row" aria-label="Partager">
-          <span class="share"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a3 3 0 1 0-2.7-4.3M6 15a3 3 0 1 0 2.7 4.3M8.7 15.7l6.6-3.4M15.3 11.7L8.7 8.3"/></svg></span>
-          <span class="share"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h5"/></svg></span>
-          <span class="share"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg></span>
-        </div>
-      </div>
-      <aside class="head-side">
-        <div class="small-title">Transparence</div>
-        <p>Ce contenu est publié par Revive Agency dans un format éditorial. Il ne s’agit pas d’un article de presse indépendant, ni d’une communication du gouvernement du Canada.</p>
-      </aside>
+    <!-- INLINE CTA after mechanism -->
+    <div class="cta-inline">
+      <div class="ct">Faites lire votre dossier avant qu'un agent ne le fasse.</div>
+      <a class="btn btn--red" href="#start-assessment">Commencer mon pré-diagnostic
+        <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
-  </section>
 
-  <main class="content-layout">
-    <article class="article-main">
-
-      <p class="lead dropcap">Je vais commencer par vous dire qui parle, parce que vous avez le droit de le savoir avant de me lire.</p>
-
-      <p>Ce texte n’est pas un article de presse indépendant. C’est une analyse éditoriale publiée par <strong>Revive Agency</strong>, une structure d’accompagnement administratif spécialisée dans les dossiers d’études vers le Canada pour les familles d’Afrique francophone. Nous ne cherchons pas à nous faire passer pour un journal, ni pour le gouvernement canadien. Le but est plus simple : expliquer franchement un problème que beaucoup de familles découvrent trop tard.</p>
-
-      <p>Dans beaucoup de familles africaines, le projet Canada ne commence pas par un formulaire. Il commence par un sacrifice. On rassemble l’argent, on paie parfois un acompte de scolarité, on réunit les relevés bancaires, les diplômes, les actes de naissance. Puis on attend.</p>
-
-      <p>Et trop souvent, la réponse tombe, brève et froide : <em>« Je ne suis pas convaincu que vous quitterez le Canada à la fin de votre séjour. »</em></p>
-
-      <p>Si vous avez déjà reçu cette phrase, vous savez ce qu’elle fait. Ce n’est pas seulement un refus administratif. C’est l’argent qui semble gaspillé. C’est l’enfant qui rate une rentrée. C’est le regard de la famille élargie, les questions, le sentiment d’avoir échoué alors qu’on avait pourtant <em>tout bien fait</em>.</p>
-
-      <div class="news-strip reveal" aria-label="Chiffres clés">
-        <div class="strip-item">
-          <div class="strip-num">~27%</div>
-          <div class="strip-label">Taux d’approbation moyen pour les étudiants africains sur 2018-2023, selon une analyse fondée sur des données IRCC.</div>
-          <div class="strip-source">MPOWER Financing / IRCC</div>
-        </div>
-        <div class="strip-item">
-          <div class="strip-num">~22%</div>
-          <div class="strip-label">Taux moyen cité pour les étudiants d’Afrique francophone sur la même période, avec variation selon les pays et profils.</div>
-          <div class="strip-source">MPOWER Financing / IRCC</div>
-        </div>
-        <div class="strip-item">
-          <div class="strip-num">22 895 $</div>
-          <div class="strip-label">Fonds de subsistance exigés pour un candidat seul hors Québec depuis sept. 2025, hors scolarité et transport.</div>
-          <div class="strip-source">IRCC · CAD</div>
-        </div>
+    <!-- ENGAGEMENT (no guarantee) -->
+    <div class="engage">
+      <div class="engage-h"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>L'engagement de Revive Agency</div>
+      <div class="engage-b">
+        <p><strong>Revive Agency ne garantit pas l'obtention d'un visa. Personne ne le peut légalement.</strong> La décision finale appartient exclusivement à IRCC. Toute structure qui promet un visa « garanti à 100&#8201;% » trompe ses clients, et ce mensonge peut coûter très cher — y compris une interdiction de territoire de plusieurs années en cas de fausse déclaration.</p>
+        <p>Ce qui est garanti, c'est le sérieux du travail : un dossier plus clair, plus cohérent, mieux structuré, et la vérité sur ses points faibles. Aucun document n'est fabriqué, aucune situation n'est maquillée. Et lorsqu'un profil n'est pas prêt, Revive le dit — même si cela signifie ne pas prendre l'argent du client ce jour-là.</p>
       </div>
+    </div>
 
-      <div class="analysis-box reveal">
-        <span class="box-label">Analyse</span>
-        <p><strong>Ces chiffres ne prédisent pas le résultat d’un dossier individuel.</strong> Ils montrent plutôt le contexte : la barre est élevée, les refus sont fréquents, et les familles d’Afrique francophone doivent présenter des dossiers plus clairs, plus cohérents et mieux expliqués.</p>
+    <!-- WHO FOR -->
+    <h2>À qui cela s'adresse — et à qui non</h2>
+    <div class="who">
+      <div class="who-col yes">
+        <div class="wh"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg>C'est pour vous si</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg>Vous voulez connaître la solidité réelle de votre dossier avant de l'envoyer.</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg>Vous préférez une vérité utile à une promesse flatteuse.</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg>Vous prenez le projet de votre enfant au sérieux.</li>
+        </ul>
       </div>
-
-      <h2>Le malentendu : croire que « complet » veut dire « solide »</h2>
-
-      <p>Beaucoup de familles pensent qu’un bon dossier est un dossier <strong>complet</strong>. On coche les cases. On ajoute des documents. On empile les relevés, les titres fonciers, les attestations. On se rassure en se disant : <em>« plus j’en mets, plus c’est crédible. »</em></p>
-
-      <p>Mais un agent ne compte pas seulement les pages. Il cherche à comprendre si l’ensemble est <strong>cohérent et crédible</strong>. Votre parcours, votre choix de programme, votre financement, votre garant et votre projet de retour doivent raconter une même histoire, qui tient debout.</p>
-
-      <div class="compare-table reveal">
-        <div class="compare-row">
-          <div class="compare-cell weak">
-            <div class="tag">Dossier complet</div>
-            <b>Toutes les pièces sont là</b>
-            <p>Admission, relevés, diplômes et attestations sont réunis, mais l’ensemble ne raconte pas forcément une logique claire.</p>
-          </div>
-          <div class="compare-cell strong">
-            <div class="tag">Dossier solide</div>
-            <b>Chaque pièce confirme les autres</b>
-            <p>Le parcours, le programme, le financement, le garant et la lettre d’explication soutiennent une histoire cohérente.</p>
-          </div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-cell weak">
-            <div class="tag">Risque</div>
-            <b>Une pile de documents</b>
-            <p>Plus de pages peuvent parfois créer plus de questions si les preuves ne sont pas reliées entre elles.</p>
-          </div>
-          <div class="compare-cell strong">
-            <div class="tag">Objectif</div>
-            <b>Une lecture claire</b>
-            <p>L’agent comprend pourquoi ce programme, pourquoi maintenant, avec quels moyens, et pourquoi le retour reste crédible.</p>
-          </div>
-        </div>
+      <div class="who-col no">
+        <div class="wh"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 7L7 17"/></svg>Ce n'est pas pour vous si</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 7L7 17"/></svg>Vous cherchez un raccourci ou une garantie magique.</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 7L7 17"/></svg>Vous voulez contourner les règles.</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 7L7 17"/></svg>Vous attendez une promesse de visa.</li>
+        </ul>
       </div>
+    </div>
 
-      <div class="pullquote">Le problème n’est pas toujours ce qui manque. C’est souvent ce qui ne s’aligne pas.</div>
+    <p>Un dossier d'études Canada ne devrait pas être une pile de papiers. Il devrait être une histoire cohérente, appuyée par des preuves.</p>
+    <p class="closing-q">Avant d'engager l'argent, le temps et l'espoir de toute une famille, la vraie question n'est pas seulement : avons-nous réuni tous les documents ? C'est : ces documents racontent-ils une histoire claire, crédible et cohérente ?</p>
 
-      <div class="editorial-cta reveal">
-        <div>
-          <div class="small">Avant la soumission</div>
-          <div class="title">Votre dossier est-il seulement complet, ou réellement cohérent ?</div>
-        </div>
-        <a class="btn" href="#start-assessment">Vérifier mon dossier</a>
+    <!-- FINAL CTA -->
+    <div class="final" id="start-assessment">
+      <div class="fk">Première étape</div>
+      <h2 class="no-rule">Vérifiez la solidité de votre dossier</h2>
+      <p>Une évaluation de votre profil. Honnête, sans fausse promesse — avant la soumission, pas après un refus.</p>
+      <div class="final-cta">
+        <a class="btn btn--red" href="#start-assessment">Commencer mon pré-diagnostic
+          <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--outline btn--wa" id="whatsapp" href="#whatsapp">Parler à Revive sur WhatsApp
+          <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l1.4-3.6A7.5 7.5 0 1 1 8.6 18.6L4 19z"/><path d="M9 10c.4 2 2 3.6 4 4l1-1.4 2 .7.4 2c-3.4 1-7-1.4-8-5z"/></svg></a>
       </div>
+    </div>
 
-      <h2>Le Drapeau Rouge Invisible</h2>
-
-      <p>La plupart des familles cherchent ce qui <em>manque</em> à leur dossier. Mais bien souvent, ce qui fragilise une demande n’est pas une pièce absente. C’est une petite incohérence présente, et invisible pour qui ne sait pas la repérer.</p>
-
-      <div class="explainer reveal">
-        <div class="explainer-head">
-          <span class="explainer-type">Décryptage</span>
-          <span class="explainer-title">Ce que beaucoup de familles ne voient pas</span>
-        </div>
-        <div class="explainer-body">
-          <p>Une date qui ne concorde pas. Un programme qui semble en décalage avec le parcours. Un montant qui ne colle pas avec la situation déclarée du garant. Pris isolément, chaque détail paraît anodin. Ensemble, ils peuvent installer le doute.</p>
-        </div>
-      </div>
-
-      <p>C’est ce que nous appelons le <strong>drapeau rouge invisible</strong> : le petit point de friction que la famille ne voit pas, parce qu’elle connaît son histoire de l’intérieur, mais qu’un œil extérieur repère immédiatement. Le travail sérieux consiste à le trouver <em>avant</em> la soumission, pas à le découvrir dans une lettre de refus.</p>
-
-      <h2>Le Paradoxe de l’Épargne Administrative</h2>
-
-      <p>Beaucoup de familles pensent qu’un gros solde bancaire suffit à rassurer. C’est logique : l’argent est là, le projet semble finançable. Pourtant, une somme importante peut parfois <em>affaiblir</em> un dossier au lieu de le renforcer.</p>
-
-      <div class="analysis-box reveal">
-        <span class="box-label">Analyse financière</span>
-        <p>Un agent ne se demande pas seulement : <em>« y a-t-il assez d’argent ? »</em> Il se demande aussi : <em>« cet argent est-il réel, stable, traçable, et cohérent avec la réalité du garant ? »</em></p>
-      </div>
-
-      <p>Un dépôt soudain et important, apparu peu avant la demande sans explication claire de son origine, peut soulever précisément la question inverse de celle qu’on voulait éviter : d’où vient cette somme, et sera-t-elle encore là demain ?</p>
-
-      <p>C’est le paradoxe : la richesse, mal expliquée, peut devenir suspecte. L’enjeu n’est pas d’avoir <em>plus</em>. C’est d’avoir des fonds clairs, documentés et cohérents avec une histoire qui tient.</p>
-
-      <section class="founder-panel reveal">
-        <div class="founder-inner">
-          <span class="founder-badge">Note du fondateur</span>
-          <h2>Quatre refus avant de comprendre</h2>
-          <p>Revive Agency est née après une expérience personnelle : plusieurs refus de visa pour le Canada. La leçon n’a pas été immédiate. Comme beaucoup, je pensais qu’avoir l’admission, l’argent et les documents suffisait.</p>
-          <div class="quote">On ne me refusait pas parce que je manquais d’argent. On me refusait parce que mon dossier ne racontait pas une histoire cohérente.</div>
-          <p>Ce n’est qu’en cherchant plus loin, en comparant les dossiers et en étudiant la logique de lecture des agents, que l’idée est devenue claire : les pièces étaient là, mais le fil qui devait les relier était absent.</p>
-          <p>Revive Agency ne s’est donc pas construite autour d’une promesse de visa, mais autour d’un principe : dire la vérité sur la solidité d’un dossier avant que la famille ne perde encore du temps, de l’argent et de l’espoir.</p>
-        </div>
-      </section>
-
-      <h2>La méthode Revive : l’Audit de Cohérence du Dossier</h2>
-
-      <p>C’est autour de cette logique que Revive Agency a développé son <strong>Audit de Cohérence du Dossier</strong>. Plutôt que d’empiler les documents, nous vérifions si votre dossier raconte une seule histoire crédible.</p>
-
-      <div class="method-grid reveal">
-        <div class="method-card">
-          <div class="method-num">Axe 01</div>
-          <h3>Cohérence académique</h3>
-          <p>Le programme choisi découle-t-il logiquement du parcours et du projet futur ?</p>
-        </div>
-        <div class="method-card">
-          <div class="method-num">Axe 02</div>
-          <h3>Cohérence financière</h3>
-          <p>Les fonds sont-ils clairs, traçables et compatibles avec la réalité du garant ?</p>
-        </div>
-        <div class="method-card">
-          <div class="method-num">Axe 03</div>
-          <h3>Cohérence du garant</h3>
-          <p>Le lien, les revenus et l’engagement du sponsor sont-ils compréhensibles ?</p>
-        </div>
-        <div class="method-card">
-          <div class="method-num">Axe 04</div>
-          <h3>Lettre d’explication</h3>
-          <p>La lettre relie-t-elle clairement le parcours, le programme, le financement et le retour ?</p>
-        </div>
-      </div>
-
-      <div class="explainer reveal">
-        <div class="explainer-head">
-          <span class="explainer-type">Méthode</span>
-          <span class="explainer-title">La cohérence globale</span>
-        </div>
-        <div class="explainer-body">
-          <p>Un dossier solide n’est pas une pile de papiers. C’est une histoire administrative claire, appuyée par des preuves, où chaque document confirme les autres au lieu de créer de nouvelles questions.</p>
-        </div>
-      </div>
-
-      <h2>Comment se déroule le pré-diagnostic</h2>
-
-      <div class="process reveal">
-        <div class="process-step">
-          <div class="num">Étape 01</div>
-          <h3>Pré-évaluation</h3>
-          <p>Vous partagez les grandes lignes de votre profil, de votre projet et de votre situation financière.</p>
-        </div>
-        <div class="process-step">
-          <div class="num">Étape 02</div>
-          <h3>Diagnostic de cohérence</h3>
-          <p>Le dossier est lu axe par axe pour repérer les zones floues et les incohérences potentielles.</p>
-        </div>
-        <div class="process-step">
-          <div class="num">Étape 03</div>
-          <h3>Identification des faiblesses</h3>
-          <p>Les drapeaux rouges invisibles sont signalés avant la soumission, quand il est encore temps d’agir.</p>
-        </div>
-        <div class="process-step">
-          <div class="num">Étape 04</div>
-          <h3>Structuration administrative</h3>
-          <p>Les pièces sont organisées et clarifiées pour soutenir une histoire plus lisible.</p>
-        </div>
-        <div class="process-step">
-          <div class="num">Étape 05</div>
-          <h3>Suite du parcours</h3>
-          <p>Vous continuez vers l’évaluation complète ou un échange direct avec Revive sur WhatsApp.</p>
-        </div>
-      </div>
-
-      <div class="editorial-cta reveal">
-        <div>
-          <div class="small">Pré-diagnostic</div>
-          <div class="title">Avant de soumettre, vérifiez si votre dossier tient debout.</div>
-        </div>
-        <a class="btn" href="#start-assessment">Commencer</a>
-      </div>
-
-      <h2>Ce que Revive promet — et ce que Revive ne promet pas</h2>
-
-      <p><strong>Revive Agency ne garantit pas l’obtention d’un visa.</strong> Personne ne peut légalement le promettre. La décision finale appartient exclusivement à IRCC.</p>
-
-      <p>Ce que Revive garantit, c’est le sérieux du travail : un dossier plus clair, plus cohérent, mieux structuré, et la vérité sur ses points faibles. Nous ne fabriquons aucun document. Nous ne maquillons aucune situation. Si un profil n’est pas prêt, nous préférons le dire clairement plutôt que vendre une promesse flatteuse.</p>
-
-      <h2>À qui cela s’adresse — et à qui non</h2>
-
-      <div class="who-grid reveal">
-        <div class="who-card">
-          <h3>C’est pour vous si</h3>
-          <ul>
-            <li>Vous voulez comprendre la solidité réelle de votre dossier avant de l’envoyer.</li>
-            <li>Vous préférez une vérité utile à une promesse flatteuse.</li>
-            <li>Vous considérez le projet de votre enfant avec le sérieux qu’il mérite.</li>
-          </ul>
-        </div>
-        <div class="who-card no">
-          <h3>Ce n’est pas pour vous si</h3>
-          <ul>
-            <li>Vous cherchez un raccourci ou une garantie magique.</li>
-            <li>Vous voulez contourner les règles ou masquer des informations.</li>
-            <li>Vous attendez une promesse de visa. Ce n’est pas ce que nous faisons.</li>
-          </ul>
-        </div>
-      </div>
-
-      <p>Un dossier d’études Canada ne devrait pas être une pile de papiers. Il devrait être une histoire cohérente, appuyée par des preuves.</p>
-
-      <p><strong>Avant d’engager l’argent, le temps et l’espoir de toute une famille, la vraie question n’est pas seulement : avons-nous réuni tous les documents ? C’est : ces documents racontent-ils une histoire claire, crédible et cohérente ?</strong></p>
-
-      <section class="final-cta" id="start-assessment">
-        <h2>Vérifiez la solidité de votre dossier</h2>
-        <p>Une première évaluation de votre profil. Honnête, transparente, sans fausse promesse — avant la soumission, pas après un refus.</p>
-        <div class="final-btns">
-          <a class="btn" href="#start-assessment">Commencer mon pré-diagnostic</a>
-          <a class="btn wa" id="whatsapp" href="#whatsapp">Parler à Revive sur WhatsApp</a>
-        </div>
-      </section>
-
-    </article>
-
-    <aside class="sidebar" aria-label="Colonne latérale">
-      <div class="side-card">
-        <div class="side-card-title">À retenir</div>
-        <div class="side-card-body">
-          <ul class="key-list">
-            <li>Un dossier peut être complet sans être convaincant.</li>
-            <li>La cohérence entre programme, financement, garant et projet est centrale.</li>
-            <li>Un gros solde bancaire mal expliqué peut créer plus de questions que de réponses.</li>
-            <li>La première étape devrait être un diagnostic, pas une soumission précipitée.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="side-card cta-card">
-        <div class="side-card-title">Pré-diagnostic</div>
-        <div class="side-card-body">
-          <p><strong>Votre dossier raconte-t-il une histoire claire ?</strong></p>
-          <p>Revive peut vous aider à identifier les faiblesses invisibles avant la soumission.</p>
-          <a class="btn full" href="#start-assessment">Vérifier mon dossier</a>
-          <a class="side-mini-link" href="#whatsapp">Ou parler sur WhatsApp →</a>
-          <p class="side-note">Aucune garantie de visa. La décision finale appartient à IRCC.</p>
-        </div>
-      </div>
-
-      <div class="side-card">
-        <div class="side-card-title">Transparence</div>
-        <div class="side-card-body">
-          <p class="side-note">Le Dossier Canada est une publication éditoriale de Revive Agency. Ce contenu vise à informer et à présenter l’approche de Revive. Il ne s’agit pas d’un média indépendant ni d’un conseil juridique.</p>
-        </div>
-      </div>
-    </aside>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-title">Le Dossier <span>Canada</span></div>
-      <p class="legal">
-        Ce contenu est un publireportage publié dans Le Dossier Canada, une publication éditoriale de Revive Agency, nom commercial opéré par BUSYSCALLING Inc. Revive Agency fournit une assistance administrative et documentaire ainsi qu’un diagnostic de cohérence de dossier. Revive Agency n’est pas un consultant réglementé en immigration (CRIC) et ne fournit pas de conseils juridiques en matière d’immigration. Revive Agency n’est pas affiliée au gouvernement du Canada et ne garantit en aucun cas l’obtention d’un visa ou d’un permis d’études : la décision finale appartient exclusivement à Immigration, Réfugiés et Citoyenneté Canada (IRCC). Les données citées proviennent de sources publiques ou de rapports sectoriels ; les taux varient selon les profils, les périodes et les pays, et un dossier bien préparé améliore la clarté sans jamais garantir une approbation.
-      </p>
-      <div class="footer-links">
-        <a href="#start-assessment">Pré-diagnostic</a>
-        <a href="#whatsapp">WhatsApp</a>
-        <a href="#">Confidentialité</a>
-        <a href="#">Mentions légales</a>
+  <!-- SIDEBAR -->
+  <aside class="aside">
+    <div class="side-box">
+      <div class="sh"><span class="b"></span>À retenir</div>
+      <div class="sb">
+        <ul class="retenir">
+          <li><span class="rn">1</span><span>Un dossier complet n'est pas forcément un dossier solide.</span></li>
+          <li><span class="rn">2</span><span>Le premier motif de refus est le doute sur le retour au pays, pas l'absence de documents.</span></li>
+          <li><span class="rn">3</span><span>Une seule incohérence — le « drapeau rouge invisible » — peut fragiliser tout le dossier.</span></li>
+          <li><span class="rn">4</span><span>Un gros dépôt mal expliqué peut nuire au lieu d'aider.</span></li>
+        </ul>
       </div>
     </div>
-  </footer>
 
-  <nav class="mobile-cta" aria-label="Actions mobiles">
-    <a class="btn" href="#start-assessment">Vérifier mon dossier</a>
-    <a class="btn wa wa-icon" href="#whatsapp" aria-label="WhatsApp">
-      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l1.4-3.6A7.5 7.5 0 1 1 8.6 18.6L4 19z"/><path d="M9 10c.4 2 2 3.6 4 4l1-1.4 2 .7.4 2c-3.4 1-7-1.4-8-5z"/></svg>
-    </a>
-  </nav>
+    <div class="side-cta">
+      <div class="sct">Votre dossier raconte-t-il une histoire cohérente ?</div>
+      <div class="scp">Faites-le évaluer avant la soumission.</div>
+      <a class="btn btn--red" href="#start-assessment">Vérifier la solidité de mon dossier
+        <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--outline btn--wa" href="#whatsapp">Parler à Revive sur WhatsApp
+        <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l1.4-3.6A7.5 7.5 0 1 1 8.6 18.6L4 19z"/><path d="M9 10c.4 2 2 3.6 4 4l1-1.4 2 .7.4 2c-3.4 1-7-1.4-8-5z"/></svg></a>
+      <div class="side-note">Revive Agency (BUSYSCALLING Inc.) n'est pas affiliée au gouvernement du Canada et ne garantit pas l'obtention d'un visa. La décision finale appartient à IRCC.</div>
+    </div>
+  </aside>
 
 </div>
 
-<script>
-var progress=document.getElementById('progress');
-function updateProgress(){
-  var doc=document.documentElement;
-  var max=doc.scrollHeight-doc.clientHeight;
-  var pct=max>0?(doc.scrollTop/max)*100:0;
-  progress.style.width=pct+'%';
-}
-document.addEventListener('scroll',updateProgress,{passive:true});
-updateProgress();
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="foot-in">
+    <div class="foot-name">Le Dossier<span class="pt"> </span>Canada</div>
+    <div class="foot-sub">Une publication éditoriale de Revive Agency</div>
+    <p class="foot-legal">
+      Ce contenu est un publireportage publié par Revive Agency, nom commercial opéré par BUSYSCALLING Inc. « Le Dossier Canada » est une publication éditoriale de Revive Agency et non un organe de presse indépendant. Revive Agency fournit une assistance administrative et documentaire ainsi qu'un diagnostic de cohérence de dossier&#8201;; elle n'est pas un consultant réglementé en immigration (CRIC) et ne fournit pas de conseils juridiques en matière d'immigration. Revive Agency n'est pas affiliée au gouvernement du Canada et ne garantit en aucun cas l'obtention d'un visa ou d'un permis d'études : la décision finale appartient exclusivement à Immigration, Réfugiés et Citoyenneté Canada (IRCC). Les données citées proviennent de sources publiques (IRCC / gouvernement du Canada, rapports sectoriels)&#8201;; les taux varient selon les profils, les périodes et les pays, et un dossier bien préparé améliore les chances sans jamais les garantir.
+    </p>
+    <div class="foot-links">
+      <a href="#start-assessment">Site officiel Revive</a>
+      <a href="#">Conditions d'utilisation</a>
+      <a href="#">Confidentialité</a>
+      <a href="#">Mentions légales</a>
+    </div>
+  </div>
+</footer>
 
-var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(!reduced && 'IntersectionObserver' in window){
-  var observer=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        entry.target.classList.add('in');
-        observer.unobserve(entry.target);
-      }
-    });
-  },{threshold:.13});
-  document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el);});
-}else{
-  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
-}
+<!-- ===== STICKY MOBILE CTA ===== -->
+<nav class="mbar">
+  <a class="btn btn--red" href="#start-assessment">Vérifier mon dossier</a>
+  <a class="btn btn--outline wa" href="#whatsapp" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--green)"><path d="M4 19l1.4-3.6A7.5 7.5 0 1 1 8.6 18.6L4 19z"/><path d="M9 10c.4 2 2 3.6 4 4l1-1.4 2 .7.4 2c-3.4 1-7-1.4-8-5z"/></svg>
+  </a>
+</nav>
+
+<script>
+  var bar=document.getElementById('progress');
+  function onScroll(){var h=document.documentElement;var max=(h.scrollHeight-h.clientHeight);bar.style.width=(max>0?(h.scrollTop/max)*100:0)+'%';}
+  document.addEventListener('scroll',onScroll,{passive:true});onScroll();
 </script>
 </body>
 </html>
