@@ -773,6 +773,12 @@
     }
   }
 
+
+  .h-nowrap{white-space:nowrap}
+  @media(max-width:560px){
+    h1{font-size:clamp(2.05rem,10.5vw,3.35rem);line-height:1.08;overflow-wrap:normal;word-break:normal;hyphens:none}
+  }
+
 </style>
 </head>
 <body>
@@ -816,7 +822,7 @@
     <div class="cat-tag">Éducation internationale</div>
     <div class="pub-label">Contenu partenaire · Publireportage</div>
 
-    <h1>Permis d'études Canada : pourquoi un dossier complet n'est pas forcément un dossier solide</h1>
+    <h1>Permis d'études <span class="h-nowrap">Canada&nbsp;:</span> pourquoi un dossier complet n'est pas forcément un dossier solide</h1>
 
     <p class="deck">Des milliers de familles d'Afrique francophone réunissent l'admission, l'argent et les documents — et reçoivent quand même un refus. Décryptage d'un malentendu coûteux, et de ce qui distingue vraiment un dossier qui convainc.</p>
 
