@@ -736,7 +736,7 @@
   .who-col li{position:relative;padding-left:24px;display:block;font-size:1rem;line-height:1.5}
   .who-col li::before{position:absolute;left:0;top:.08em;font-family:Arial,sans-serif;font-size:1rem;line-height:1;font-weight:700}
   .who-col.yes li::before{content:"✓";color:var(--green)}
-  .who-col.no li::before{content:"×";color:var(--muted)}
+  .who-col.no li::before{content:"×";color:var(--red)}
   .who svg{display:none !important}
   @media(max-width:900px){
     .who{display:block;grid-template-columns:1fr;margin:22px 0}
@@ -789,6 +789,14 @@
     .review-summary-text b{font-size:.86rem}
     .review-summary-text span{font-size:.72rem}
   }
+
+
+  /* V24 fixes */
+  .who-col.no li::before{color:var(--red) !important}
+
+
+  /* V25 cleanup */
+  .aside .side-cta{margin-top:0}
 
 </style>
 </head>
@@ -928,9 +936,9 @@
     <div class="mobile-retain" aria-label="À retenir">
       <div class="mr-head">À retenir</div>
       <ul>
-        <li><b>1</b> Un dossier complet n’est pas forcément un dossier solide.</li>
-        <li><b>2</b> Le vrai risque est souvent l’incohérence entre les documents.</li>
-        <li><b>3</b> Avant de soumettre, il faut comprendre ce qui peut créer le doute.</li>
+        <li><b>1</b> L’agent ne lit pas seulement des documents. Il cherche une logique.</li>
+        <li><b>2</b> Le projet d’études, le garant et les fonds doivent raconter la même histoire.</li>
+        <li><b>3</b> Avant de soumettre, chaque zone floue doit être expliquée clairement.</li>
       </ul>
     </div>
 
@@ -1261,7 +1269,7 @@
 
     <!-- INLINE CTA after mechanism -->
     <div class="cta-inline">
-      <div class="ct">Ne payez pas seulement pour soumettre un dossier. Faites-le préparer avec une vraie logique de cohérence.
+      <div class="ct">Ne payez pas seulement pour soumettre. Faites préparer un dossier clair, organisé et défendable.
     </div>
       <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon accompagnement Canada
         <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1332,8 +1340,6 @@
         <p>Non. Revive fournit une assistance administrative et documentaire. Pour un avis juridique, une stratégie légale personnalisée ou une représentation en immigration, il faut consulter un professionnel autorisé.</p>
       </details>
     </div>
-
-    <p>Un dossier d'études Canada ne devrait pas être une pile de papiers. Il devrait être une histoire cohérente, appuyée par des preuves — et c'est précisément le type de préparation que Revive propose d'accompagner.</p>
     <p class="closing-q">Avant d’engager l’argent et l’espoir d’une famille, la vraie question est : est-ce que mon dossier raconte une histoire cohérente ?</p>
 
     <!-- Sources -->
@@ -1363,19 +1369,7 @@
 
   <!-- SIDEBAR -->
   <aside class="aside">
-    <div class="side-box">
-      <div class="sh"><span class="b"></span>À retenir</div>
-      <div class="sb">
-        <ul class="retenir">
-          <li><span class="rn">1</span><span>Un dossier complet n'est pas forcément un dossier solide.</span></li>
-          <li><span class="rn">2</span><span>Le premier motif de refus est souvent le doute sur le retour au pays, pas l'absence de documents.</span></li>
-          <li><span class="rn">3</span><span>Une agence qui remplit seulement les formulaires peut passer à côté du vrai problème.</span></li>
-          <li><span class="rn">4</span><span>Revive accompagne la préparation du dossier avec une logique de cohérence avant soumission.</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="side-cta">
+<div class="side-cta">
       <div class="sct">Votre dossier est-il vraiment cohérent ?</div>
       <div class="scp">Commencez l’accompagnement avec Revive Agency.</div>
       <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon accompagnement Canada
@@ -1409,35 +1403,75 @@
 </nav>
 
 <script>
-  // Replace these two values before final publication:
+  // Replace this value before final publication:
   var LANDING_URL = "#start-assessment";
 
-  document.querySelectorAll(".cta-link").forEach(function(a){ a.setAttribute("href", LANDING_URL); });
+  document.querySelectorAll(".cta-link").forEach(function(a){
+    a.setAttribute("href", LANDING_URL);
+  });
 
-  var bar=document.getElementById('progress');
-  function onScroll(){var h=document.documentElement;var max=(h.scrollHeight-h.clientHeight);bar.style.width=(max>0?(h.scrollTop/max)*100:0)+'%';}
-  document.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var bar = document.getElementById("progress");
+  function onScroll(){
+    if (!bar) return;
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + "%";
+  }
+  document.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
 
   var shareBar = document.getElementById("shareBar");
-  var pageTitle = document.title;
-  var pageUrl = window.location.href;
+  var pageTitle = document.title || "Le Dossier Canada";
+  var pageUrl = window.location.href.split("#")[0];
+
+  function openShare(url){
+    var win = window.open(url, "_blank", "noopener,noreferrer");
+    if (win) win.opener = null;
+  }
+
+  function copyPageLink(){
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(pageUrl).then(function(){
+        shareBar.classList.add("copied");
+        setTimeout(function(){ shareBar.classList.remove("copied"); }, 1600);
+      });
+    } else {
+      var input = document.createElement("input");
+      input.value = pageUrl;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      document.body.removeChild(input);
+      shareBar.classList.add("copied");
+      setTimeout(function(){ shareBar.classList.remove("copied"); }, 1600);
+    }
+  }
+
   if (shareBar) {
     shareBar.addEventListener("click", function(e){
       var btn = e.target.closest("button[data-share]");
       if (!btn) return;
+
+      e.preventDefault();
+
       var type = btn.getAttribute("data-share");
       var u = encodeURIComponent(pageUrl);
       var t = encodeURIComponent(pageTitle);
-      if (type === "facebook") window.open("https://www.facebook.com/sharer/sharer.php?u=" + u, "_blank", "noopener,noreferrer");
-      if (type === "x") window.open("https://twitter.com/intent/tweet?url=" + u + "&text=" + t, "_blank", "noopener,noreferrer");
-      if (type === "whatsapp") window.open("https://wa.me/?text=" + t + "%20" + u, "_blank", "noopener,noreferrer");
+
+      if (type === "facebook") {
+        openShare("https://www.facebook.com/sharer/sharer.php?u=" + u);
+      }
+
+      if (type === "x") {
+        openShare("https://twitter.com/intent/tweet?text=" + t + "&url=" + u);
+      }
+
+      if (type === "whatsapp") {
+        openShare("https://api.whatsapp.com/send?text=" + t + "%20" + u);
+      }
+
       if (type === "copy") {
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(pageUrl).then(function(){
-            shareBar.classList.add("copied");
-            setTimeout(function(){ shareBar.classList.remove("copied"); }, 1600);
-          });
-        }
+        copyPageLink();
       }
     });
   }
