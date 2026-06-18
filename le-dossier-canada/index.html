@@ -798,6 +798,37 @@
   /* V25 cleanup */
   .aside .side-cta{margin-top:0}
 
+
+  /* V26 delayed reveal + agency comparison */
+  .agency-gap{margin:34px 0;border:1px solid var(--line-strong);background:#fff;padding:26px 24px}
+  .agency-gap .label{font-family:"Archivo",sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+  .agency-gap h2{border-top:none;padding-top:0;margin-top:0}
+  .agency-gap p{font-size:1.05rem;line-height:1.62;color:var(--text)}
+  .gap-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin:22px 0;overflow:hidden}
+  .gap-card{padding:22px 20px}
+  .gap-card.bad{background:#fff}
+  .gap-card.good{background:var(--paper-2);border-left:1px solid var(--line)}
+  .gap-head{font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;margin-bottom:14px}
+  .gap-card.bad .gap-head{color:var(--red)}
+  .gap-card.good .gap-head{color:var(--green)}
+  .gap-card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+  .gap-card li{position:relative;padding-left:24px;font-size:.98rem;line-height:1.48}
+  .gap-card.bad li::before{content:"×";position:absolute;left:0;top:.05em;color:var(--red);font-weight:800}
+  .gap-card.good li::before{content:"✓";position:absolute;left:0;top:.05em;color:var(--green);font-weight:800}
+  .gap-note{margin:0;background:#fbf7ef;border-left:3px solid var(--red);padding:14px 16px;font-size:.98rem !important}
+  @media(max-width:760px){
+    .agency-gap{padding:22px 18px}
+    .gap-grid{grid-template-columns:1fr}
+    .gap-card.good{border-left:none;border-top:1px solid var(--line)}
+    .gap-card{padding:20px 18px}
+  }
+
+
+  /* V27 conversion cleanup */
+  .layout{grid-template-columns:minmax(0,860px) !important;justify-content:center}
+  .article{max-width:860px}
+  .aside,.mbar{display:none !important}
+
 </style>
 </head>
 <body>
@@ -847,7 +878,7 @@
 
     <div class="byline">
       <div class="byline-main">
-        <span class="pub"><span class="mono-r">R</span>Publié par Revive Agency</span>
+        <span class="pub"><span class="mono-r">D</span>Publié par Le Dossier Canada</span>
         <span class="sep"></span><span class="byline-item">14 juin 2026</span>
         <span class="sep"></span><span class="byline-item">Lecture 10 min</span>
       </div>
@@ -886,7 +917,7 @@
 
     <p>Et trop souvent, la réponse tombe, brève et froide : <em>« Je ne suis pas convaincu que vous quitterez le Canada à la fin de votre séjour. »</em> Si cette phrase vous est familière, vous savez ce qu'elle provoque : l'argent qui semble gaspillé, l'enfant qui rate une rentrée, le regard de la famille élargie.</p>
 
-    <p>Cet article — publié par <strong>Revive Agency</strong>, une structure d'accompagnement administratif spécialisée dans les dossiers d'études vers le Canada — n'a pas pour but de vendre un rêve. Il explique un malentendu rarement énoncé clairement, puis montre pourquoi certaines familles choisissent de faire préparer leur dossier avec une approche plus structurée, plus cohérente et sans fausse promesse.</p>
+    <p>Cet article n'a pas pour but de vendre un rêve. Il explique pourquoi des dossiers apparemment complets peuvent créer le doute, puis montre comment certaines familles évitent de soumettre leur demande à l’aveugle.</p>
 
     <!-- DATA STRIP -->
     <div class="data">
@@ -942,38 +973,42 @@
       </ul>
     </div>
 
-    <p class="pull">Le problème n'est pas toujours ce qui manque. C'est souvent ce qui ne s'aligne pas.</p>
 
-    <!-- V5: what happens after click -->
-    <div class="next-click">
-      <div class="nh">Ce qui se passe après le clic</div>
-      <div class="next-grid">
-        <div class="next-item">
-          <div class="num">Étape 1</div>
-          <b>Quelques questions</b>
-          <p>Vous répondez à des questions simples sur le profil, le projet d'études, le financement, le garant et les refus précédents.</p>
+    <section class="agency-gap">
+      <div class="label">Le coût caché d’un mauvais accompagnement</div>
+      <h2>Ce que beaucoup de familles perdent avec un service mal organisé</h2>
+      <p>Dans plusieurs pays, beaucoup de familles ne perdent pas seulement les frais de service. Elles perdent aussi les frais de dossier, les frais d’admission, les traductions, les billets réservés trop tôt, et parfois plusieurs mois d’attente parce que personne ne leur explique clairement où le dossier bloque.</p>
+
+      <div class="gap-grid">
+        <div class="gap-card bad">
+          <div class="gap-head">Accompagnement faible</div>
+          <ul>
+            <li>On vous demande des documents sans vraie logique.</li>
+            <li>Vous payez, puis les nouvelles deviennent rares.</li>
+            <li>Vous n’avez pas toujours accès à votre propre dossier.</li>
+            <li>La lettre est générique et ne répond pas vraiment au profil.</li>
+            <li>Après un refus, on vous dit seulement de “réessayer”.</li>
+          </ul>
         </div>
-        <div class="next-item">
-          <div class="num">Étape 2</div>
-          <b>Validation du profil</b>
-          <p>Revive vérifie si votre situation peut être accompagnée sérieusement, sans promesse automatique ni discours magique.</p>
-        </div>
-        <div class="next-item">
-          <div class="num">Étape 3</div>
-          <b>Ouverture du dossier</b>
-          <p>Si vous décidez d'avancer, vous recevez les étapes pour payer le service, ouvrir votre dossier client et commencer la préparation.</p>
+
+        <div class="gap-card good">
+          <div class="gap-head">Méthode Revive</div>
+          <ul>
+            <li>Chaque document est relié à une logique claire.</li>
+            <li>Les zones floues sont signalées avant la soumission.</li>
+            <li>Le client sait ce qui est demandé, pourquoi, et à quelle étape.</li>
+            <li>Le dossier est préparé autour du projet d’études, du garant et des fonds.</li>
+            <li>Si le profil est trop risqué, on le dit avant de vendre une promesse.</li>
+          </ul>
         </div>
       </div>
-    </div>
 
+      <p class="gap-note">Le sujet n’est pas de dire que toutes les agences travaillent mal. Le vrai point est simple : quand personne ne structure le dossier, c’est souvent la famille qui paie le prix de l’improvisation.</p>
+    </section>
 
-    <!-- INLINE CTA after belief shift -->
-    <div class="cta-inline">
-      <div class="ct">Si votre dossier doit être soumis, il doit d’abord être construit autour d’une histoire cohérente.
-    </div>
-      <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon accompagnement Canada
-        <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
+    <p class="pull">Le problème n'est pas toujours ce qui manque. C'est souvent ce qui ne s'aligne pas.</p>
+
+    
 
     <!-- EXPLAINER : DRAPEAU ROUGE -->
     <div class="explainer">
@@ -1004,7 +1039,7 @@
       <div class="flab"><span class="mono-r">R</span>Le mot du fondateur de Revive Agency</div>
       <p>J'ai créé Revive Agency après avoir vécu, personnellement, quatre refus de visa pour le Canada. Je ne vais pas raconter une légende héroïque : la vérité est plus simple, et plus humble.</p>
       <p>Je croyais, comme beaucoup, qu'avoir l'admission, l'argent et les documents suffisait. À chaque refus, je recommençais en changeant des détails, sans comprendre ce qu'on me reprochait vraiment. Les lettres étaient courtes, presque interchangeables.</p>
-      <div class="fpull">On ne me refusait pas parce que je manquais d'argent. On me refusait parce que mon dossier ne racontait pas une histoire cohérente.</div>
+      <div class="fpull">On ne me refusait pas parce que je manquais d'argent. On me refusait parce que les pièces de mon dossier ne se reliaient pas clairement.</div>
       <p>Ce n'est qu'en cherchant plus loin — en analysant des dizaines de dossiers et la logique réelle des agents — que je l'ai compris. Les pièces étaient là&nbsp;; le fil qui devait les relier, lui, était absent. Quand j'ai reconstruit mon dossier autour de cette idée, la réponse a changé. Revive Agency est née de cette expérience.</p>
       <div class="fsign">— Le fondateur de Revive Agency</div>
     </div>
@@ -1245,42 +1280,31 @@
     </section>
 
     <!-- METHOD -->
-    <h2>Comment Revive transforme cette analyse en accompagnement concret</h2>
+    <h2>Pourquoi choisir Revive pour préparer votre dossier</h2>
 
-    <p>Le cœur de l'approche Revive reste l'<strong>Audit de Cohérence du Dossier</strong>. Mais l'objectif n'est pas seulement de regarder un dossier de loin. L'objectif est d'accompagner la famille dans la préparation administrative du dossier, l'organisation des pièces, la structuration des preuves et la présentation d'un projet plus clair avant la soumission.</p>
+    <p>Revive ne se limite pas à remplir des formulaires ou à demander une longue liste de documents. L’objectif est de reprendre les points qui font souvent tomber un dossier sérieux : le choix du programme, le garant, les fonds, la lettre d’explication et les contradictions entre les pièces.</p>
 
     <div class="axes">
-      <div class="axis"><div class="ax-n">1</div><div class="ax-b"><b>Le programme peut-il créer le doute ?</b><p>Le choix d’études doit paraître logique avec le parcours déjà suivi, pas comme une rupture difficile à expliquer.</p></div></div>
-      <div class="axis"><div class="ax-n">2</div><div class="ax-b"><b>L’argent est-il lisible pour un agent ?</b><p>Les fonds doivent être clairs, traçables et compatibles avec la réalité du garant, pas seulement présents sur un compte.</p></div></div>
-      <div class="axis"><div class="ax-n">3</div><div class="ax-b"><b>Le garant est-il crédible ?</b><p>Le lien, les revenus et l’engagement du sponsor doivent être compréhensibles pour quelqu’un qui ne connaît pas la famille.</p></div></div>
-      <div class="axis"><div class="ax-n">4</div><div class="ax-b"><b>La lettre répond-elle aux vraies questions ?</b><p>Elle doit expliquer pourquoi ce programme, pourquoi maintenant, et pourquoi le projet reste cohérent après les études.</p></div></div>
-      <div class="axis"><div class="ax-n">5</div><div class="ax-b"><b>Les documents se contredisent-ils ?</b><p>Un bon dossier ne se contente pas d’empiler des pièces : chaque document doit renforcer les autres.</p></div></div>
+      <div class="axis"><div class="ax-n">1</div><div class="ax-b"><b>Projet d’études clarifié</b><p>Le programme choisi est relié à votre parcours, à vos objectifs et à votre situation.</p></div></div>
+      <div class="axis"><div class="ax-n">2</div><div class="ax-b"><b>Fonds mieux présentés</b><p>Les relevés, dépôts et preuves financières sont organisés pour être plus faciles à comprendre.</p></div></div>
+      <div class="axis"><div class="ax-n">3</div><div class="ax-b"><b>Garant mieux expliqué</b><p>Le lien avec le sponsor, ses revenus et son engagement sont présentés clairement.</p></div></div>
+      <div class="axis"><div class="ax-n">4</div><div class="ax-b"><b>Lettre personnalisée</b><p>La lettre répond aux vraies questions du dossier au lieu de rester vague ou générique.</p></div></div>
+      <div class="axis"><div class="ax-n">5</div><div class="ax-b"><b>Vérification finale</b><p>Les incohérences visibles sont repérées avant la soumission, pas après un refus.</p></div></div>
     </div>
 
     <div class="price-note">
       <b>Tarif indicatif</b>
-      <p>L’accompagnement Revive est accessible à partir de <strong>850 USD</strong>, selon le profil et le type de demande. L’objectif est simple : vérifier d’abord la cohérence du dossier avant d’engager du temps, des documents et de l’argent dans une soumission.</p>
+      <p>L’accompagnement Revive commence à partir de <strong>850 USD</strong>, selon le profil et le type de demande. Avant d’avancer, le profil est regardé pour vérifier si Revive peut vraiment apporter une aide sérieuse.</p>
     </div>
 
-    <div class="callout c-decryptage">
-      <div class="clab">Peut-on faire sa demande seul ?</div>
-      <p>Oui. Beaucoup de familles déposent seules. Revive s’adresse surtout à ceux qui veulent éviter qu’un dossier sérieux soit affaibli par des zones floues : programme mal expliqué, garant mal présenté, fonds difficiles à lire ou ancienne lettre de refus mal comprise.</p>
-    </div>
-
-    <!-- INLINE CTA after mechanism -->
-    <div class="cta-inline">
-      <div class="ct">Ne payez pas seulement pour soumettre. Faites préparer un dossier clair, organisé et défendable.
-    </div>
-      <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon accompagnement Canada
-        <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
+    
 
     <!-- ENGAGEMENT (no guarantee) -->
     <div class="engage">
       <div class="engage-h"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>L'engagement de Revive Agency</div>
       <div class="engage-b">
-        <p><strong>La décision finale appartient exclusivement à IRCC. Aucun acteur — ni consultant, ni avocat, ni agence — ne peut légalement garantir l'obtention d'un visa.</strong> Une structure sérieuse doit expliquer les risques, refuser les faux documents et éviter les promesses impossibles.</p>
-        <p>Ce qui est garanti, c’est le sérieux de l’accompagnement administratif : des documents mieux organisés, une présentation plus claire, une cohérence mieux travaillée, et la vérité sur les points faibles visibles du dossier. Aucun document n’est fabriqué, aucune situation n’est maquillée.</p>
+        <p><strong>La décision finale appartient exclusivement à IRCC. Aucune agence sérieuse ne peut promettre un visa.</strong> Revive ne vend pas de garantie magique et ne fabrique aucun document.</p>
+        <p>Ce que Revive apporte, c’est un accompagnement sérieux : documents mieux organisés, points faibles signalés, lettre plus claire, suivi plus propre et préparation faite avant la soumission.</p>
       </div>
     </div>
 
@@ -1358,26 +1382,15 @@
     <div class="final" id="start-assessment">
       <div class="fk">Première étape</div>
       <h2 class="no-rule">Faites préparer votre dossier Canada avec Revive</h2>
-      <p>Admission, garant, preuves financières, lettre d’explication, documents administratifs… Revive vous aide à clarifier votre dossier avant la soumission. Les accompagnements sont limités chaque mois pour préserver la qualité du suivi.</p>
+      <p>Vous avez une admission, un garant, des preuves financières ou un ancien refus ? Revive vous aide à organiser les documents, repérer les zones faibles et préparer une présentation plus claire avant la soumission.</p>
+      <p>Pas de promesse de visa. Pas de faux documents. Un accompagnement sérieux pour éviter les erreurs qui coûtent cher.</p>
       <div class="final-cta">
-        <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon accompagnement Canada
+        <a class="btn btn--red cta-link" href="#start-assessment">Faire préparer mon dossier Canada
           <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
 
   </main>
-
-  <!-- SIDEBAR -->
-  <aside class="aside">
-<div class="side-cta">
-      <div class="sct">Votre dossier est-il vraiment cohérent ?</div>
-      <div class="scp">Commencez l’accompagnement avec Revive Agency.</div>
-      <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon accompagnement Canada
-        <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <div class="side-note">Revive Agency est une publication/service privé et n’est pas affiliée au gouvernement du Canada. La décision finale appartient à IRCC.</div>
-    </div>
-  </aside>
-
 </div>
 
 <!-- ===== FOOTER ===== -->
@@ -1398,10 +1411,6 @@
 </footer>
 
 <!-- ===== STICKY MOBILE CTA ===== -->
-<nav class="mbar">
-  <a class="btn btn--red cta-link" href="#start-assessment">Commencer</a>
-</nav>
-
 <script>
   // Replace this value before final publication:
   var LANDING_URL = "#start-assessment";
