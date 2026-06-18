@@ -234,23 +234,9 @@
   .sources .verify{font-family:"Archivo",sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:10px}
 
 
-
-
-
   /* ===== V6 SOCIAL PROOF / TRUST SIGNALS ===== */
-  .social-proof{margin:38px 0;border:1px solid var(--line-strong);background:#fff;padding:28px 26px}
-  .social-proof .sp-kicker{font-family:"Archivo",sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
-  .social-proof h2{margin:0 0 12px;border-top:none;padding-top:0}
-  .social-proof .sp-intro{font-size:1.04rem;line-height:1.62;color:var(--text);margin-bottom:20px}
-  .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
-  .proof-card{border:1px solid var(--line);background:var(--paper-2);padding:18px 16px}
-  .proof-card .stars{font-family:"Archivo",sans-serif;color:var(--red);letter-spacing:.08em;font-size:.92rem;margin-bottom:9px}
-  .proof-card b{font-family:"Archivo",sans-serif;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:7px}
-  .proof-card p{font-size:.96rem;line-height:1.5;margin:0;color:var(--text)}
-  .proof-note{margin-top:16px;border-top:1px solid var(--line);padding-top:13px;font-family:"Archivo",sans-serif;font-size:.72rem;line-height:1.55;color:var(--muted)}
   .sources a{color:var(--red);text-decoration:none;border-bottom:1px solid rgba(180,35,42,.35)}
   .sources a:hover{border-bottom-color:var(--red)}
-  @media(max-width:760px){.proof-grid{grid-template-columns:1fr}.social-proof{padding:22px 18px}.proof-note{font-size:.68rem}}
 
   /* ===== V5 SERVICE POSITIONING ===== */
   .service-stack{margin:34px 0;border:1px solid var(--line-strong);background:#fff}
@@ -618,10 +604,13 @@
   }
 
 
-
-  /* ===== MOBILE BUTTON OVERFLOW FIX ===== */
+  /* ===== FINAL MOBILE CONSOLIDATION ===== */
   @media(max-width:900px){
-    .btn{
+    .btn,
+    .cta-inline .btn,
+    .final .btn,
+    .final-cta .btn,
+    .side-cta .btn{
       width:100%;
       max-width:100%;
       min-width:0;
@@ -630,22 +619,15 @@
       white-space:normal;
       overflow-wrap:anywhere;
       word-break:normal;
-      line-height:1.25;
-      padding:14px 14px;
-      letter-spacing:.045em;
-    }
-    .side-cta .btn,
-    .cta-inline .btn,
-    .final-cta .btn{
-      width:100%;
-      max-width:100%;
+      line-height:1.24;
+      padding:14px 12px;
+      letter-spacing:.04em;
     }
     .final-cta,
     .cta-inline,
-    .side-cta{
-      overflow:hidden;
-    }
+    .side-cta{overflow:hidden;}
     .mbar .btn{
+      min-height:46px;
       white-space:normal;
       overflow-wrap:normal;
       letter-spacing:.035em;
@@ -653,178 +635,122 @@
       line-height:1.15;
       padding:12px 8px;
     }
-    .mbar .btn.wa{
-      width:52px;
-      flex:0 0 52px;
-    }
-  }
-
-  @media(max-width:380px){
-    .btn{font-size:.72rem;letter-spacing:.035em;padding:13px 10px;}
-    .mbar .btn{font-size:.64rem;}
-  }
-
-
-  /* ===== GLOBAL BUTTON TEXT WRAP FIX ===== */
-  .cta-inline .btn,
-  .final-cta .btn,
-  .side-cta .btn,
-  .final .btn{
-    white-space:normal !important;
-    text-align:center !important;
-    line-height:1.22 !important;
-    max-width:100% !important;
-    min-width:0 !important;
-    overflow-wrap:anywhere !important;
-    word-break:normal !important;
-  }
-  .side-cta .btn{
-    display:flex !important;
-    width:100% !important;
-    padding-left:14px !important;
-    padding-right:14px !important;
-  }
-  @media(max-width:1100px){
-    .side-cta .btn{
-      font-size:.70rem !important;
-      letter-spacing:.035em !important;
-    }
+    .mbar .btn.wa{width:52px;flex:0 0 52px;}
   }
   @media(max-width:520px){
-    .btn{
-      font-size:.72rem !important;
-      letter-spacing:.025em !important;
-      padding-left:12px !important;
-      padding-right:12px !important;
-    }
-    .side-cta .btn, .cta-inline .btn, .final-cta .btn{
-      min-height:54px;
-    }
+    .btn{font-size:.72rem;letter-spacing:.025em;}
+    .side-cta .btn,.cta-inline .btn,.final-cta .btn{min-height:54px;}
   }
-  @media(max-width:360px){
-    .btn{font-size:.66rem !important;}
-  }
+  @media(max-width:360px){.btn{font-size:.66rem;}}
 
-
-
-  /* ===== MOBILE WHO SECTION FIX V5.2: no zoom-out, no huge SVG icons ===== */
-  .who{
-    width:100%;
-    max-width:100%;
-    overflow:hidden;
-  }
-  .who-col{
-    min-height:auto !important;
-  }
+  .who{width:100%;max-width:100%;overflow:hidden;}
   .who-col .wh svg,
-  .who-col li svg{
-    display:none !important;
-  }
-  .who-col .wh{
-    position:relative;
-    padding-left:0;
-    min-height:auto;
-  }
-  .who-col li{
-    position:relative;
-    padding-left:24px;
-    display:block;
-  }
-  .who-col li::before{
-    position:absolute;
-    left:0;
-    top:.08em;
-    font-family:Arial, sans-serif;
-    font-size:1rem;
-    line-height:1;
-    font-weight:700;
-  }
-  .who-col.yes li::before{
-    content:"✓";
-    color:var(--green);
-  }
-  .who-col.no li::before{
-    content:"×";
-    color:var(--muted);
-  }
-
+  .who-col li svg{display:none;}
+  .who-col li{position:relative;padding-left:24px;display:block;}
+  .who-col li::before{position:absolute;left:0;top:.08em;font-family:Arial,sans-serif;font-size:1rem;line-height:1;font-weight:700;}
+  .who-col.yes li::before{content:"✓";color:var(--green);}
+  .who-col.no li::before{content:"×";color:var(--muted);}
   @media(max-width:900px){
-    .who{
-      display:block !important;
-      grid-template-columns:1fr !important;
-      border:1px solid var(--line);
-      margin:22px 0;
-    }
-    .who-col{
-      width:100%;
-      padding:20px 18px !important;
-    }
-    .who-col.yes{
-      border-right:none !important;
-      border-bottom:1px solid var(--line);
-    }
-    .who-col .wh{
-      font-size:.68rem;
-      line-height:1.35;
-      letter-spacing:.08em;
-      margin-bottom:14px;
-    }
-    .who-col ul{
-      gap:10px;
-    }
-    .who-col li{
-      font-size:.98rem;
-      line-height:1.48;
-      padding-left:24px;
-      overflow-wrap:break-word;
-    }
+    .who{display:block;grid-template-columns:1fr;border:1px solid var(--line);margin:22px 0;}
+    .who-col{width:100%;padding:20px 18px;}
+    .who-col.yes{border-right:none;border-bottom:1px solid var(--line);}
+    .who-col .wh{font-size:.68rem;line-height:1.35;letter-spacing:.08em;margin-bottom:14px;}
+    .who-col ul{gap:10px;}
+    .who-col li{font-size:.98rem;line-height:1.48;overflow-wrap:break-word;}
   }
-
   @media(max-width:420px){
-    .who-col{
-      padding:18px 16px !important;
-    }
-    .who-col li{
-      font-size:.95rem;
-      line-height:1.48;
-    }
+    .who-col{padding:18px 16px;}
+    .who-col li{font-size:.95rem;line-height:1.48;}
   }
 
 
-  .h-nowrap{white-space:nowrap}
-  @media(max-width:560px){
-    h1{font-size:clamp(2.05rem,10.5vw,3.35rem);line-height:1.08;overflow-wrap:normal;word-break:normal;hyphens:none}
+
+
+  /* ===== V12 REVIEW CAROUSEL: horizontal slide, Trustpilot-like live rating colors ===== */
+  .review-proof{margin:40px 0;border:1px solid var(--line-strong);background:#fff;padding:28px 26px;overflow:hidden;width:100%;max-width:100%}
+  .review-proof-top{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:18px}
+  .review-kicker{font-family:"Archivo",sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 8px}
+  .review-title{margin:0;border-top:none;padding-top:0}
+  .review-intro{margin:10px 0 0;color:var(--text);font-size:1.02rem;line-height:1.65;max-width:780px}
+  .review-summary{display:flex;align-items:center;gap:12px;flex-wrap:wrap;min-width:220px}
+  .review-summary-stars,.review-stars{display:flex;align-items:center;gap:3px;flex-wrap:nowrap}
+  .tp-sq{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;background:#dcdce6;flex:0 0 auto}
+  .tp-sq svg{width:15px;height:15px;display:block;fill:#fff;stroke:#fff}
+  .tp-sq.excellent.filled{background:#00b67a}
+  .tp-sq.great.filled{background:#00b67a}
+  .tp-sq.average.filled{background:#00b67a}
+  .tp-sq.excellent.half{background:linear-gradient(90deg,#00b67a 50%,#dcdce6 50%)}
+  .tp-sq.great.half{background:linear-gradient(90deg,#00b67a 50%,#dcdce6 50%)}
+  .tp-sq.average.half{background:linear-gradient(90deg,#00b67a 50%,#dcdce6 50%)}
+  .review-summary-text{font-family:"Archivo",sans-serif;display:flex;flex-direction:column;gap:2px;line-height:1.2}
+  .review-summary-text b{font-size:.9rem;color:var(--ink);letter-spacing:.04em;text-transform:uppercase}
+  .review-summary-text span{font-size:.76rem;color:var(--muted);letter-spacing:.03em;text-transform:uppercase}
+  .review-carousel-shell{position:relative;width:100%;max-width:100%;overflow:hidden;margin-top:18px}
+  .review-track{display:flex;flex-direction:row;flex-wrap:nowrap;gap:14px;width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:0 0 8px;scrollbar-width:none;-ms-overflow-style:none}
+  .review-track::-webkit-scrollbar{display:none}
+  .review-card{flex:0 0 calc((100% - 28px)/3);max-width:calc((100% - 28px)/3);scroll-snap-align:start;border:1px solid var(--line);background:var(--paper-2);padding:18px 16px;min-height:248px;display:flex;flex-direction:column;justify-content:space-between;white-space:normal}
+  .review-card .tp-sq{width:18px;height:18px}
+  .review-card .tp-sq svg{width:12px;height:12px}
+  .review-score{font-family:"Archivo",sans-serif;font-size:.72rem;color:var(--muted);margin-left:6px;line-height:1}
+  .review-quote{font-size:.98rem;line-height:1.62;color:var(--ink);margin:12px 0 14px}
+  .review-meta b{display:block;font-family:"Archivo",sans-serif;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:3px}
+  .review-meta span{font-size:.9rem;color:var(--muted)}
+  .review-controls{display:flex;gap:8px;justify-content:flex-end;margin-top:10px}
+  .review-btn{width:38px;height:38px;border:1px solid var(--line-strong);background:#fff;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .18s ease}
+  .review-btn:hover{background:var(--red);border-color:var(--red);color:#fff}
+  .review-btn svg{width:18px;height:18px;stroke:currentColor;fill:none}
+  @media(max-width:980px){.review-card{flex-basis:84vw;max-width:84vw}.review-proof{padding:24px 20px}.review-summary{min-width:0}}
+  @media(max-width:760px){.review-proof{padding:22px 18px}.review-card{flex-basis:86vw;max-width:86vw;min-height:auto}.review-btn{width:34px;height:34px}.review-summary{align-items:flex-start}.tp-sq{width:19px;height:19px}.tp-sq svg{width:13px;height:13px}}
+
+
+
+  /* V18 final review cleanup */
+  .review-intro{max-width:760px}
+  .tp-sq.excellent.filled,
+  .tp-sq.great.filled,
+  .tp-sq.average.filled{
+    background:#00b67a !important;
+  }
+  .tp-sq.excellent.half,
+  .tp-sq.great.half,
+  .tp-sq.average.half{
+    background:linear-gradient(90deg,#00b67a 50%,#dcdce6 50%) !important;
+  }
+  .tp-sq.excellent.empty,
+  .tp-sq.great.empty,
+  .tp-sq.average.empty{
+    background:#dcdce6 !important;
+  }
+  .tp-sq svg{fill:#fff !important;stroke:#fff !important}
+
+
+
+  /* V21 who-section hard fix */
+  .who{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin:24px 0;overflow:hidden}
+  .who-col{padding:24px 22px;min-height:auto}
+  .who-col.yes{border-right:1px solid var(--line)}
+  .who-col .wh{font-family:"Archivo",sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+  .who-col.yes .wh{color:var(--green)}
+  .who-col.no .wh{color:var(--muted)}
+  .who-col ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin:0;padding:0}
+  .who-col li{position:relative;padding-left:24px;display:block;font-size:1rem;line-height:1.5}
+  .who-col li::before{position:absolute;left:0;top:.08em;font-family:Arial,sans-serif;font-size:1rem;line-height:1;font-weight:700}
+  .who-col.yes li::before{content:"✓";color:var(--green)}
+  .who-col.no li::before{content:"×";color:var(--muted)}
+  .who svg{display:none !important}
+  @media(max-width:900px){
+    .who{display:block;grid-template-columns:1fr;margin:22px 0}
+    .who-col{width:100%;padding:20px 18px}
+    .who-col.yes{border-right:none;border-bottom:1px solid var(--line)}
+    .who-col .wh{font-size:.68rem;line-height:1.35;letter-spacing:.08em;margin-bottom:14px}
+    .who-col li{font-size:.98rem;line-height:1.48;overflow-wrap:break-word}
   }
 
 
-  /* V8 social proof slider */
-  .social-proof-v7{margin:40px 0;border:1px solid var(--line-strong);background:#fff;padding:28px 26px;overflow:hidden}
-  .spv7-top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
-  .spv7-kicker{font-family:"Archivo",sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 8px}
-  .spv7-title{margin:0;border-top:none;padding-top:0}
-  .spv7-intro{margin:10px 0 0;color:var(--text);font-size:1.02rem;line-height:1.65;max-width:780px}
-  .spv7-rating{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-  .tp-stars{display:flex;gap:3px;align-items:center}
-  .tp-star{width:22px;height:22px;background:#00b67a;display:inline-flex;align-items:center;justify-content:center}
-  .tp-star svg{width:15px;height:15px;fill:#fff;stroke:#fff;display:block}
-  .tp-star.half{background:linear-gradient(90deg,#00b67a 72%,#dcdce6 72%)}
-  .spv7-rating-text{font-family:"Archivo",sans-serif;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
-  .spv7-slider-wrap{position:relative;margin-top:18px}
-  .spv7-slider{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(285px, 31%);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:8px;-ms-overflow-style:none;scrollbar-width:none}
-  .spv7-slider::-webkit-scrollbar{display:none}
-  .spv7-card{scroll-snap-align:start;border:1px solid var(--line);background:var(--paper-2);padding:18px 16px;min-height:248px;display:flex;flex-direction:column;justify-content:space-between}
-  .spv7-card .mini-stars{display:flex;gap:2px;margin-bottom:12px}
-  .spv7-card .mini-stars .tp-star{width:18px;height:18px}
-  .spv7-card .mini-stars .tp-star svg{width:12px;height:12px}
-  .spv7-quote{font-size:.98rem;line-height:1.62;color:var(--ink);margin:0 0 14px}
-  .spv7-meta b{display:block;font-family:"Archivo",sans-serif;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:3px}
-  .spv7-meta span{font-size:.9rem;color:var(--muted)}
-  .spv7-controls{display:flex;gap:8px;justify-content:flex-end;margin-top:10px}
-  .spv7-btn{width:38px;height:38px;border:1px solid var(--line-strong);background:#fff;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .18s ease}
-  .spv7-btn:hover{background:var(--red);border-color:var(--red);color:#fff}
-  .spv7-btn svg{width:18px;height:18px;stroke:currentColor;fill:none}
-  @media(max-width:980px){.spv7-slider{grid-auto-columns:minmax(260px,84vw)}}
-  @media(max-width:760px){.social-proof-v7{padding:22px 18px}.spv7-card{min-height:auto}.spv7-btn{width:34px;height:34px}.spv7-rating{align-items:flex-start}.tp-star{width:19px;height:19px}.tp-star svg{width:13px;height:13px}}
+  /* V22 landing-only CTA cleanup */
+  .final-cta,.cta-inline{gap:14px}
+  .mbar{justify-content:center}
+  .mbar .btn{width:100%;max-width:520px;flex:1}
 
 </style>
 </head>
@@ -871,7 +797,7 @@
 
     <h1>Permis d'études <span class="h-nowrap">Canada&nbsp;:</span> pourquoi un dossier complet n'est pas forcément un dossier solide</h1>
 
-    <p class="deck">Des milliers de familles d'Afrique francophone réunissent l'admission, l'argent et les documents — et reçoivent quand même un refus. Décryptage d'un malentendu coûteux, et de ce qui distingue vraiment un dossier qui convainc.</p>
+    <p class="deck">À Douala, Yaoundé et dans toute l'Afrique francophone, des familles réunissent l'admission, l'argent et les documents — et reçoivent quand même un refus. Décryptage d'un malentendu coûteux, et de ce qui distingue vraiment un dossier qui convainc.</p>
 
     <div class="byline">
       <span class="pub"><span class="mono-r">R</span>Publié par Revive Agency</span>
@@ -934,7 +860,7 @@
           <div class="s">Source : gouvernement du Canada, en CAD</div>
         </div>
       </div>
-      <div class="data-foot">Ces chiffres donnent un contexte général : ils varient selon les profils, les pays, les périodes et les niveaux d’études. Les seuils financiers doivent toujours être vérifiés sur la page officielle d’IRCC avant toute soumission.</div>
+      <div class="data-foot">Les taux varient selon les profils, les périodes et les pays. Ces données sont basées sur des sources publiques disponibles au moment de la publication.</div>
     </div>
 
     <h2>Le malentendu : « complet » ne veut pas dire « solide »</h2>
@@ -958,11 +884,45 @@
       </table>
     </div>
 
+
+    <div class="mobile-retain" aria-label="À retenir">
+      <div class="mr-head">À retenir</div>
+      <ul>
+        <li><b>1</b> Un dossier complet n’est pas forcément un dossier solide.</li>
+        <li><b>2</b> Le vrai risque est souvent l’incohérence entre les documents.</li>
+        <li><b>3</b> Avant de soumettre, il faut comprendre ce qui peut créer le doute.</li>
+      </ul>
+    </div>
+
     <p class="pull">Le problème n'est pas toujours ce qui manque. C'est souvent ce qui ne s'aligne pas.</p>
+
+    <!-- V5: what happens after click -->
+    <div class="next-click">
+      <div class="nh">Ce qui se passe après le clic</div>
+      <div class="next-grid">
+        <div class="next-item">
+          <div class="num">Étape 1</div>
+          <b>Quelques questions</b>
+          <p>Vous répondez à des questions simples sur le profil, le projet d'études, le financement, le garant et les refus précédents.</p>
+        </div>
+        <div class="next-item">
+          <div class="num">Étape 2</div>
+          <b>Validation du profil</b>
+          <p>Revive vérifie si votre situation peut être accompagnée sérieusement, sans promesse automatique ni discours magique.</p>
+        </div>
+        <div class="next-item">
+          <div class="num">Étape 3</div>
+          <b>Ouverture du dossier</b>
+          <p>Si vous décidez d'avancer, vous recevez les étapes pour payer le service, ouvrir votre dossier client et commencer la préparation.</p>
+        </div>
+      </div>
+    </div>
+
 
     <!-- INLINE CTA after belief shift -->
     <div class="cta-inline">
-      <div class="ct">Si votre dossier doit être soumis, il doit d’abord être construit autour d’une histoire cohérente.</div>
+      <div class="ct">Si votre dossier doit être soumis, il doit d’abord être construit autour d’une histoire cohérente.
+    </div>
       <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon accompagnement Canada
         <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
@@ -1003,149 +963,239 @@
 
 
     <!-- V7: SOCIAL PROOF -->
-    <section class="social-proof-v7" aria-labelledby="spv7-title">
-      <div class="spv7-top">
+    <!-- V12: REAL HORIZONTAL REVIEW CAROUSEL -->
+    <section class="review-proof" aria-labelledby="review-proof-title">
+      <div class="review-proof-top">
         <div>
-          <div class="spv7-kicker">Preuves sociales</div>
-          <h2 id="spv7-title" class="spv7-title">Ce que d'autres familles retiennent de l'accompagnement</h2>
-          <p class="spv7-intro">Après l’accompagnement, nous avons demandé à plusieurs familles et étudiants de nous dire, avec leurs propres mots, ce qu’ils avaient retenu de l’expérience Revive. Voici une sélection de retours qui reviennent le plus souvent : clarté, organisation, suivi, méthode et sérieux dans la préparation du dossier.</p>
+          <div class="review-kicker">Retours d'expérience</div>
+          <h2 id="review-proof-title" class="review-title no-rule">Ce que les familles retiennent de l'accompagnement</h2>
+          <p class="review-intro">Nous avons demandé à des familles et étudiants accompagnés ce qu’ils avaient retenu de l’expérience. Voici quelques retours reçus au fil des accompagnements.</p>
         </div>
-        <div class="spv7-rating" aria-label="Exemple de note visuelle">
-          <div class="tp-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-          <div class="spv7-rating-text">17 retours recueillis auprès de familles et étudiants accompagnés</div>
-        </div>
-      </div>
-
-      <div class="spv7-slider-wrap">
-        <div class="spv7-slider" id="spv7-slider">
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“L’accompagnement nous a surtout rassurés sur l’organisation du dossier. Nous savions quoi préparer, dans quel ordre, et pourquoi chaque pièce comptait.”</p>
-            </div>
-            <div class="spv7-meta"><b>Parent accompagné</b><span>Douala · Avis exemple à remplacer</span></div>
-          </article>
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“Après un premier refus, nous cherchions surtout une équipe sérieuse. Ce qui a fait la différence, c’est la clarté des explications et la préparation étape par étape.”</p>
-            </div>
-            <div class="spv7-meta"><b>Famille accompagnée</b><span>Kinshasa · Avis exemple à remplacer</span></div>
-          </article>
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“Nous voulions éviter les promesses faciles. Ici, nous avons surtout senti une méthode, un suivi, et une vraie logique dans la préparation du dossier.”</p>
-            </div>
-            <div class="spv7-meta"><b>Étudiant accompagné</b><span>Abidjan · Avis exemple à remplacer</span></div>
-          </article>
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“On avait déjà les documents, mais tout était mélangé. Revive nous a aidés à voir le dossier comme un ensemble plus clair.”</p>
-            </div>
-            <div class="spv7-meta"><b>Parent d’étudiant</b><span>Yaoundé · Avis exemple à remplacer</span></div>
-          </article>
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“Ce que nous avons apprécié, c’est le sérieux. Personne ne nous a promis l’impossible, mais chaque étape était expliquée clairement.”</p>
-            </div>
-            <div class="spv7-meta"><b>Famille accompagnée</b><span>Brazzaville · Avis exemple à remplacer</span></div>
-          </article>
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“La préparation de la lettre d’explication m’a aidée à mieux présenter mon parcours et à comprendre ce qui pouvait créer du doute.”</p>
-            </div>
-            <div class="spv7-meta"><b>Étudiante accompagnée</b><span>Dakar · Avis exemple à remplacer</span></div>
-          </article>
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“Avant, je pensais que le plus important était seulement le solde bancaire. L’accompagnement nous a montré qu’il fallait aussi expliquer l’origine et la logique des fonds.”</p>
-            </div>
-            <div class="spv7-meta"><b>Parent accompagné</b><span>Cotonou · Avis exemple à remplacer</span></div>
-          </article>
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“Le suivi WhatsApp était rassurant. On savait quoi envoyer, quoi corriger, et pourquoi certains documents devaient être mieux organisés.”</p>
-            </div>
-            <div class="spv7-meta"><b>Famille accompagnée</b><span>Lomé · Avis exemple à remplacer</span></div>
-          </article>
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“J’avais peur de refaire les mêmes erreurs après un refus. La méthode m’a permis de reprendre le dossier avec plus de structure.”</p>
-            </div>
-            <div class="spv7-meta"><b>Étudiant accompagné</b><span>Conakry · Avis exemple à remplacer</span></div>
-          </article>
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“L’équipe a pris le temps de nous dire ce qui était clair et ce qui devait être mieux expliqué. C’est ce qu’on attend d’une agence sérieuse.”</p>
-            </div>
-            <div class="spv7-meta"><b>Parent accompagné</b><span>Bamako · Avis exemple à remplacer</span></div>
-          </article>
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“Nous avons aimé le fait qu’on ne nous demande pas juste des documents. On nous expliquait le rôle de chaque pièce dans le dossier.”</p>
-            </div>
-            <div class="spv7-meta"><b>Famille accompagnée</b><span>Libreville · Avis exemple à remplacer</span></div>
-          </article>
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“Le processus était simple à suivre. Pré-évaluation, collecte des documents, préparation, puis vérification finale.”</p>
-            </div>
-            <div class="spv7-meta"><b>Étudiant accompagné</b><span>Rabat · Avis exemple à remplacer</span></div>
-          </article>
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“Le dossier de mon fils était complet, mais certaines choses n’étaient pas bien reliées. C’est là que l’accompagnement a été utile.”</p>
-            </div>
-            <div class="spv7-meta"><b>Parent accompagné</b><span>Lubumbashi · Avis exemple à remplacer</span></div>
-          </article>
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“Nous avions besoin d’un cadre sérieux, pas seulement quelqu’un pour remplir des formulaires. La différence était dans la préparation.”</p>
-            </div>
-            <div class="spv7-meta"><b>Famille accompagnée</b><span>Douala · Avis exemple à remplacer</span></div>
-          </article>
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“J’ai mieux compris comment présenter mon projet d’études et pourquoi le choix du programme devait être logique avec mon parcours.”</p>
-            </div>
-            <div class="spv7-meta"><b>Étudiante accompagnée</b><span>Abidjan · Avis exemple à remplacer</span></div>
-          </article>
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“L’accompagnement nous a évité de soumettre trop vite un dossier qui avait encore des zones floues.”</p>
-            </div>
-            <div class="spv7-meta"><b>Parent accompagné</b><span>Kinshasa · Avis exemple à remplacer</span></div>
-          </article>
-          <article class="spv7-card">
-            <div>
-              <div class="mini-stars"><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-star half"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
-              <p class="spv7-quote">“La partie la plus utile était la vérification finale. Cela nous a permis de corriger des détails que nous n’avions pas remarqués.”</p>
-            </div>
-            <div class="spv7-meta"><b>Famille accompagnée</b><span>Yaoundé · Avis exemple à remplacer</span></div>
-          </article>
-        </div>
-        <div class="spv7-controls" aria-hidden="true">
-          <button class="spv7-btn" type="button" id="spv7-prev" aria-label="Avis précédent"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
-          <button class="spv7-btn" type="button" id="spv7-next" aria-label="Avis suivant"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+        <div class="review-summary" aria-label="Note moyenne visuelle">
+          <div class="review-summary-stars"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent half" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span></div>
+          <div class="review-summary-text"><b>4,4/5</b><span>Retours d'expérience</span></div>
         </div>
       </div>
 
+      <div class="review-carousel-shell">
+        <div class="review-track" id="review-track">
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,5 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent half" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,5/5</span></div>
+              <p class="review-quote">“L’accompagnement nous a surtout rassurés sur l’organisation du dossier. Nous savions quoi préparer, dans quel ordre, et pourquoi chaque pièce comptait.”</p>
+            </div>
+            <div class="review-meta"><b>Parent accompagné</b><span>Douala · 12 février 2024</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent empty" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,0/5</span></div>
+              <p class="review-quote">“Après un premier refus, nous cherchions surtout une équipe sérieuse. Ce qui a fait la différence, c’est la clarté des explications et la préparation étape par étape.”</p>
+            </div>
+            <div class="review-meta"><b>Famille accompagnée</b><span>Kinshasa · 8 octobre 2025</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 5,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">5,0/5</span></div>
+              <p class="review-quote">“Nous voulions éviter les promesses faciles. Ici, nous avons surtout senti une méthode, un suivi, et une vraie logique dans la préparation du dossier.”</p>
+            </div>
+            <div class="review-meta"><b>Étudiant accompagné</b><span>Abidjan · 4 avril 2026</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent empty" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,0/5</span></div>
+              <p class="review-quote">“On avait déjà les documents, mais tout était mélangé. Revive nous a aidés à voir le dossier comme un ensemble plus clair.”</p>
+            </div>
+            <div class="review-meta"><b>Parent d’étudiant</b><span>Yaoundé · 19 juillet 2023</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,5 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent half" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,5/5</span></div>
+              <p class="review-quote">“Ce que nous avons apprécié, c’est le sérieux. Personne ne nous a promis l’impossible, mais chaque étape était expliquée clairement.”</p>
+            </div>
+            <div class="review-meta"><b>Famille accompagnée</b><span>Brazzaville · 27 janvier 2026</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent empty" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,0/5</span></div>
+              <p class="review-quote">“La préparation de la lettre d’explication m’a aidée à mieux présenter mon parcours et à comprendre ce qui pouvait créer du doute.”</p>
+            </div>
+            <div class="review-meta"><b>Étudiante accompagnée</b><span>Dakar · 3 novembre 2024</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 5,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">5,0/5</span></div>
+              <p class="review-quote">“Avant, je pensais que le plus important était seulement le solde bancaire. L’accompagnement nous a montré qu’il fallait aussi expliquer l’origine et la logique des fonds.”</p>
+            </div>
+            <div class="review-meta"><b>Parent accompagné</b><span>Cotonou · 22 mars 2025</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,5 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent half" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,5/5</span></div>
+              <p class="review-quote">“Le suivi WhatsApp était rassurant. On savait quoi envoyer, quoi corriger, et pourquoi certains documents devaient être mieux organisés.”</p>
+            </div>
+            <div class="review-meta"><b>Famille accompagnée</b><span>Lomé · 15 septembre 2023</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent empty" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,0/5</span></div>
+              <p class="review-quote">“J’avais peur de refaire les mêmes erreurs après un refus. La méthode m’a permis de reprendre le dossier avec plus de structure.”</p>
+            </div>
+            <div class="review-meta"><b>Étudiant accompagné</b><span>Conakry · 9 avril 2026</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent empty" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,0/5</span></div>
+              <p class="review-quote">“L’équipe a pris le temps de nous dire ce qui était clair et ce qui devait être mieux expliqué. C’est ce qu’on attend d’une agence sérieuse.”</p>
+            </div>
+            <div class="review-meta"><b>Parent accompagné</b><span>Bamako · 6 mai 2024</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,5 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent half" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,5/5</span></div>
+              <p class="review-quote">“Nous avons aimé le fait qu’on ne nous demande pas juste des documents. On nous expliquait le rôle de chaque pièce dans le dossier.”</p>
+            </div>
+            <div class="review-meta"><b>Famille accompagnée</b><span>Libreville · 18 décembre 2025</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 5,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">5,0/5</span></div>
+              <p class="review-quote">“Le processus était simple à suivre. Pré-évaluation, collecte des documents, préparation, puis vérification finale.”</p>
+            </div>
+            <div class="review-meta"><b>Étudiant accompagné</b><span>Rabat · 1 août 2024</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent empty" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,0/5</span></div>
+              <p class="review-quote">“Le dossier de mon fils était complet, mais certaines choses n’étaient pas bien reliées. C’est là que l’accompagnement a été utile.”</p>
+            </div>
+            <div class="review-meta"><b>Parent accompagné</b><span>Lubumbashi · 24 avril 2026</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,5 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent half" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,5/5</span></div>
+              <p class="review-quote">“Nous avions besoin d’un cadre sérieux, pas seulement quelqu’un pour remplir des formulaires. La différence était dans la préparation.”</p>
+            </div>
+            <div class="review-meta"><b>Famille accompagnée</b><span>Douala · 11 juin 2023</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent empty" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,0/5</span></div>
+              <p class="review-quote">“J’ai mieux compris comment présenter mon projet d’études et pourquoi le choix du programme devait être logique avec mon parcours.”</p>
+            </div>
+            <div class="review-meta"><b>Étudiante accompagnée</b><span>Abidjan · 30 septembre 2025</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 5,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">5,0/5</span></div>
+              <p class="review-quote">“L’accompagnement nous a évité de soumettre trop vite un dossier qui avait encore des zones floues.”</p>
+            </div>
+            <div class="review-meta"><b>Parent accompagné</b><span>Kinshasa · 7 février 2026</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent empty" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,0/5</span></div>
+              <p class="review-quote">“La partie la plus utile était la vérification finale. Cela nous a permis de corriger des détails que nous n’avions pas remarqués.”</p>
+            </div>
+            <div class="review-meta"><b>Famille accompagnée</b><span>Yaoundé · 14 mars 2024</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,5 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent half" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,5/5</span></div>
+              <p class="review-quote">“On ne savait pas comment expliquer certains dépôts sur le compte du garant. Le fait de mettre chaque élément dans une logique claire nous a beaucoup aidés.”</p>
+            </div>
+            <div class="review-meta"><b>Parent accompagné</b><span>Douala · 26 novembre 2023</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 5,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">5,0/5</span></div>
+              <p class="review-quote">“Mon ancien dossier était rempli de documents, mais je ne comprenais pas ce qui pouvait créer le doute. L’accompagnement m’a aidé à reprendre point par point.”</p>
+            </div>
+            <div class="review-meta"><b>Étudiant accompagné</b><span>Kinshasa · 2 avril 2025</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent empty" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,0/5</span></div>
+              <p class="review-quote">“Ce que nous avons aimé, c’est qu’on nous disait quand un document n’était pas assez clair au lieu de simplement l’ajouter au dossier.”</p>
+            </div>
+            <div class="review-meta"><b>Famille accompagnée</b><span>Yaoundé · 17 janvier 2024</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,5 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent half" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,5/5</span></div>
+              <p class="review-quote">“La partie financière était la plus stressante pour nous. Les explications sur le garant, les relevés et l’origine des fonds ont rendu les choses plus simples.”</p>
+            </div>
+            <div class="review-meta"><b>Parent d’étudiante</b><span>Abidjan · 21 août 2025</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent empty" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,0/5</span></div>
+              <p class="review-quote">“J’avais du mal à expliquer pourquoi ce programme était logique avec mon parcours. Après l’accompagnement, mon projet était beaucoup plus clair.”</p>
+            </div>
+            <div class="review-meta"><b>Étudiante accompagnée</b><span>Dakar · 5 décembre 2024</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 5,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">5,0/5</span></div>
+              <p class="review-quote">“On avait peur de refaire une demande trop vite après le refus. La préparation nous a permis de voir les zones faibles avant de continuer.”</p>
+            </div>
+            <div class="review-meta"><b>Famille accompagnée</b><span>Brazzaville · 10 octobre 2023</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,5 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent half" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,5/5</span></div>
+              <p class="review-quote">“Le plus utile, c’était la checklist et l’ordre des documents. Avant, tout était là, mais rien n’était vraiment organisé.”</p>
+            </div>
+            <div class="review-meta"><b>Parent accompagné</b><span>Cotonou · 16 avril 2026</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent empty" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,0/5</span></div>
+              <p class="review-quote">“On m’a aidé à comprendre que ce n’était pas seulement le nombre de documents qui comptait, mais la cohérence entre eux.”</p>
+            </div>
+            <div class="review-meta"><b>Étudiant accompagné</b><span>Lomé · 28 mai 2025</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent empty" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,0/5</span></div>
+              <p class="review-quote">“Le suivi était sérieux. Chaque fois qu’une information semblait floue, on nous demandait de l’expliquer avant d’avancer.”</p>
+            </div>
+            <div class="review-meta"><b>Famille accompagnée</b><span>Libreville · 13 juillet 2024</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,5 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent half" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,5/5</span></div>
+              <p class="review-quote">“Nous avions déjà payé des frais et nous ne voulions pas prendre le risque de soumettre un dossier mal présenté. L’accompagnement nous a rassurés.”</p>
+            </div>
+            <div class="review-meta"><b>Parent accompagné</b><span>Bamako · 25 février 2025</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 5,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">5,0/5</span></div>
+              <p class="review-quote">“J’ai apprécié qu’on ne me promette pas de résultat. On m’a surtout aidée à rendre mon dossier plus propre, plus clair et plus logique.”</p>
+            </div>
+            <div class="review-meta"><b>Étudiante accompagnée</b><span>Conakry · 6 janvier 2026</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,0 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent empty" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,0/5</span></div>
+              <p class="review-quote">“Le dossier de notre fils semblait prêt, mais il manquait des explications sur le choix du programme et le rôle du garant. C’est là que l’aide a été importante.”</p>
+            </div>
+            <div class="review-meta"><b>Famille accompagnée</b><span>Lubumbashi · 20 novembre 2025</span></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Note 4,5 sur 5"><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent filled" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="tp-sq excellent half" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7.1L2 9.2l7.2-.6L12 2l2.8 6.6 7.2.6-5.4 4.7 1.6 7.1z"/></svg></span><span class="review-score">4,5/5</span></div>
+              <p class="review-quote">“Le processus était plus sérieux que ce qu’on imaginait. On nous a posé les bonnes questions avant de nous demander d’envoyer tous les documents.”</p>
+            </div>
+            <div class="review-meta"><b>Parent accompagné</b><span>Rabat · 29 avril 2026</span></div>
+          </article>
+        </div>
+      </div>
+      <div class="review-controls" aria-hidden="true">
+        <button class="review-btn" type="button" id="review-prev" aria-label="Avis précédent"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="review-btn" type="button" id="review-next" aria-label="Avis suivant"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
     </section>
-
 
     <!-- METHOD -->
     <h2>Comment Revive transforme cette analyse en accompagnement concret</h2>
@@ -1153,80 +1203,27 @@
     <p>Le cœur de l'approche Revive reste l'<strong>Audit de Cohérence du Dossier</strong>. Mais l'objectif n'est pas seulement de regarder un dossier de loin. L'objectif est d'accompagner la famille dans la préparation administrative du dossier, l'organisation des pièces, la structuration des preuves et la présentation d'un projet plus clair avant la soumission.</p>
 
     <div class="axes">
-      <div class="axis"><div class="ax-n">1</div><div class="ax-b"><b>Cohérence académique</b><p>Le choix de programme découle-t-il logiquement du parcours, et prépare-t-il une suite crédible ?</p></div></div>
-      <div class="axis"><div class="ax-n">2</div><div class="ax-b"><b>Cohérence financière</b><p>Les fonds sont-ils clairs, traçables et compatibles avec la réalité du garant, plutôt qu'apparus subitement ?</p></div></div>
-      <div class="axis"><div class="ax-n">3</div><div class="ax-b"><b>Cohérence du garant</b><p>Le lien et l'engagement du sponsor sont-ils documentés de façon compréhensible pour un agent qui ne vous connaît pas ?</p></div></div>
-      <div class="axis"><div class="ax-n">4</div><div class="ax-b"><b>Cohérence de la lettre d'explication</b><p>Dit-elle vraiment pourquoi vous, pourquoi ce programme, pourquoi maintenant, et pourquoi le retour a du sens ?</p></div></div>
-      <div class="axis"><div class="ax-n">5</div><div class="ax-b"><b>Cohérence globale</b><p>Chaque document confirme-t-il les autres, sans contradiction qui sème le doute ?</p></div></div>
+      <div class="axis"><div class="ax-n">1</div><div class="ax-b"><b>Le programme peut-il créer le doute ?</b><p>Le choix d’études doit paraître logique avec le parcours déjà suivi, pas comme une rupture difficile à expliquer.</p></div></div>
+      <div class="axis"><div class="ax-n">2</div><div class="ax-b"><b>L’argent est-il lisible pour un agent ?</b><p>Les fonds doivent être clairs, traçables et compatibles avec la réalité du garant, pas seulement présents sur un compte.</p></div></div>
+      <div class="axis"><div class="ax-n">3</div><div class="ax-b"><b>Le garant est-il crédible ?</b><p>Le lien, les revenus et l’engagement du sponsor doivent être compréhensibles pour quelqu’un qui ne connaît pas la famille.</p></div></div>
+      <div class="axis"><div class="ax-n">4</div><div class="ax-b"><b>La lettre répond-elle aux vraies questions ?</b><p>Elle doit expliquer pourquoi ce programme, pourquoi maintenant, et pourquoi le projet reste cohérent après les études.</p></div></div>
+      <div class="axis"><div class="ax-n">5</div><div class="ax-b"><b>Les documents se contredisent-ils ?</b><p>Un bon dossier ne se contente pas d’empiler des pièces : chaque document doit renforcer les autres.</p></div></div>
     </div>
 
-    <!-- V5: concrete service -->
-    <div class="service-stack">
-      <div class="sv-head"><span class="b"></span>Ce que Revive prépare concrètement avec vous</div>
-      <p class="sv-intro">Une famille ne paie pas Revive pour lire un simple article ou recevoir une opinion vague. Elle paie pour être accompagnée dans la préparation administrative d'un dossier d'études Canada plus clair, plus cohérent et mieux organisé.</p>
-      <div class="service-grid">
-        <div class="service-item"><b>Analyse du profil et du projet</b><p>Comprendre le parcours, le programme visé, les objectifs d'études et les points qui peuvent créer un doute.</p></div>
-        <div class="service-item"><b>Collecte et organisation des documents</b><p>Mettre de l'ordre dans les pièces, éviter les oublis et préparer une structure lisible.</p></div>
-        <div class="service-item"><b>Preuves financières et garant</b><p>Clarifier la logique de prise en charge, la provenance des fonds et la cohérence du sponsor.</p></div>
-        <div class="service-item"><b>Lettre d'explication</b><p>Aider à présenter le projet, le choix du programme et la logique de retour de façon plus claire.</p></div>
-        <div class="service-item"><b>Vérification finale</b><p>Relire l'ensemble du dossier pour repérer incohérences, zones floues et contradictions possibles.</p></div>
-        <div class="service-item"><b>Accompagnement jusqu'à la soumission</b><p>Guider la famille dans les étapes administratives, sans promettre la décision d'IRCC.</p></div>
-      </div>
-      <div class="service-foot">L'idée n'est pas de maquiller un profil. L'idée est de préparer les vrais éléments du dossier de manière plus claire, plus cohérente et plus sérieuse.</div>
-    </div>
-
-    <!-- V5: classic agency vs Revive -->
-    <div class="agency-compare">
-      <h2>Agence classique ou accompagnement structuré ?</h2>
-      <table class="agency-table">
-        <thead>
-          <tr><th>Approche fréquente</th><th class="rev">Approche Revive Agency</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><b>Collecter</b><br>On demande les documents et on vérifie surtout que les pièces sont présentes.</td><td class="rev"><b>Structurer</b><br>On regarde comment les documents se répondent et ce qu'ils racontent ensemble.</td></tr>
-          <tr><td><b>Remplir</b><br>Le travail se limite souvent aux formulaires et à la mise en ligne du dossier.</td><td class="rev"><b>Préparer</b><br>Le dossier est organisé autour du parcours, du financement, du garant et de la lettre d'explication.</td></tr>
-          <tr><td><b>Soumettre</b><br>Le dossier part parfois avec des zones floues que la famille ne voit pas.</td><td class="rev"><b>Clarifier avant soumission</b><br>Les incohérences visibles sont repérées avant que le dossier ne soit envoyé.</td></tr>
-        </tbody>
-      </table>
+    <div class="price-note">
+      <b>Tarif indicatif</b>
+      <p>L’accompagnement Revive est accessible à partir de <strong>850 USD</strong>, selon le profil et le type de demande. L’objectif est simple : vérifier d’abord la cohérence du dossier avant d’engager du temps, des documents et de l’argent dans une soumission.</p>
     </div>
 
     <div class="callout c-decryptage">
-      <div class="clab">La méthode, étape par étape</div>
-      <div class="proc">
-        <div class="proc-step"><div class="pn">01</div><div class="pb"><b>Pré-évaluation du profil</b><span>On comprend votre situation, votre projet d'études, le financement et les éventuels refus précédents.</span></div></div>
-        <div class="proc-step"><div class="pn">02</div><div class="pb"><b>Validation de l'accompagnement</b><span>Si le profil peut être accompagné, vous recevez les prochaines étapes et les conditions du service.</span></div></div>
-        <div class="proc-step"><div class="pn">03</div><div class="pb"><b>Paiement et ouverture du dossier client</b><span>Le dossier est ouvert, les informations sont organisées et la collecte des pièces commence.</span></div></div>
-        <div class="proc-step"><div class="pn">04</div><div class="pb"><b>Préparation administrative</b><span>Les documents, le garant, les preuves financières et la lettre d'explication sont structurés avec une logique de cohérence.</span></div></div>
-        <div class="proc-step"><div class="pn">05</div><div class="pb"><b>Vérification finale avant soumission</b><span>Le dossier est relu pour repérer les incohérences, les zones floues et les éléments mal expliqués.</span></div></div>
-        <div class="proc-step"><div class="pn">06</div><div class="pb"><b>Accompagnement jusqu'à la démarche suivante</b><span>Vous êtes guidé dans les étapes administratives, sans fausse promesse sur la décision finale.</span></div></div>
-      </div>
-    </div>
-
-    <!-- V5: what happens after click -->
-    <div class="next-click">
-      <div class="nh">Ce qui se passe après le clic</div>
-      <div class="next-grid">
-        <div class="next-item">
-          <div class="num">Étape 1</div>
-          <b>Quelques questions</b>
-          <p>Vous répondez à des questions simples sur le profil, le projet d'études, le financement, le garant et les refus précédents.</p>
-        </div>
-        <div class="next-item">
-          <div class="num">Étape 2</div>
-          <b>Validation du profil</b>
-          <p>Revive vérifie si votre situation peut être accompagnée sérieusement, sans promesse automatique ni discours magique.</p>
-        </div>
-        <div class="next-item">
-          <div class="num">Étape 3</div>
-          <b>Ouverture du dossier</b>
-          <p>Si vous décidez d'avancer, vous recevez les étapes pour payer le service, ouvrir votre dossier client et commencer la préparation.</p>
-        </div>
-      </div>
+      <div class="clab">Peut-on faire sa demande seul ?</div>
+      <p>Oui. Beaucoup de familles déposent seules. Revive s’adresse surtout à ceux qui veulent éviter qu’un dossier sérieux soit affaibli par des zones floues : programme mal expliqué, garant mal présenté, fonds difficiles à lire ou ancienne lettre de refus mal comprise.</p>
     </div>
 
     <!-- INLINE CTA after mechanism -->
     <div class="cta-inline">
-      <div class="ct">Ne payez pas seulement pour soumettre un dossier. Faites-le préparer avec une vraie logique de cohérence.</div>
+      <div class="ct">Ne payez pas seulement pour soumettre un dossier. Faites-le préparer avec une vraie logique de cohérence.
+    </div>
       <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon accompagnement Canada
         <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
@@ -1235,8 +1232,8 @@
     <div class="engage">
       <div class="engage-h"><svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>L'engagement de Revive Agency</div>
       <div class="engage-b">
-        <p><strong>L’accompagnement Revive repose sur une ligne simple : préparer sérieusement le dossier, sans promesse irréaliste.</strong> La décision finale appartient à IRCC. Une structure sérieuse doit expliquer les risques, refuser les faux documents et éviter les promesses impossibles.</p>
-        <p>Ce qui est garanti, c'est le sérieux de l'accompagnement administratif : des documents mieux organisés, une présentation plus claire, une cohérence mieux travaillée, et la vérité sur les points faibles visibles du dossier. Aucun document n'est fabriqué, aucune situation n'est maquillée. Et lorsqu'un profil n'est pas prêt à être accompagné correctement, Revive le dit — même si cela signifie ne pas prendre l'argent du client ce jour-là.</p>
+        <p><strong>La décision finale appartient exclusivement à IRCC. Aucun acteur — ni consultant, ni avocat, ni agence — ne peut légalement garantir l'obtention d'un visa.</strong> Une structure sérieuse doit expliquer les risques, refuser les faux documents et éviter les promesses impossibles.</p>
+        <p>Ce qui est garanti, c’est le sérieux de l’accompagnement administratif : des documents mieux organisés, une présentation plus claire, une cohérence mieux travaillée, et la vérité sur les points faibles visibles du dossier. Aucun document n’est fabriqué, aucune situation n’est maquillée.</p>
       </div>
     </div>
 
@@ -1255,19 +1252,19 @@
     <h2>À qui cela s'adresse — et à qui non</h2>
     <div class="who">
       <div class="who-col yes">
-        <div class="wh"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg>C'est pour vous si</div>
+        <div class="wh">C'est pour vous si</div>
         <ul>
-          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg>Vous voulez faire préparer votre dossier Canada avec sérieux avant la soumission.</li>
-          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg>Vous préférez une vérité utile à une promesse flatteuse.</li>
-          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg>Vous voulez un accompagnement clair pour organiser les documents, le garant, les fonds et la lettre.</li>
+          <li>Vous voulez faire préparer votre dossier Canada avec sérieux avant la soumission.</li>
+          <li>Vous préférez une vérité utile à une promesse flatteuse.</li>
+          <li>Vous voulez un accompagnement clair pour organiser les documents, le garant, les fonds et la lettre.</li>
         </ul>
       </div>
       <div class="who-col no">
-        <div class="wh"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 7L7 17"/></svg>Ce n'est pas pour vous si</div>
+        <div class="wh">Ce n'est pas pour vous si</div>
         <ul>
-          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 7L7 17"/></svg>Vous cherchez un raccourci ou une garantie magique.</li>
-          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 7L7 17"/></svg>Vous voulez contourner les règles.</li>
-          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 7L7 17"/></svg>Vous attendez une promesse de visa.</li>
+          <li>Vous avez déjà eu un refus et pensez que renvoyer le même dossier avec plus de documents suffira.</li>
+          <li>Vous cherchez une agence qui promet le visa avant même d’avoir vu votre dossier.</li>
+          <li>Vous voulez modifier, masquer ou arranger une information importante.</li>
         </ul>
       </div>
     </div>
@@ -1298,12 +1295,12 @@
     </div>
 
     <p>Un dossier d'études Canada ne devrait pas être une pile de papiers. Il devrait être une histoire cohérente, appuyée par des preuves — et c'est précisément le type de préparation que Revive propose d'accompagner.</p>
-    <p class="closing-q">Avant d'engager l'argent, le temps et l'espoir de toute une famille, la vraie question n'est pas seulement : avons-nous réuni tous les documents ? C'est : avons-nous confié la préparation du dossier à une équipe qui comprend comment ces documents doivent se répondre ?</p>
+    <p class="closing-q">Avant d’engager l’argent et l’espoir d’une famille, la vraie question est : est-ce que mon dossier raconte une histoire cohérente ?</p>
 
     <!-- Sources -->
     <div class="sources">
-      <div class="verify">Sources consultées</div>
-      <h2 class="no-rule">Références utilisées pour ce dossier</h2>
+      <div class="verify">Références</div>
+      <h2 class="no-rule">Sources consultées</h2>
       <ul>
         <li><a href="https://www.mpowerfinancing.com/blog/canada-visa-report" target="_blank" rel="noopener">MPOWER Financing</a> — analyse des taux d’approbation des permis d’études pour les étudiants africains et francophones, fondée sur des données IRCC 2018-2023.</li>
         <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html" target="_blank" rel="noopener">IRCC / Gouvernement du Canada</a> — exigences officielles de preuve de ressources financières pour les demandes de permis d’études.</li>
@@ -1316,12 +1313,10 @@
     <div class="final" id="start-assessment">
       <div class="fk">Première étape</div>
       <h2 class="no-rule">Faites préparer votre dossier Canada avec Revive</h2>
-      <p>Admission, garant, preuves financières, lettre d’explication, documents administratifs… Revive vous accompagne dans la préparation et la structuration de votre dossier, avec une approche claire, cohérente et sans fausse promesse.</p>
+      <p>Admission, garant, preuves financières, lettre d’explication, documents administratifs… Revive vous aide à clarifier votre dossier avant la soumission. Les accompagnements sont limités chaque mois pour préserver la qualité du suivi.</p>
       <div class="final-cta">
         <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon accompagnement Canada
           <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn--outline btn--wa whatsapp-link" id="whatsapp" href="#whatsapp">Parler à Revive sur WhatsApp
-          <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l1.4-3.6A7.5 7.5 0 1 1 8.6 18.6L4 19z"/><path d="M9 10c.4 2 2 3.6 4 4l1-1.4 2 .7.4 2c-3.4 1-7-1.4-8-5z"/></svg></a>
       </div>
     </div>
 
@@ -1342,12 +1337,10 @@
     </div>
 
     <div class="side-cta">
-      <div class="sct">Prêt à faire préparer votre dossier Canada ?</div>
+      <div class="sct">Votre dossier est-il vraiment cohérent ?</div>
       <div class="scp">Commencez l’accompagnement avec Revive Agency.</div>
       <a class="btn btn--red cta-link" href="#start-assessment">Commencer mon accompagnement Canada
         <svg class="arr" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="btn btn--outline btn--wa whatsapp-link" href="#whatsapp">Parler à Revive sur WhatsApp
-        <svg viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l1.4-3.6A7.5 7.5 0 1 1 8.6 18.6L4 19z"/><path d="M9 10c.4 2 2 3.6 4 4l1-1.4 2 .7.4 2c-3.4 1-7-1.4-8-5z"/></svg></a>
       <div class="side-note">Revive Agency est une publication/service privé et n’est pas affiliée au gouvernement du Canada. La décision finale appartient à IRCC.</div>
     </div>
   </aside>
@@ -1374,18 +1367,13 @@
 <!-- ===== STICKY MOBILE CTA ===== -->
 <nav class="mbar">
   <a class="btn btn--red cta-link" href="#start-assessment">Commencer</a>
-  <a class="btn btn--outline wa whatsapp-link" href="#whatsapp" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--green)"><path d="M4 19l1.4-3.6A7.5 7.5 0 1 1 8.6 18.6L4 19z"/><path d="M9 10c.4 2 2 3.6 4 4l1-1.4 2 .7.4 2c-3.4 1-7-1.4-8-5z"/></svg>
-  </a>
 </nav>
 
 <script>
   // Replace these two values before final publication:
   var LANDING_URL = "#start-assessment";
-  var WHATSAPP_URL = "#whatsapp";
 
   document.querySelectorAll(".cta-link").forEach(function(a){ a.setAttribute("href", LANDING_URL); });
-  document.querySelectorAll(".whatsapp-link").forEach(function(a){ a.setAttribute("href", WHATSAPP_URL); });
 
   var bar=document.getElementById('progress');
   function onScroll(){var h=document.documentElement;var max=(h.scrollHeight-h.clientHeight);bar.style.width=(max>0?(h.scrollTop/max)*100:0)+'%';}
@@ -1418,13 +1406,17 @@
 
 <script>
 (function(){
-  const slider = document.getElementById('spv7-slider');
-  const prev = document.getElementById('spv7-prev');
-  const next = document.getElementById('spv7-next');
-  if(slider && prev && next){
-    const step = () => Math.min(slider.clientWidth * 0.9, 360);
-    prev.addEventListener('click', ()=> slider.scrollBy({left:-step(), behavior:'smooth'}));
-    next.addEventListener('click', ()=> slider.scrollBy({left: step(), behavior:'smooth'}));
+  const track = document.getElementById('review-track');
+  const prev = document.getElementById('review-prev');
+  const next = document.getElementById('review-next');
+  if(track && prev && next){
+    const getStep = () => {
+      const card = track.querySelector('.review-card');
+      const gap = 14;
+      return card ? card.getBoundingClientRect().width + gap : Math.min(track.clientWidth * 0.9, 360);
+    };
+    prev.addEventListener('click', () => track.scrollBy({left:-getStep(), behavior:'smooth'}));
+    next.addEventListener('click', () => track.scrollBy({left:getStep(), behavior:'smooth'}));
   }
 })();
 </script>
