@@ -752,6 +752,44 @@
   .mbar{justify-content:center}
   .mbar .btn{width:100%;max-width:520px;flex:1}
 
+
+
+  /* ===== V23 FIXES: mobile retain bullets, review summary, byline alignment ===== */
+  .mobile-retain ul{list-style:none;margin:0;padding:0}
+  .mobile-retain li{display:flex;align-items:flex-start;gap:12px;padding-left:0;margin:0 0 16px}
+  .mobile-retain li::marker{content:""}
+  .mobile-retain li b{flex:0 0 auto;min-width:18px;display:inline-block}
+
+  .review-summary{display:flex;align-items:center;gap:12px;flex-wrap:nowrap}
+  .review-summary-text{display:flex;flex-direction:row;align-items:center;gap:8px;line-height:1.1;white-space:nowrap}
+  .review-summary-text b{margin:0}
+  .review-summary-text span{margin:0}
+
+  .byline{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .byline-main{display:flex;align-items:center;gap:13px;flex-wrap:nowrap;min-width:0}
+  .byline-main > span,.byline-main .pub{display:flex;align-items:center;white-space:nowrap}
+  .byline .sep{align-self:center;margin:0}
+  .share{margin-left:auto}
+
+  @media(max-width:860px){
+    .byline{align-items:flex-start}
+    .byline-main{gap:10px}
+  }
+
+  @media(max-width:640px){
+    .byline{gap:10px}
+    .byline-main{width:100%;gap:8px;font-size:.68rem}
+    .byline .mono-r{width:24px;height:24px;font-size:.8rem}
+    .share{margin-left:0;width:100%;justify-content:flex-start}
+
+    .review-proof-top{align-items:flex-start}
+    .review-summary{gap:10px;flex-wrap:nowrap}
+    .review-summary-stars{flex:0 0 auto}
+    .review-summary-text{gap:6px}
+    .review-summary-text b{font-size:.86rem}
+    .review-summary-text span{font-size:.72rem}
+  }
+
 </style>
 </head>
 <body>
@@ -800,9 +838,11 @@
     <p class="deck">À Douala, Yaoundé et dans toute l'Afrique francophone, des familles réunissent l'admission, l'argent et les documents — et reçoivent quand même un refus. Décryptage d'un malentendu coûteux, et de ce qui distingue vraiment un dossier qui convainc.</p>
 
     <div class="byline">
-      <span class="pub"><span class="mono-r">R</span>Publié par Revive Agency</span>
-      <span class="sep"></span><span>14 juin 2026</span>
-      <span class="sep"></span><span>Lecture 10 min</span>
+      <div class="byline-main">
+        <span class="pub"><span class="mono-r">R</span>Publié par Revive Agency</span>
+        <span class="sep"></span><span class="byline-item">14 juin 2026</span>
+        <span class="sep"></span><span class="byline-item">Lecture 10 min</span>
+      </div>
       <span class="share" id="shareBar">
         <button type="button" data-share="facebook" aria-label="Partager sur Facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v6h3v-6h3l1-3h-4V9z"/></svg></button>
         <button type="button" data-share="x" aria-label="Partager sur X"><svg viewBox="0 0 24 24"><path d="M17 3h3l-7 8 8 10h-6l-4-5-5 5H3l7-9L3 3h6l4 5 4-5z"/></svg></button>
@@ -967,8 +1007,7 @@
     <section class="review-proof" aria-labelledby="review-proof-title">
       <div class="review-proof-top">
         <div>
-          <div class="review-kicker">Retours d'expérience</div>
-          <h2 id="review-proof-title" class="review-title no-rule">Ce que les familles retiennent de l'accompagnement</h2>
+                    <h2 id="review-proof-title" class="review-title no-rule">Ce que les familles retiennent de l'accompagnement</h2>
           <p class="review-intro">Nous avons demandé à des familles et étudiants accompagnés ce qu’ils avaient retenu de l’expérience. Voici quelques retours reçus au fil des accompagnements.</p>
         </div>
         <div class="review-summary" aria-label="Note moyenne visuelle">
